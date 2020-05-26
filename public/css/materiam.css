@@ -1,0 +1,64 @@
+ul.stepper .step-title {
+    padding: 15.5px 64px 24px 44px;
+}
+
+.input-field.col label {
+    right: 0.75rem;
+    left: auto;
+}
+
+ul.stepper > .step:not(:last-of-type):after {
+    right: 13.5px;
+    left: auto;
+}
+
+.row .col {
+    float: right;
+}
+
+.select-wrapper .caret {
+    left: 0;
+    right: auto;
+}
+
+.dropdown-content li > a, .dropdown-content li > span {
+    text-align: right;
+}
+
+.file-field .btn, .file-field .btn-large, .file-field .btn-small {
+    float: right;
+}
+
+.file-field .file-path-wrapper {
+    padding-right: 10px;
+    padding-left: 0;
+}
+
+.tabs .indicator {
+    right: 0;
+    left: auto;
+}
+
+.input-field .prefix {
+    left: auto;
+    right: 15px;
+}
+
+    .input-field .prefix ~ input {
+        margin-right: 2rem;
+        margin-left: 0;
+    }
+
+    .input-field .prefix ~ label {
+        margin-right: 3rem;
+    }
+
+.input-field > label:not(.label-icon).active {
+    margin-right: 0;
+}
+
+
+.input-field > label:not(.label-icon).active {   
+    -webkit-transform-origin: 100% 0;
+    transform-origin: 100% 0;
+}
