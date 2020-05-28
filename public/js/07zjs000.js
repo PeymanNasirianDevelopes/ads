@@ -133,7 +133,7 @@ $(document).ready(function () {
 //     minLength: 1,
 //     searchIn: 'name',
 //     data: 'http://127.0.0.1/test/'
-//     
+//
 //});
 //    $("#SkillInfosSkillName").autocomplete({
 //        source: function (query, result) {
@@ -1084,7 +1084,7 @@ $(function () {
                             selectize.addOption({value: val, text: tex});
                             selectize.addItem(val);
 //                         $('#BasicInfoCityId').selectize.addOption({value: val , text: tex });
-//                           $('#BasicInfoCityId').selectize.addItem(val); 
+//                           $('#BasicInfoCityId').selectize.addItem(val);
                         });
                     });
 
@@ -1271,7 +1271,7 @@ $(function () {
     }
     );
     // $("#select [id='UserSocialNets']").click(function () {
-//  
+//
 //        $(this).parent('div').remove();
 //    });
 //    var data = ["option 1", "option 2", "option 3"];
@@ -1389,7 +1389,7 @@ $(function () {
         current = 7;
 
     });
-    var save6 = function () {//unread 
+    var save6 = function () {//unread
 
         var myFormData = new FormData();
 
@@ -1426,20 +1426,20 @@ $(function () {
 
         $.ajax({
 
-            url: siteurl + "builder/endstep",
+            url: siteurl + "/create",
             type: "POST",
             enctype: 'multipart/form-data',
             contentType: false,
             processData: false,
             data: myFormData,
-            dataType: "json",
+
             success: function (result) {
                 if (current == 7) {
                     if (result.islogin == '0') {
 
                         if (result.id == '1') {
-                            
-                           if (result.flag == '1') {  
+
+                           if (result.flag == '1') {
                     toastr.success('  با موفقیت ذخیره شد');
                 }
                             //   $('#modalregister').modal('show');
@@ -1450,7 +1450,7 @@ $(function () {
                         }
                     } else if (result.islogin == '1') {
                         if (result.id == '1') {
-                             if (result.flag == '1') {  
+                             if (result.flag == '1') {
                     toastr.success('  با موفقیت ذخیره شد');
                 }
                             window.location.replace(siteurl + 'templatemarket');
@@ -1463,7 +1463,7 @@ $(function () {
                 } else {
                     if (result.islogin == '0') {
                         if (result.id == '1') {
-                              if (result.flag == '1') {  
+                              if (result.flag == '1') {
                     toastr.success('  با موفقیت ذخیره شد');
                 }
                         } else {
@@ -1471,7 +1471,7 @@ $(function () {
                         }
                     } else if (result.islogin == '1') {
                         if (result.id == '1') {
-                            if (result.flag == '1') {  
+                            if (result.flag == '1') {
                     toastr.success('  با موفقیت ذخیره شد');
                 }
                         } else {
@@ -1496,7 +1496,7 @@ $(function () {
         current = 2;
 
     });
-    var save1 = function () {//unread 
+    var save1 = function () {//unread
 
         var BasicInfoFirstName, BasicInfoLastName, BasicInfoGender, BasicInfoMaritalStatus;
         var profilephoto, BasicInfoMilitaryStatus, BasicInfoBirthYear, BasicInfoBirthMonth, BasicInfoBirthday;
@@ -1732,7 +1732,7 @@ $(function () {
         }
     });
 
-    var save2 = function () {//unread 
+    var save2 = function () {//unread
 
         var myFormData = new FormData();
 
@@ -1855,7 +1855,7 @@ $(function () {
         });
 
     };
-    var save3 = function () {//unread 
+    var save3 = function () {//unread
 
         var myFormData = new FormData();
         var answer1 = [];
@@ -1902,7 +1902,7 @@ $(function () {
         });
 
         $('select[name="ExperienceInfosCountryId[]"]').each(function () {
-           
+
             answer7.push([$(this).val()]);
 
         });
@@ -2061,7 +2061,7 @@ $(function () {
         $(this).parent().parent().parent().parent().remove();
     }
     );
-    var save4 = function () {//unread 
+    var save4 = function () {//unread
 
         var myFormData = new FormData();
         //**language**
@@ -2236,7 +2236,7 @@ $(function () {
         $(this).parent().parent().parent().parent().remove();
     }
     );
-    var save5 = function () {//unread 
+    var save5 = function () {//unread
         var myFormData = new FormData();
         var answer1 = [];
         var answer2 = [];
@@ -2332,7 +2332,7 @@ $(function () {
             dataType: "json",
             success: function (result) {
                 if (result.id == '1') {
-                   if (result.flag == '1') {  
+                   if (result.flag == '1') {
                     toastr.success('  با موفقیت ذخیره شد');
                 }
                 } else {
