@@ -192,11 +192,11 @@
 
                             <select id="UserSocialNets0"  name="UserSocialNets[]" class="form-control  select2 selectnew">
                                 <option value="0" disabled></option>
-                                <option value="1">لینکداین</option>
-                                <option value="2">توییتر</option>
-                                <option value="3">فیسبوک</option>
-                                <option value="4">اینستاگرام</option>
-                                <option value="5">تلگرام</option>
+                                <option value="لینکداین">لینکداین</option>
+                                <option value="توییتر">توییتر</option>
+                                <option value="فیسبوک">فیسبوک</option>
+                                <option value="اینستاگرام">اینستاگرام</option>
+                                <option value="تلگرام">تلگرام</option>
 
                             </select>
 
@@ -223,11 +223,11 @@
                             <label asp-for="UserSocialNets[index].Url">نام شبکه اجتماعی</label>
                             <select id="UserSocialNets" name="UserSocialNets[]" class="form-control select2 selectnew">
                                 <option value="0" disabled></option>
-                                <option value="1">لینکداین</option>
-                                <option value="2">توییتر</option>
-                                <option value="3">فیسبوک</option>
-                                <option value="4">اینستاگرام</option>
-                                <option value="5">تلگرام</option>
+                                <option value="لینکداین">لینکداین</option>
+                                <option value="توییتر">توییتر</option>
+                                <option value="فیسبوک">فیسبوک</option>
+                                <option value="اینستاگرام">اینستاگرام</option>
+                                <option value="تلگرام">تلگرام</option>
 
                             </select>
 

@@ -91,14 +91,8 @@
                     </div>
                     <div class="col-md-2 col-sm-6">
                         <label asp-for="EducationInfos[index].CityTitle">شهر</label>
-                        <div id="selectcity3"style="display: none;">
-                            <div id="selectcity3"name="selectcity3[]"style="display: none;">
-                                <select id="ExperienceInfosCityId" name="ExperienceInfosCityId[]" class="form-control select2 selectnew">
 
-                                </select>
-                            </div>
-                        </div>
-                        <input id="ExperienceInfosCityTitle" style="display:block" name="ExperienceInfosCityTitle[]" class="form-control select2 selectnew"/>
+                        <input  style="display:block" name="ExperienceInfosCityTitle[]" class="form-control select2 selectnew"/>
 
                     </div>
 
@@ -168,7 +162,7 @@
                     <div class="col-md-5 col-sm-12">
                         <p class="present-checkbox">
                             <label>
-                                <input type="checkbox"id="working" name="working[]" class="form-control select2 selectnew"/>
+                                <input type="checkbox"id="working" name="working[]" class="form-control select2 selectnew" value="1"/>
                                 <span>مشغول فعالیت در این مجموعه هستم</span>
                             </label>
                         </p>

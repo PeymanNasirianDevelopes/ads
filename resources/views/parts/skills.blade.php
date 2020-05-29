@@ -20,18 +20,18 @@
                                             <select id="LanguageInfosLanguageName" name="LanguageInfosLanguageName[]" class="form-control select2 selectnew">
                                                 <option value="0"> </option>
 
-                                                <option value="1">انگلیسی</option>
-                                                <option value="2">عربی</option>
-                                                <option value="3">آلمانی</option>
-                                                <option value="4">فرانسوی</option>
-                                                <option value="5">اسپانیایی</option>
-                                                <option value="6">روسی</option>
-                                                <option value="7">ایتالیایی</option>
-                                                <option value="8">ترکی استانبولی</option>
-                                                <option value="9">فارسی</option>
-                                                <option value="10">چینی</option>
-                                                <option value="11">عبری</option>
-                                                <option value="12">ترکی آذربایجانی</option>
+                                                <option value="انگلیسی">انگلیسی</option>
+                                                <option value="عربی">عربی</option>
+                                                <option value="آلمانی">آلمانی</option>
+                                                <option value="فرانسوی">فرانسوی</option>
+                                                <option value="اسپانیایی">اسپانیایی</option>
+                                                <option value="روسی">روسی</option>
+                                                <option value="ایتالیایی">ایتالیایی</option>
+                                                <option value="ترکی استانبولی">ترکی استانبولی</option>
+                                                <option value="فارسی">فارسی</option>
+                                                <option value="چینی">چینی</option>
+                                                <option value="عبری">عبری</option>
+                                                <option value="ترکی آذربایجانی">ترکی آذربایجانی</option>
 
                                             </select>
 
@@ -40,7 +40,7 @@
                                             <label asp-for="LanguageInfos[index].ReadingLevel" class="active">مهارت خواندن</label>
                                             <select id="LanguageInfosReadingLevel" name="LanguageInfosReadingLevel[]" class="form-control select2 selectnew">
 
-                                                <option value="0"> </option> <option value="1"><text>★</text><text>☆</text><text>☆</text><text>☆</text><text>☆</text> <option value="2"><text>★</text><text>★</text><text>☆</text><text>☆</text><text>☆</text> <option value="3"><text>★</text><text>★</text><text>★</text><text>☆</text><text>☆</text> <option value="4"><text>★</text><text>★</text><text>★</text><text>★</text><text>☆</text> <option value="5"><text>★</text><text>★</text><text>★</text><text>★</text><text>★</text>
+                                                <option selected value="0"> </option> <option value="1"><text>★</text><text>☆</text><text>☆</text><text>☆</text><text>☆</text> <option value="2"><text>★</text><text>★</text><text>☆</text><text>☆</text><text>☆</text> <option value="3"><text>★</text><text>★</text><text>★</text><text>☆</text><text>☆</text> <option value="4"><text>★</text><text>★</text><text>★</text><text>★</text><text>☆</text> <option value="5"><text>★</text><text>★</text><text>★</text><text>★</text><text>★</text>
 
                                             </select>
 
@@ -48,14 +48,14 @@
                                         <div class="col-md-2 col-sm-6 rate-dropdown-wrapper">
                                             <label asp-for="LanguageInfos[index].WritingLevel" class="active">مهارت نوشتن</label>
                                             <select id="LanguageInfosWritingLevel" name="LanguageInfosWritingLevel[]" class="form-control select2 selectnew">
-                                                <option value="0"> </option> <option value="1"><text>★</text><text>☆</text><text>☆</text><text>☆</text><text>☆</text> <option value="2"><text>★</text><text>★</text><text>☆</text><text>☆</text><text>☆</text> <option value="3"><text>★</text><text>★</text><text>★</text><text>☆</text><text>☆</text> <option value="4"><text>★</text><text>★</text><text>★</text><text>★</text><text>☆</text> <option value="5"><text>★</text><text>★</text><text>★</text><text>★</text><text>★</text>
+                                                <option selected value="0"> </option> <option value="1"><text>★</text><text>☆</text><text>☆</text><text>☆</text><text>☆</text> <option value="2"><text>★</text><text>★</text><text>☆</text><text>☆</text><text>☆</text> <option value="3"><text>★</text><text>★</text><text>★</text><text>☆</text><text>☆</text> <option value="4"><text>★</text><text>★</text><text>★</text><text>★</text><text>☆</text> <option value="5"><text>★</text><text>★</text><text>★</text><text>★</text><text>★</text>
                                             </select>
 
                                         </div>
                                         <div class="col-md-2 col-sm-6 rate-dropdown-wrapper">
                                             <label asp-for="LanguageInfos[index].ListeningLevel" class="active">مهارت گوش دادن</label>
                                             <select id="LanguageInfosListeningLevel" name="LanguageInfosListeningLevel[]" class="form-control select2 selectnew">
-                                                <option value="0"> </option> <option value="1"><text>★</text><text>☆</text><text>☆</text><text>☆</text><text>☆</text> <option value="2"><text>★</text><text>★</text><text>☆</text><text>☆</text><text>☆</text> <option value="3"><text>★</text><text>★</text><text>★</text><text>☆</text><text>☆</text> <option value="4"><text>★</text><text>★</text><text>★</text><text>★</text><text>☆</text> <option value="5"><text>★</text><text>★</text><text>★</text><text>★</text><text>★</text>
+                                                <option selected value="0"> </option> <option value="1"><text>★</text><text>☆</text><text>☆</text><text>☆</text><text>☆</text> <option value="2"><text>★</text><text>★</text><text>☆</text><text>☆</text><text>☆</text> <option value="3"><text>★</text><text>★</text><text>★</text><text>☆</text><text>☆</text> <option value="4"><text>★</text><text>★</text><text>★</text><text>★</text><text>☆</text> <option value="5"><text>★</text><text>★</text><text>★</text><text>★</text><text>★</text>
                                             </select>
 
                                         </div>
@@ -63,7 +63,7 @@
                                         <div class="col-md-2 col-sm-6 rate-dropdown-wrapper">
                                             <label asp-for="LanguageInfos[index].SpeakingLevel" class="active">مهارت صحبت کردن</label>
                                             <select id="LanguageInfosSpeakingLevel" name="LanguageInfosSpeakingLevel[]" class="form-control select2 selectnew">
-                                                <option value="0"> </option> <option value="1"><text>★</text><text>☆</text><text>☆</text><text>☆</text><text>☆</text> <option value="2"><text>★</text><text>★</text><text>☆</text><text>☆</text><text>☆</text> <option value="3"><text>★</text><text>★</text><text>★</text><text>☆</text><text>☆</text> <option value="4"><text>★</text><text>★</text><text>★</text><text>★</text><text>☆</text> <option value="5"><text>★</text><text>★</text><text>★</text><text>★</text><text>★</text>
+                                                <option selected value="0"> </option> <option value="1"><text>★</text><text>☆</text><text>☆</text><text>☆</text><text>☆</text> <option value="2"><text>★</text><text>★</text><text>☆</text><text>☆</text><text>☆</text> <option value="3"><text>★</text><text>★</text><text>★</text><text>☆</text><text>☆</text> <option value="4"><text>★</text><text>★</text><text>★</text><text>★</text><text>☆</text> <option value="5"><text>★</text><text>★</text><text>★</text><text>★</text><text>★</text>
                                             </select>
 
                                         </div>

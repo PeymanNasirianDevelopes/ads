@@ -12,14 +12,14 @@
             <div class="col-sm-12">
                 <p class="recruitment-item">
                     <label>
-                        <input type="checkbox" id="RecruitmentInfoJobApplication" />
+                        <input type="checkbox" id="RecruitmentInfoJobApplication" name="RecruitmentInfoJobApplication" />
                         <span><label asp-for="@Model.RecruitmentInfo.JobApplication"></label>قصد انتخاب یا تغییر شغل دارم</span>
                     </label>
                 </p>
                 <div class="unexpanded" id="12">
                     <div class="col-md-3 col-sm-12">
                         <label asp-for="RecruitmentInfo.JobCategoryId" class="active">گروه شغلی</label>
-                        <select id="RecruitmentInfoJobCategoryId" class="form-control select2 selectnew">
+                        <select id="RecruitmentInfoJobCategoryId" name="RecruitmentInfoJobCategoryId" class="form-control select2 selectnew">
                             <option value="0"></option>
                             <option value="0"> </option><option value="1">سخت افزار و شبکه</option><option value="2">طراحی / گرافیست</option><option value="3">وب،‌ برنامه‌نویسی و نرم‌افزار</option><option value="4">فروش و بازاریابی</option><option value="5">تولید و مدیریت محتوا</option><option value="6">مسئول دفتر، اجرائی و اداری</option><option value="7">پزشکی/داروسازی</option><option value="8">پشتیبانی و امور مشتریان</option><option value="9">IT / DevOps / Server</option><option value="10">مالی و حسابداری</option><option value="11">مهندسی برق و الکترونیک</option><option value="12">آموزش</option><option value="13">منابع انسانی و کارگزینی</option><option value="14">مهندسی صنایع و مدیریت صنعتی</option><option value="15">خرید و بازرگانی</option><option value="16">مدیر محصول</option><option value="17">ترجمه</option><option value="18">مهندسی عمران و معماری</option><option value="19">تحقیق و توسعه</option><option value="20">تحقیق بازار و تحلیل اقتصادی</option><option value="21">گردشگری</option><option value="22">کارشناس حقوقی،‌ وکالت</option><option value="23">پزشکی،‌ پرستاری و دارویی</option><option value="24">مهندسی مکانیک و هوافضا</option><option value="25">روابط عمومی</option><option value="26">خبر‌نگاری</option><option value="27">انبارداری</option><option value="28">هتلداری</option><option value="29">حمل و نقل</option><option value="30">صنایع غذایی</option><option value="31">مهندسی شیمی و نفت</option><option value="32">CEO</option><option value="33">HSE</option><option value="34">مدیریت بیمه</option><option value="35">مهندسی کشاورزی</option><option value="36">مهندسی معدن و متالورژی</option><option value="37">مهندسی صنایع</option><option value="38">بازاریابی و فروش</option><option value="39">سایر</option><option value="40">بازاریابی دیجیتال/تولید محتوا</option><option value="41">مسئول دفتر/ امور اداری</option><option value="42">عملیات و تولید/تعمیر و نگهداری</option><option value="43">هنر</option>
                         </select>
@@ -27,12 +27,12 @@
                     </div>
                     <div class="col-md-3 col-sm-12">
                         <label asp-for="RecruitmentInfo.JobTitle">عنوان شغلی</label>
-                        <input data-score="1" id="RecruitmentInfoJobTitle" />
+                        <input data-score="1" id="RecruitmentInfoJobTitle" name="RecruitmentInfoJobTitle" />
 
                     </div>
                     <div class="col-md-3 col-sm-6">
                         <label asp-for="RecruitmentInfo.EmploymentType" class="active">نحوه ی همکاری</label>
-                        <select id="RecruitmentInfoEmploymentType" class="form-control select2 selectnew">
+                        <select id="RecruitmentInfoEmploymentType" name="RecruitmentInfoEmploymentType" class="form-control select2 selectnew">
                             <option value="0"> </option>
 
                             <option value="1">تمام وقت</option>
@@ -50,7 +50,7 @@
                                    }
                                    else
                                    {-->
-                        <input dir="ltr" data-score="0.5"id="RecruitmentInfoMinAverageSalary" type="text" />
+                        <input dir="ltr" data-score="0.5"id="RecruitmentInfoMinAverageSalary" name="RecruitmentInfoMinAverageSalary" type="text" />
                         <!--}-->
 
                     </div>
@@ -74,7 +74,7 @@
             <div class="col-sm-12">
                 <p class="recruitment-item">
                     <label>
-                        <input type="checkbox" id="RecruitmentInfoImmigrationForStudy" />
+                        <input type="checkbox" id="RecruitmentInfoImmigrationForStudy" name="RecruitmentInfoImmigrationForStudy" />
                         <span><label asp-for="@Model.RecruitmentInfo.ImmigrationForStudy">میخواهم برای ادامه تحصیل مهاجرت کنم</label></span>
                     </label>
                 </p>
@@ -88,7 +88,7 @@
                     </div>
                     <div class="col-md-4 col-sm-12">
                         <label class="active">مقطع درخواستی برای تحصیل</label>
-                        <select id="RecruitmentInfoEducationLevel" class="form-control select2 selectnew">
+                        <select id="RecruitmentInfoEducationLevel" name="RecruitmentInfoEducationLevel" class="form-control select2 selectnew">
                             <option value="0"></option>
                             <option value="1">زیر دیپلم</option>
                             <option value="2">دیپلم</option>
@@ -103,7 +103,7 @@
                     </div>
                     <div class="col-md-4 col-sm-12">
                         <label asp-for="RecruitmentInfo.FieldOfStudy">رشته تحصیلی</label>
-                        <input data-score="0.5" id="RecruitmentInfoFieldOfStudy" />
+                        <input data-score="0.5" id="RecruitmentInfoFieldOfStudy" name="RecruitmentInfoFieldOfStudy" />
 
                     </div>
                 </div>
@@ -116,7 +116,7 @@
             <div class="col-sm-12">
                 <p class="recruitment-item">
                     <label>
-                        <input type="checkbox" id="RecruitmentInfoImmigrationForWork" />
+                        <input type="checkbox" id="RecruitmentInfoImmigrationForWork" name="RecruitmentInfoImmigrationForWork" />
                         <span><label asp-for="@Model.RecruitmentInfo.ImmigrationForWork">میخواهم برای کار مهاجرت کنم</label></span>
                     </label>
                 </p>
@@ -137,7 +137,7 @@
             <div class="col-sm-12">
                 <p class="recruitment-item">
                     <label>
-                        <input type="checkbox" id="RecruitmentInfoContinueEducation" />
+                        <input type="checkbox" id="RecruitmentInfoContinueEducation" name="RecruitmentInfoContinueEducation" />
                         <span><label asp-for="@Model.RecruitmentInfo.ContinueEducation">ادامه تحصیل داخل</label></span>
                     </label>
                 </p>
@@ -146,7 +146,7 @@
 
                     <div class="col-md-3 col-sm-12">
                         <label asp-for="RecruitmentInfo.InstitudeType" class="active">نوع موسسه</label>
-                        <select id="RecruitmentInfoInstitudeType" class="form-control select2 selectnew">
+                        <select id="RecruitmentInfoInstitudeType" name="RecruitmentInfoInstitudeType" class="form-control select2 selectnew">
                             <option value="0" ></option>
                             <option value="5">دولتی</option>
                             <option value="6">آزاد</option>

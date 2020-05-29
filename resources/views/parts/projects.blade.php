@@ -91,7 +91,7 @@
                         </div>
 
                         <div class="row col-md-12 right">
-                            <a id="researchadd" class="btn waves-effect waves-light green" title="افزودن شبکه اجتماعی">
+                            <a id="researchadd" class="btn waves-effect waves-light green" title="افزودن تحقیق جدید">
                                 <!--<i class="material-icons">add</i>-->
                                 <i class="fa fa-plus"></i>
 
@@ -181,7 +181,7 @@
                             </div>
 
                             <div class="row col-md-12 right">
-                                <a id="addproject" class="btn waves-effect waves-light green" title="افزودن شبکه اجتماعی">
+                                <a id="addproject" class="btn waves-effect waves-light green" title="افزودن پروژه">
                                     <!--<i class="material-icons">add</i>-->
                                     <i class="fa fa-plus"></i>
 
