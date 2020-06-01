@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Joe Bloggs - Curriculum Vitae</title>
+<title>{{$resume->name}} {{$resume->last_name}} Resume</title>
 
 <meta name="viewport" content="width=device-width"/>
 <meta name="description" content="The Curriculum Vitae of Joe Bloggs."/>
@@ -18,84 +18,156 @@
 <div id="cv" class="instaFade">
 	<div class="mainDetails">
 		<div id="headshot" class="quickFade">
-			<img src="{{asset("pdf/5th/headshot.jpg")}}" alt="Alan Smith" />
+            <img width="200" height="200" src="{{asset("storage/images/$resume->image")}}" alt="{{$resume->name}} {{$resume->last_name}}" itemprop="image" />
 		</div>
 
 		<div id="name">
-			<h1 class="quickFade delayTwo">Joe Bloggs</h1>
-			<h2 class="quickFade delayThree">Job Title</h2>
+			<h1 class="quickFade delayTwo">{{$resume->name}} {{$resume->last_name}}</h1>
+			<h2 class="quickFade delayThree">{{$resume->about}}</h2>
 		</div>
 
 		<div id="contactDetails" class="quickFade delayFour">
 			<ul>
-				<li>e: <a href="mailto:joe@bloggs.com" target="_blank">joe@bloggs.com</a></li>
-				<li>w: <a href="http://www.bloggs.com">www.bloggs.com</a></li>
-				<li>m: 01234567890</li>
+				<li>e: <a href="mailto:{{$resume->email}}" target="_blank">{{$resume->email}}</a></li>
+				<li>w: <a href="http://{{$resume->website}}">{{$resume->website}}</a></li>
+				<li>m: {{$resume->mobile}}</li>
 			</ul>
 		</div>
 		<div class="clear"></div>
 	</div>
 
 	<div id="mainArea" class="quickFade delayFive">
-		<section>
-			<article>
-				<div class="sectionTitle">
-					<h1>Personal Profile</h1>
-				</div>
 
-				<div class="sectionContent">
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer dolor metus, interdum at scelerisque in, porta at lacus. Maecenas dapibus luctus cursus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ultricies massa et erat luctus hendrerit. Curabitur non consequat enim. Vestibulum bibendum mattis dignissim. Proin id sapien quis libero interdum porttitor.</p>
-				</div>
-			</article>
-			<div class="clear"></div>
-		</section>
 
 
 		<section>
 			<div class="sectionTitle">
-				<h1>Work Experience</h1>
+				<h1>Works</h1>
 			</div>
 
 			<div class="sectionContent">
+                @foreach($samples as $sample)
 				<article>
-					<h2>Job Title at Company</h2>
-					<p class="subDetails">April 2011 - Present</p>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ultricies massa et erat luctus hendrerit. Curabitur non consequat enim. Vestibulum bibendum mattis dignissim. Proin id sapien quis libero interdum porttitor.</p>
-				</article>
+					<h2>   <a href="http://{{$sample->project_link}}" title="{{$sample->project_title}}">{{$sample->project_title}}</a></h2>
+					<p >              <br>
+                    Description:  {{$sample->project_content}}
+                    <br>
+                    Web Site:  {{$sample->project_link}}</p>
 
-				<article>
-					<h2>Job Title at Company</h2>
-					<p class="subDetails">Janruary 2007 - March 2011</p>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ultricies massa et erat luctus hendrerit. Curabitur non consequat enim. Vestibulum bibendum mattis dignissim. Proin id sapien quis libero interdum porttitor.</p>
 				</article>
+                @endforeach
 
-				<article>
-					<h2>Job Title at Company</h2>
-					<p class="subDetails">October 2004 - December 2006</p>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ultricies massa et erat luctus hendrerit. Curabitur non consequat enim. Vestibulum bibendum mattis dignissim. Proin id sapien quis libero interdum porttitor.</p>
-				</article>
 			</div>
 			<div class="clear"></div>
 		</section>
 
 
+        <section>
+            <div class="sectionTitle">
+                <h1>Experience</h1>
+            </div>
+
+            <div class="sectionContent">
+                @foreach($work_ex as $work)
+                    <article>
+                        @if($work->in_work)
+                            <h3>{{$work->work_startm}} {{$work->work_starty}} - in work</h3>
+                        @else
+                            <h3>{{$work->work_startm}} {{$work->work_starty}} - {{$work->work_endm}} {{$work->work_endy}}</h3>
+                        @endif
+                        <p>{{$work->work_center}} {{$work->work_center_title}} <br />
+                            <em>{{$work->work_title}}</em></p>
+
+                    </article>
+                @endforeach
+
+            </div>
+            <div class="clear"></div>
+        </section>
+
 		<section>
 			<div class="sectionTitle">
-				<h1>Key Skills</h1>
+				<h1> Skills</h1>
 			</div>
 
 			<div class="sectionContent">
+                <h2>Languages</h2>
 				<ul class="keySkills">
-					<li>A Key Skill</li>
-					<li>A Key Skill</li>
-					<li>A Key Skill</li>
-					<li>A Key Skill</li>
-					<li>A Key Skill</li>
-					<li>A Key Skill</li>
-					<li>A Key Skill</li>
-					<li>A Key Skill</li>
+                    @foreach($skills_language as $language)
+                        <li>{{$language->language_name}}
+                            <br>
+                            Reading:
+                            @for($i=1;$i<=$language->language_read;$i++)
+                                &#9733;
+                            @endfor
+                            <br>
+                            Writing:
+                            @for($i=1;$i<=$language->language_write;$i++)
+                                &#9733;
+                            @endfor
+                            <br>
+                            Listening:
+                            @for($i=1;$i<=$language->language_listen;$i++)
+                                &#9733;
+                            @endfor
+                            <br>
+                            Speaking:
+                            @for($i=1;$i<=$language->language_speak;$i++)
+                                &#9733;
+                            @endfor
+                        </li>
+                    @endforeach
 				</ul>
 			</div>
+
+
+            <div class="sectionContent">
+                <h2>Working Experiences</h2>
+                <ul class="keySkills">
+                    @foreach($skills_exp as $work_exp)
+                        <li>{{$work_exp->ex_name}}
+                            @for($i=1;$i<=$work_exp->ex_state;$i++)
+                                &#9733;
+                            @endfor
+                        </li>
+                    @endforeach
+                </ul>
+            </div>
+
+            <div class="sectionContent">
+                <h2>Certificates</h2>
+                <ul class="keySkills">
+                    @foreach($skills_degrees as $degree)
+
+                        <li>
+                            @if($degree->degree_type==1)
+                                Language
+                            @elseif($degree->degree_type==2)
+                                SoftWare
+                            @else
+                                Other
+                            @endif
+                            <br>
+                            {{$degree->degree_title}} From
+                            &nbsp;{{$degree->degree_uni}}&nbsp;{{$degree->degree_month}}&nbsp;{{$degree->degree_year}}
+                        </li>
+                    @endforeach
+                </ul>
+            </div>
+
+            <div class="sectionContent">
+                <h2>Honors</h2>
+                <ul class="keySkills">
+                    @foreach($skills_honors as $honor)
+
+                        <li>
+                            {{$honor->honor_title}}
+
+                            {{$honor->honor_month}}&nbsp;{{$honor->honor_year}}
+                        </li>
+                    @endforeach
+                </ul>
+            </div>
 			<div class="clear"></div>
 		</section>
 
@@ -106,20 +178,51 @@
 			</div>
 
 			<div class="sectionContent">
-				<article>
-					<h2>College/University</h2>
-					<p class="subDetails">Qualification</p>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ultricies massa et erat luctus hendrerit. Curabitur non consequat enim.</p>
-				</article>
 
+                @foreach($education as $edu)
 				<article>
-					<h2>College/University</h2>
-					<p class="subDetails">Qualification</p>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ultricies massa et erat luctus hendrerit. Curabitur non consequat enim.</p>
+					<h2>{{$edu->uni_type}}</h2>
+					<p class="subDetails">{{$edu->uni_name}}</p>
+					<p>{{$edu->uni_gerayesh}}</p>
+                    @if($edu->uni_instudy)
+                        <h5>{{$edu->uni_inyear}} - in study</h5>
+                    @else
+                        <h5>{{$edu->uni_inyear}} - {{$edu->uni_outyear}}</h5>
+                    @endif
 				</article>
+                    <br>
+                    <br>
+
+                @endforeach
 			</div>
 			<div class="clear"></div>
 		</section>
+
+
+        <section>
+            <div class="sectionTitle">
+                <h1>Researches</h1>
+            </div>
+
+            <div class="sectionContent">
+                @foreach($researchs as $research)
+                    <article>
+
+                        <p>  <a href="http://{{$research->research_link}}" title="{{$research->research_title}}">{{$research->research_title}}</a> <br />
+                            <em> Publisher:{{$research->research_author}}</em>
+
+
+                            <br>
+                            Description: {{$research->research_content}}
+                            <br>
+                            Web Site:  {{$research->research_link}}</p>
+
+                    </article>
+                @endforeach
+
+            </div>
+            <div class="clear"></div>
+        </section>
 
 	</div>
 </div>

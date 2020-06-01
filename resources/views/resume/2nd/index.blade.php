@@ -6,7 +6,7 @@
 <head>
      <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 
-     <title>One Page Resume</title>
+     <title>{{$resume->name}} {{$resume->last_name}} Resume</title>
 
      <style type="text/css">
         * { margin: 0; padding: 0; }
@@ -33,26 +33,23 @@
 
     <div id="page-wrap">
 
-        <img src="{{asset("pdf/2nd/cthulu.png")}}" alt="Photo of Cthulu" id="pic" />
+        <img width="200" height="200" src="{{asset("storage/images/$resume->image")}}" alt="{{$resume->name}} {{$resume->last_name}}" id="pic" />
 
         <div id="contact-info" class="vcard">
 
             <!-- Microformats! -->
 
-            <h1 class="fn">C'thulhu</h1>
+            <h1 class="fn">{{$resume->name}} {{$resume->last_name}}</h1>
 
             <p>
-                Cell: <span class="tel">555-666-7777</span><br />
-                Email: <a class="email" href="mailto:greatoldone@lovecraft.com">greatoldone@lovecraft.com</a>
+                Cell: <span class="tel">{{$resume->mobile}}</span><br />
+                Email: <a class="email" href="mailto:{{$resume->email}}">{{$resume->email}}</a>
             </p>
         </div>
 
         <div id="objective">
             <p>
-                I am an outgoing and energetic (ask anybody) young professional, seeking a
-                career that fits my professional skills, personality, and murderous tendencies.
-                My squid-like head is a masterful problem solver and inspires fear in who gaze upon it.
-                I can bring world domination to your organization.
+      {{$resume->about}}
             </p>
         </div>
 
@@ -63,51 +60,147 @@
 
             <dt>Education</dt>
             <dd>
-                <h2>Withering Madness University - Planet Vhoorl</h2>
-                <p><strong>Major:</strong> Public Relations<br />
-                   <strong>Minor:</strong> Scale Tending</p>
+                @foreach($education as $edu)
+                <h2>{{$edu->uni_name}}</h2>
+                <p><strong>Major:</strong>{{$edu->uni_major}}<br />
+                   <strong>City:</strong> {{$edu->uni_city}}</p>
+                @endforeach
             </dd>
 
             <dd class="clear"></dd>
 
             <dt>Skills</dt>
             <dd>
-                <h2>Office skills</h2>
-                <p>Office and records management, database administration, event organization, customer support, travel coordination</p>
+                <div style="float: left; margin: 10px;">
+                <h2>Languages</h2>
+                @foreach($skills_language as $language)
+                <p><b>{{$language->language_name}}</b>
+                  <br>
+                    Reading:
+                    @for($i=1;$i<=$language->language_read;$i++)
+                        &#9733;
+                    @endfor
+                    <br>
+                    Writing:
+                    @for($i=1;$i<=$language->language_write;$i++)
+                        &#9733;
+                    @endfor
+                    <br>
+                    Listening:
+                    @for($i=1;$i<=$language->language_listen;$i++)
+                        &#9733;
+                    @endfor
+                    <br>
+                    Speaking:
+                    @for($i=1;$i<=$language->language_speak;$i++)
+                        &#9733;
+                    @endfor
 
-                <h2>Computer skills</h2>
-                <p>Microsoft productivity software (Word, Excel, etc), Adobe Creative Suite, Windows</p>
+
+                </p>
+                @endforeach
+                    <h2>Honors</h2>
+                    @foreach($skills_honors as $honor)
+                        <p><b>{{$honor->honor_title}}</b>
+                            <br>
+
+
+                            {{$honor->honor_month}}&nbsp;{{$honor->honor_year}}
+
+                        </p>
+                    @endforeach
+                </div>
+                <div style="float: right;">
+                    <h2>Working Experiences</h2>
+                    @foreach($skills_exp as $work_exp)
+                        <p><b>{{$work_exp->ex_name}}</b>
+                            <br>
+                            @for($i=1;$i<=$work_exp->ex_state;$i++)
+                                &#9733;
+                            @endfor
+
+
+                        </p>
+                    @endforeach
+
+                    <h2>Certificates</h2>
+                    @foreach($skills_degrees as $degree)
+                        <p><b>
+
+                                @if($degree->degree_type==1)
+                                    Language
+                                @elseif($degree->degree_type==2)
+                                    SoftWare
+                                @else
+                                    Other
+                                @endif
+
+                            </b>
+
+
+                            <br>
+                            {{$degree->degree_title}} From
+                            &nbsp;{{$degree->degree_uni}}&nbsp;{{$degree->degree_month}}&nbsp;{{$degree->degree_year}}
+
+
+                        </p>
+                    @endforeach
+                </div>
+
+
+
+
+
+
+
+
+
+
             </dd>
 
             <dd class="clear"></dd>
 
             <dt>Experience</dt>
             <dd>
-                <h2>Doomsday Cult <span>Leader/Overlord - Baton Rogue, LA - 1926-2010</span></h2>
+                @foreach($work_ex as $work)
+                <h2>{{$work->work_title}} <span>in {{$work->work_center}} {{$work->work_center_title}} - {{$work->work_startm}} {{$work->work_starty}} - {{$work->work_endm}} {{$work->work_endy}}</span></h2>
                 <ul>
-                    <li>Inspired and won highest peasant death competition among servants</li>
-                    <li>Helped coordinate managers to grow cult following</li>
-                    <li>Provided untimely deaths to all who opposed</li>
+                    <li>{{$work->work_semat}}</li>
+                    <li>{{$work->work_city}}</li>
+                    <li>{{$work->work_how}}</li>
+
                 </ul>
 
-                <h2>The Watering Hole <span>Bartender/Server - Milwaukee, WI - 2009</span></h2>
-                <ul>
-                    <li>Worked on grass-roots promotional campaigns</li>
-                    <li>Reduced theft and property damage percentages</li>
-                    <li>Janitorial work, Laundry</li>
-                </ul>
+                @endforeach
             </dd>
 
             <dd class="clear"></dd>
 
-            <dt>Hobbies</dt>
-            <dd>World Domination, Deep Sea Diving, Murder Most Foul</dd>
+            <dt>Works</dt>
+            @foreach($samples as $sample)
+            <dd><div style="margin:20px">
+                    <a href="http://{{$sample->project_link}}" title="{{$sample->project_title}}">{{$sample->project_title}}</a>
+                    <br>
+                    Description:  {{$sample->project_content}}
+                    <br>
+                    Web Site:  {{$sample->project_link}}
+                </div></dd>
+            @endforeach
 
             <dd class="clear"></dd>
 
-            <dt>References</dt>
-            <dd>Available on request</dd>
-
+            <dt>Researches</dt>
+            @foreach($researchs as $research)
+            <dd><div style="margin:20px">
+                    <a href="http://{{$research->research_link}}" title="{{$research->research_title}}">{{$research->research_title}}</a>
+                    <br>
+                    Publisher:{{$research->research_author}}
+                    <br>
+                    Description: {{$research->research_content}}
+                    <br>
+                    Web Site:  {{$research->research_link}}
+                </div></dd>
+            @endforeach
             <dd class="clear"></dd>
         </dl>
 

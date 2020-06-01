@@ -2,7 +2,7 @@
 <html>
 <head>
 
-	<title>Jonathan Doe | Web Designer, Director | name@yourdomain.com</title>
+	<title>{{$resume->name}} {{$resume->last_name}} Resume</title>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 
 	<meta name="keywords" content="" />
@@ -20,15 +20,20 @@
 		<div id="hd">
 			<div class="yui-gc">
 				<div class="yui-u first">
-					<h1>Jonathan Doe</h1>
-					<h2>Web Designer, Director</h2>
+					<h1>{{$resume->name}} {{$resume->last_name}}</h1>
+					<h2>{{$resume->about}}</h2>
+                    <br>
+                    <h3>Email:<a href="mailto:{{$resume->email}}">{{$resume->email}}</a></h3>
+                    <h3>Phone:{{$resume->mobile}}</h3>
+                    <h3>Website:{{$resume->website}}</h3>
+
 				</div>
+                <img width="200" height="200" class="portrait" src="{{asset("storage/images/$resume->image")}}" alt="{{$resume->name}} {{$resume->last_name}}" />
 
 				<div class="yui-u">
 					<div class="contact-info">
 						<h3><a id="pdf" href="#">Download PDF</a></h3>
-						<h3><a href="mailto:name@yourdomain.com">name@yourdomain.com</a></h3>
-						<h3>(313) - 867-5309</h3>
+
 					</div><!--// .contact-info -->
 				</div>
 			</div><!--// .yui-gc -->
@@ -38,16 +43,7 @@
 			<div id="yui-main">
 				<div class="yui-b">
 
-					<div class="yui-gf">
-						<div class="yui-u first">
-							<h2>Profile</h2>
-						</div>
-						<div class="yui-u">
-							<p class="enlarge">
-								Progressively evolve cross-platform ideas before impactful infomediaries. Energistically visualize tactical initiatives before cross-media catalysts for change.
-							</p>
-						</div>
-					</div><!--// .yui-gf -->
+
 
 					<div class="yui-gf">
 						<div class="yui-u first">
@@ -56,46 +52,73 @@
 						<div class="yui-u">
 
 								<div class="talent">
-									<h2>Web Design</h2>
-									<p>Assertively exploit wireless initiatives rather than synergistic core competencies.	</p>
+									<h2>Languages</h2>
+                                    @foreach($skills_language as $language)
+									<p>Language:{{$language->language_name}}
+                                        <br>
+                                        Reading:
+                                        @for($i=1;$i<=$language->language_read;$i++)
+                                            &#9733;
+                                        @endfor
+                                        <br>
+                                        Writing:
+                                        @for($i=1;$i<=$language->language_write;$i++)
+                                            &#9733;
+                                        @endfor
+                                        <br>
+                                        Listening:
+                                        @for($i=1;$i<=$language->language_listen;$i++)
+                                            &#9733;
+                                        @endfor
+                                        <br>
+                                        Speaking:
+                                        @for($i=1;$i<=$language->language_speak;$i++)
+                                            &#9733;
+                                        @endfor</p>
+                                <br>
+                                    @endforeach
+
+
 								</div>
 
-								<div class="talent">
-									<h2>Interface Design</h2>
-									<p>Credibly streamline mission-critical value with multifunctional functionalities.	 </p>
-								</div>
 
 								<div class="talent">
-									<h2>Project Direction</h2>
-									<p>Proven ability to lead and manage a wide variety of design and development projects in team and independent situations.</p>
+									<h2>Certificates</h2>
+                                    @foreach($skills_degrees as $degree)
+									<p>                  @if($degree->degree_type==1)
+                                           <b>Language</b>
+                                        @elseif($degree->degree_type==2)
+                                           <b>SoftWare</b>
+                                        @else
+                                          <b>Other</b>
+                                        @endif
+                                        <br>
+                                        {{$degree->degree_title}} From
+                                        &nbsp;{{$degree->degree_uni}}&nbsp;{{$degree->degree_month}}&nbsp;{{$degree->degree_year}}</p>
+                                    @endforeach
 								</div>
+                            <div class="talent">
+                                <h2>Working Experiences</h2>
+                                @foreach($skills_exp as $work_exp)
+                                    <p>{{$work_exp->ex_name}}
+                                        @for($i=1;$i<=$work_exp->ex_state;$i++)
+                                            &#9733;
+                                        @endfor	 </p>
+                                @endforeach
+<br>
+                                <h2>Honors</h2>
+                                @foreach($skills_honors as $honor)
+                                    <p> {{$honor->honor_title}}
+
+                                        {{$honor->honor_month}}&nbsp;{{$honor->honor_year}}
+                                    </p>
+                                @endforeach
+                            </div>
+
 						</div>
 					</div><!--// .yui-gf -->
 
-					<div class="yui-gf">
-						<div class="yui-u first">
-							<h2>Technical</h2>
-						</div>
-						<div class="yui-u">
-							<ul class="talent">
-								<li>XHTML</li>
-								<li>CSS</li>
-								<li class="last">Javascript</li>
-							</ul>
 
-							<ul class="talent">
-								<li>Jquery</li>
-								<li>PHP</li>
-								<li class="last">CVS / Subversion</li>
-							</ul>
-
-							<ul class="talent">
-								<li>OS X</li>
-								<li>Windows XP/Vista</li>
-								<li class="last">Linux</li>
-							</ul>
-						</div>
-					</div><!--// .yui-gf-->
 
 					<div class="yui-gf">
 
@@ -104,48 +127,92 @@
 						</div><!--// .yui-u -->
 
 						<div class="yui-u">
-
+                            @foreach($work_ex as $work)
 							<div class="job">
-								<h2>Facebook</h2>
-								<h3>Senior Interface Designer</h3>
-								<h4>2005-2007</h4>
-								<p>Intrinsicly enable optimal core competencies through corporate relationships. Phosfluorescently implement worldwide vortals and client-focused imperatives. Conveniently initiate virtual paradigms and top-line convergence. </p>
+								<h2>{{$work->work_title}}</h2>
+								<h3>{{$work->work_center}} {{$work->work_center_title}}</h3>
+                                @if($work->in_work)
+                                    <h4>{{$work->work_startm}} {{$work->work_starty}} - in work</h4>
+                                @else
+                                    <h4>{{$work->work_startm}} {{$work->work_starty}} - {{$work->work_endm}} {{$work->work_endy}}</h4>
+                                @endif
+								<p>{{$work->description}} </p>
 							</div>
+                            @endforeach
 
-							<div class="job">
-								<h2>Apple Inc.</h2>
-								<h3>Senior Interface Designer</h3>
-								<h4>2005-2007</h4>
-								<p>Progressively reconceptualize multifunctional "outside the box" thinking through inexpensive methods of empowerment. Compellingly morph extensive niche markets with mission-critical ideas. Phosfluorescently deliver bricks-and-clicks strategic theme areas rather than scalable benefits. </p>
-							</div>
-
-							<div class="job">
-								<h2>Microsoft</h2>
-								<h3>Principal and Creative Lead</h3>
-								<h4>2004-2005</h4>
-								<p>Intrinsicly transform flexible manufactured products without excellent intellectual capital. Energistically evisculate orthogonal architectures through covalent action items. Assertively incentivize sticky platforms without synergistic materials. </p>
-							</div>
-
-
-							<div class="job last">
-								<h2>International Business Machines (IBM)</h2>
-								<h3>Lead Web Designer</h3>
-								<h4>2001-2004</h4>
-								<p>Globally re-engineer cross-media schemas through viral methods of empowerment. Proactively grow long-term high-impact human capital and highly efficient innovation. Intrinsicly iterate excellent e-tailers with timely e-markets.</p>
-							</div>
 
 						</div><!--// .yui-u -->
 					</div><!--// .yui-gf -->
+
+
+
+                    <div class="yui-gf">
+
+                        <div class="yui-u first">
+                            <h2>Experience</h2>
+                        </div><!--// .yui-u -->
+
+                        <div class="yui-u">
+                            @foreach($samples as $sample)
+                                <div class="job">
+                                    <h2> <a href="http://{{$sample->project_link}}" title="{{$sample->project_title}}">{{$sample->project_title}}</a></h2>
+                                    <h3>{{$work->work_center}} {{$work->work_center_title}}</h3>
+
+                                    <p>   Description :  {{$sample->project_content}}</p>
+                                    <p>    Web Site :  {{$sample->project_link}}</p>
+                                </div>
+                            @endforeach
+
+
+                        </div><!--// .yui-u -->
+                    </div>
+
+                    <div class="yui-gf">
+
+                        <div class="yui-u first">
+                            <h2>Researches</h2>
+                        </div><!--// .yui-u -->
+
+                        <div class="yui-u">
+                            @foreach($researchs as $research)
+                                <div class="job">
+                                    <h2>    <a href="http://{{$research->research_link}}" title="{{$research->research_title}}">{{$research->research_title}}</a></h2>
+                                    <h3>{{$work->work_center}} {{$work->work_center_title}}</h3>
+
+                                    <p>          <br>
+                                        Publisher:{{$research->research_author}}
+                                        <br>
+                                        Description: {{$research->research_content}}
+                                        <br>
+                                        Web Site:  {{$research->research_link}}</p>
+
+                                </div>
+                            @endforeach
+
+
+                        </div><!--// .yui-u -->
+                    </div>
+
+
+
+
 
 
 					<div class="yui-gf last">
 						<div class="yui-u first">
 							<h2>Education</h2>
 						</div>
+                        @foreach($education as $edu)
 						<div class="yui-u">
-							<h2>Indiana University - Bloomington, Indiana</h2>
-							<h3>Dual Major, Economics and English &mdash; <strong>4.0 GPA</strong> </h3>
+
+							<h2>{{$edu->uni_name}}</h2>
+							<h3>{{$edu->uni_city}}  <strong>         @if($edu->uni_instudy)
+                                        <h3>{{$edu->uni_inyear}} - in study</h3>
+                                    @else
+                                        <h3>{{$edu->uni_inyear}} - {{$edu->uni_outyear}}</h3>
+                                    @endif</strong> </h3>
 						</div>
+                        @endforeach
 					</div><!--// .yui-gf -->
 
 
@@ -154,7 +221,7 @@
 		</div><!--// bd -->
 
 		<div id="ft">
-			<p>Jonathan Doe &mdash; <a href="mailto:name@yourdomain.com">name@yourdomain.com</a> &mdash; (313) - 867-5309</p>
+			<p>{{$resume->name}} {{$resume->last_name}} Resume &mdash; <a href="mailto:{{$resume->email}}">{{$resume->email}}</a> &mdash; {{$resume->mobile}}</p>
 		</div><!--// footer -->
 
 	</div><!-- // inner -->

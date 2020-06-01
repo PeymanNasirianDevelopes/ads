@@ -33,12 +33,12 @@
       <div id="paper-mid">
         <div class="entry">
           <!-- Begin Image -->
-          <img class="portrait" src="{{asset("storage/images/$resume->image")}}" alt="John Smith" />
+          <img class="portrait" src="{{asset("storage/images/$resume->image")}}" alt="{{$resume->name}} {{$resume->last_name}}" />
           <!-- End Image -->
           <!-- Begin Personal Information -->
           <div class="self">
             <h1 class="name">{{$resume->name}} {{$resume->last_name}} <br />
-              <span>Interactive Designer</span></h1>
+              <span>{{$resume->about}}</span></h1>
             <ul>
               <li class="ad">{{$resume->address}}</li>
               <li class="mail">{{$resume->email}}</li>
@@ -181,7 +181,7 @@ Reading:
                         <li>
                             {{$honor->honor_title}}
 
-          {{$degree->degree_month}}&nbsp;{{$degree->degree_year}}
+          {{$honor->honor_month}}&nbsp;{{$honor->honor_year}}
                         </li>
                     @endforeach
 

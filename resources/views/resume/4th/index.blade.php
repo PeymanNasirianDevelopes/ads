@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>Online Responsive Resume Demo</title>
-  <meta name="author" content="Jake Rocheleau">
+  <title>{{$resume->name}} {{$resume->last_name}} Resume</title>
+  <meta name="author" content="{{$resume->name}} {{$resume->last_name}} Resume">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="HandheldFriendly" content="true">
   <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
@@ -17,93 +17,174 @@
 </head>
 
 <body>
-	<div id="w" itemscope itemtype="http://schema.org/Person">
+	<div style="margin: 0 auto;" id="w" itemscope itemtype="http://schema.org/Person">
 		<header class="clearfix">
 			<div id="info">
-				<h1><span itemprop="name">Jake Rocheleau</span></h1>
-				<h3><span itemprop="jobTitle">Freelance Writer &amp; Web Developer</span></h3>
+				<h1><span itemprop="name">{{$resume->name}} {{$resume->last_name}} Resume</span></h1>
+				<h3><span itemprop="jobTitle">{{$resume->about}}</span></h3>
 				<small itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-				  <span itemprop="addressLocality">Hudson</span>,
-				  <span itemprop="addressRegion">Massachusetts</span>,
-				  <span itemprop="addressCountry">USA</span>
+
+                    <small>Email:<a href="mailto:{{$resume->email}}">{{$resume->email}}</a></small>
 				</small>
-				<small><span itemprop="email">jakerocheleau@gmail.com</span></small>
-				<small><a href="http://byjakewithlove.com/" itemprop="url">My Portfolio</a> &bull; <a href="http://twitter.com/jakerocheleau" itemprop="url">@jakerocheleau</a></small>
+
+                <small>Phone : {{$resume->mobile}}</small>
+
+				<small><a href="http://{{$resume->website}}" itemprop="url">My WebSite</a> </small>
 			</div>
 
 			<div id="photo">
-				<img src="{{asset("pdf/4th/jake-rocheleau-250.jpg")}}" alt="Jake Rocheleau resume photo avatar" itemprop="image" />
+				<img width="200" height="200" src="{{asset("storage/images/$resume->image")}}" alt="{{$resume->name}} {{$resume->last_name}}" itemprop="image" />
 			</div>
 		</header>
 
-		<section id="profile">
-			<h2>My History &amp; Profile</h2>
-			<p itemprop="description">I'm a 21 year old web designer and developer working out of eastern Massachusetts. I have been coding websites ever since sophomore year of high school in my first web design class. Fast-forward a few years later I was landing freelance projects most of my junior and senior years. During this time I was also working part-time at Best Buy's Geek Squad division.</p>
 
-			<p>After graduating High School in summer 2009 I started writing on various web design blogs along with launching my own startup ideas. A few months later in September 2009 I spent a couple months studying at <a href="http://www.wpi.edu/">Worcester Polytechnic Institute</a> in Worcester, Massachsuetts. However I left in January 2010 to pursue a career on my own. I now work doing freelance writing and building side-projects in my spare time.</p>
-		</section>
 
 		<section id="skills" class="clearfix" itemscope itemtype="http://schema.org/ItemList">
 			<h2 itemprop="name">Skillset</h2>
 			<section id="skills-left">
-				<h4 itemprop="about">Development</h4>
+				<h4 itemprop="about">Language</h4>
 				<ul>
-					<li itemprop="itemListElement">HTML5/CSS3</li>
-					<li itemprop="itemListElement">JavaScript &amp; jQuery</li>
-					<li itemprop="itemListElement">PHP Backend</li>
-					<li itemprop="itemListElement">SQL Databases</li>
-					<li itemprop="itemListElement">Wordpress</li>
-					<li itemprop="itemListElement">Pligg CMS</li>
-					<li itemprop="itemListElement">Some Objective-C</li>
+                    @foreach($skills_language as $language)
+                        <li>{{$language->language_name}}
+                            <br>
+                            R :
+                            @for($i=1;$i<=$language->language_read;$i++)
+                                &#9733;
+                            @endfor
+                            <br>
+                            W:
+                            @for($i=1;$i<=$language->language_write;$i++)
+                                &#9733;
+                            @endfor
+                            <br>
+                            L:
+                            @for($i=1;$i<=$language->language_listen;$i++)
+                                &#9733;
+                            @endfor
+                            <br>
+                            S:
+                            @for($i=1;$i<=$language->language_speak;$i++)
+                                &#9733;
+                            @endfor
+                        </li>
+                    @endforeach
+
 				</ul>
 			</section>
 
 			<section id="skills-right">
-				<h4 itemprop="about">Software</h4>
+				<h4 itemprop="about">Certificates</h4>
 				<ul>
-					<li itemprop="itemListElement">Adobe Photoshop</li>
-					<li itemprop="itemListElement">Adobe Dreamweaver</li>
-					<li itemprop="itemListElement">MS Office 2007-2010</li>
-					<li itemprop="itemListElement">cPanel &amp; phpMyAdmin</li>
-					<li itemprop="itemListElement">Xcode 4</li>
+                    @foreach($skills_degrees as $degree)
+
+                        <li>
+                            @if($degree->degree_type==1)
+                                <strong>Language</strong>
+                            @elseif($degree->degree_type==2)
+                                <strong>SoftWare</strong>
+                            @else
+                                <strong>    Other</strong>
+                            @endif
+                            <br>
+                            {{$degree->degree_title}} From
+                            &nbsp;{{$degree->degree_uni}}&nbsp;{{$degree->degree_month}}&nbsp;{{$degree->degree_year}}
+                        </li>
+                    @endforeach
 				</ul>
 			</section>
+            <section id="skills-left">
+                <h4 itemprop="about">Work Experiences</h4>
+                <ul>
+                    @foreach($skills_exp as $work_exp)
+                        <li>{{$work_exp->ex_name}}
+                            @for($i=1;$i<=$work_exp->ex_state;$i++)
+                                &#9733;
+                            @endfor
+                        </li>
+                    @endforeach
+
+                </ul>
+            </section>
+
+            <section id="skills-right">
+                <h4 itemprop="about">Honors</h4>
+                <ul>
+                    @foreach($skills_honors as $honor)
+
+                        <li>
+                            {{$honor->honor_title}}
+
+                            {{$honor->honor_month}}&nbsp;{{$honor->honor_year}}
+                        </li>
+                    @endforeach
+                </ul>
+            </section>
 		</section>
 
 		<section id="education">
 			<h2>Past Education</h2>
-			<p><span itemprop="alumniOf">Hudson High School</span> graduate of 2009.</p>
+
+			<p>           @foreach($education as $edu)
+
+
+                        @if($edu->uni_instudy)
+                            <small>{{$edu->uni_inyear}} - in study</small>
+                        @else
+                            <small>{{$edu->uni_inyear}} - {{$edu->uni_outyear}}</small>
+            @endif
+          {{$edu->uni_name}}
+                <span>{{$edu->uni_city}}</span>
+                <em>{{$edu->uni_major}}</em>
+
+
+    @endforeach
+    </p>
 		</section>
 
 		<section id="experience">
-			<h2>Work Experience</h2>
-			<p>Freelance Web Designer/Developer ~ 2007-2009</p>
-			<p>Best Buy - Geek Squad In-Store Agent ~ 2008-2009</p>
-			<p>Freelance Writer for <span itemprop="worksFor">Hongkiat.com</span> ~ 2011-Present</p>
+			<h2>Works</h2>
+            @foreach($samples as $sample)
+			<p>  <a href="http://{{$sample->project_link}}" title="{{$sample->project_title}}">{{$sample->project_title}}</a>
+                <br>
+                Description:  {{$sample->project_content}}
+                <br>
+                Web Site:  {{$sample->project_link}}
+            </p>
+
+            @endforeach
 		</section>
+
+        <section id="experience">
+            <h2>Experiences</h2>
+            @foreach($work_ex as $work)
+                <p>              @if($work->in_work)
+                    <h3>{{$work->work_startm}} {{$work->work_starty}} - in work</h3>
+                @else
+                    <h3>{{$work->work_startm}} {{$work->work_starty}} - {{$work->work_endm}} {{$work->work_endy}}</h3>
+                @endif
+                <h3>{{$work->work_center}} {{$work->work_center_title}} <br />
+                    <em>{{$work->work_title}}</em></h3>
+                </p>
+
+            @endforeach
+        </section>
 
 		<section id="articles">
-			<h2>Recent Articles</h2>
-			<p itemscope itemtype="http://schema.org/Article">
-			<span itemprop="name">
-			<a href="http://www.hongkiat.com/blog/css-javascript-fallback-methods/" itemprop="url" title="10 Useful Fallback Methods For CSS And Javascript">10 Useful Fallback Methods For CSS And Javascript</a></span> &bull; Published in <span itemprop="datePublished">July 2012</span></p>
+			<h2>Researches</h2>
 
+            @foreach($researchs as $research)
 			<p itemscope itemtype="http://schema.org/Article">
 			<span itemprop="name">
-			<a href="http://www.hongkiat.com/blog/wordpress-url-rewrite/" itemprop="url" title="Rewriting URLs In WordPress: Tips And Plugins">Rewriting URLs In WordPress: Tips And Plugins</a></span> &bull; Published in <span itemprop="datePublished">July 2012</span></p>
+		 <a href="http://{{$research->research_link}}" title="{{$research->research_title}}">{{$research->research_title}}</a></span>
+                <br>
+                Publisher:{{$research->research_author}}
+                <br>
+                Description: {{$research->research_content}}
+                <br>
+                Web Site:  {{$research->research_link}}</p>
 
-			<p itemscope itemtype="http://schema.org/Article">
-			<span itemprop="name">
-			<a href="http://www.hongkiat.com/blog/jpeg-optimization-guide/" itemprop="url" title="JPEG Optimization For The Web – Ultimate Guide">JPEG Optimization For The Web – Ultimate Guide</a></span> &bull; Published in <span itemprop="datePublished">July 2012</span></p>
-
-			<p itemscope itemtype="http://schema.org/Article">
-			<span itemprop="name">
-			<a href="http://www.hongkiat.com/blog/design-perfect-newsletter/" itemprop="url" title="9 Tricks To Design The Perfect HTML Newsletter">9 Tricks To Design The Perfect HTML Newsletter</a></span> &bull; Published in <span itemprop="datePublished">May 2012</span></p>
-
-			<p itemscope itemtype="http://schema.org/Article">
-			<span itemprop="name">
-			<a href="http://www.hongkiat.com/blog/google-website-optimizer-ab-testing-guide/" itemprop="url" title="Guide To A/B Testing With Google Website Optimizer">Guide To A/B Testing With Google Website Optimizer</a></span> &bull; Published in <span itemprop="datePublished">March 2012</span></p>
-		</section>
+            @endforeach
+        </section>
 
 	</div>
 </body>
