@@ -1,0 +1,184 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0px;
+	padding: 0px;
+	border: 0px;
+	outline: 0px;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+}
+body {
+	line-height: 1;
+	background: #222 url('ajax-loa.gif') no-repeat center;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+
+:focus {
+	outline: 0;
+}
+
+ins {
+	text-decoration: none;
+}
+del {
+	text-decoration: line-through;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+a {
+
+text-decoration: none;
+color: #fff;
+
+}
+
+body {
+	overflow: hidden;
+	font-family: 'helvetica',sans-serif;
+	font-weight: 300;
+	color: #333;
+}
+
+#switcher {
+	height: 50px;
+	background: #111;
+	z-index: 99999;
+	position: absolute;
+	width: 100%;
+	z-index: 1;
+}
+
+#theme_select {
+	background: url(dropdown.png) no-repeat 0 center;
+	width: 170px;
+	display: block;
+	padding: 0 0 0 10px;
+	color: #888;
+	font-size: 12px;
+	font-weight: bold;	
+	line-height: 50px;
+	
+	color: #fff;
+}
+#theme_select:hover {color: #fff;}
+#theme_dropdown_list {
+	padding: 20px;
+}
+#switcher ul li {
+	display: inline;
+	position: relative;
+	float: right;
+}
+
+#switcher ul li#logo {float: left; height: 50px; overflow: hidden; padding: 0;}
+#switcher ul li#logo a {line-height: 50px; padding: 0 20px; display: inline-block;
+
+	padding: 0 15px;
+	background: #282828;
+}
+#switcher ul li#logo a img {vertical-align: middle; height: 20px; width: 15px;}
+
+#switcher ul li#theme_list {float: none; position: absolute; left: 50%; margin-left: -105px; z-index: 998;
+
+	left: 60px; margin-left: 0;
+}
+
+#switcher ul li ul {
+	background:rgba(0,0,0,.9); 
+	border: 1px solid #555;
+	border-top: none;
+    display: none;
+    left: 0px;
+    position: absolute;
+    top: 39px;
+    width: 178px;
+    padding: 3px 0;
+    z-index: 999;
+    box-shadow: 0 1px 3px rgba(0,0,0,.25);
+}
+
+#switcher ul li ul li {display: block; float: none; position: relative;}
+
+#switcher ul li ul li a {
+	display: block;
+	color: #888;
+	font-weight: 700;
+	font-size: 12px;
+	padding: 5px 10px;
+	position: relative;
+}
+#switcher ul li ul li a:hover {color: #fff;}
+
+img.toolTip {
+	z-index: 1000 !important; 
+	width: 100%; 
+	height: auto; 
+	background: #222 url('ajax-loa.gif') no-repeat center; 
+	border: 8px solid #111; 
+	box-shadow: 0 1px 5px rgba(0,0,0,.35);
+}
+
+li.purchase,
+li.remove_frame {
+	text-transform: uppercase;
+	padding: 0;
+	line-height: 50px;
+}
+li.purchase a,
+li.remove_frame a {
+	padding: 0 20px;
+	line-height: 50px;
+	font-size: 10px;
+	font-weight: bold;
+	display: block;
+}
+li.remove_frame a {
+	font-size: 20px;
+	font-weight: lighter;
+}
+
+li.purchase a {background: #292929;}
+
+li.remove_frame i {
+	font-size: 14px;
+	vertical-align: middle;
+    font-weight: normal;	
+}
+
+#iframe {
+	margin-top: 50px;
+}
+
+
+/*----------------------------------*/
+/*-----------400px WIDE------------*/
+/*--------------------------------*/
+@media screen and (max-width:400px) {
+
+	#switcher ul li#logo {display:none;}
+	
+	#switcher ul li#theme_list {left: 10px;}
+
+}
