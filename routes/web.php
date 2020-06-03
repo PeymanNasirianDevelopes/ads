@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::get('/resume', 'BaseInfoController@index');
+Route::get('/personal/website/{id}/show', 'BaseInfoController@web_site');
 Route::get('/resume/pdf/1st/{id}', 'PdfController@index1');
 Route::get('/resume/pdf/2nd/{id}', 'PdfController@index2');
 Route::get('/resume/pdf/3rd/{id}', 'PdfController@index3');
