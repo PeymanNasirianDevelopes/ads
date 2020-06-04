@@ -29,4 +29,16 @@ class ValidationController extends Controller
         ]);
 
     }
+    public static function contact(){
+        return request()->validate([
+            "name"=>"string | between:4,100 | required ",
+            "email"=>"email | required ",
+            "message"=> "string | nullable ",
+            "base_info_id"=> "integer | nullable ",
+
+
+
+        ]);
+
+    }
 }

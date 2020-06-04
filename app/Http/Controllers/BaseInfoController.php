@@ -42,6 +42,8 @@ class BaseInfoController extends Controller
                 $data['image']=do_upload($image);
 
         }
+        $unique_id=rand();
+        $data['link']=md5($unique_id.$request->phone.$request->name.$request->last_name);
         $create= BaseInfo::create($data);
         $id=$create->id;
         if ($UserSocialNetsaddress=$request->UserSocialNetsaddress){
@@ -376,6 +378,7 @@ if($ExperiencesInfosJobCategoryId=$request->ExperienceInfosJobCategoryId){
                     "project_month"=> $ProjectInfosMonth[$index] ?? 0,
                     "project_year"=> $ProjectInfosYear[$index] ?? 0,
                     "project_content"=> $ProjectInfosDescription[$index] ?? 0,
+                    "project_class"=>md5($ProjectInfosTitlew) ?? 0,
 
 
                     "base_info_id"=>$id
@@ -511,20 +514,34 @@ if($ExperiencesInfosJobCategoryId=$request->ExperienceInfosJobCategoryId){
 
     }
 
-    public function web_site($id){
-        $resume = BaseInfo::where('id',$id)->first();
-        $education=Education::all()->where('base_info_id',$id);
-        $work_ex=WorkEx::all()->where('base_info_id',$id);
-        $skills_language=Language::all()->where('base_info_id',$id);
-        $skills_exp=Experience::all()->where('base_info_id',$id);
-        $skills_degrees=Degree::all()->where('base_info_id',$id);
-        $skills_honors=Honor::all()->where('base_info_id',$id);
-        $samples=Sample::all()->where('base_info_id',$id);
-        $researchs=Research::all()->where('base_info_id',$id);
+    public function web_site($link)
+    {
+        $resume = BaseInfo::where('link', $link)->first();
+
+        if ($resume){
+            $id = $resume->id;
+        $education = Education::all()->where('base_info_id', $id);
+        $work_ex = WorkEx::all()->where('base_info_id', $id);
+        $skills_language = Language::all()->where('base_info_id', $id);
+        $skills_exp = Experience::all()->where('base_info_id', $id);
+        $skills_degrees = Degree::all()->where('base_info_id', $id);
+        $skills_honors = Honor::all()->where('base_info_id', $id);
+        $samples = Sample::all()->where('base_info_id', $id);
+        $researchs = Research::all()->where('base_info_id', $id);
+        $job = Job::all()->where('base_info_id', $id);
+        $educationgo = EducationGo::all()->where('base_info_id', $id);
+        $migration_student = Migration_student::all()->where('base_info_id', $id);
+        $migration_job = MigrationJob::all()->where('base_info_id', $id);
+        $social_links = SocialNet::all()->where('base_info_id', $id)->whereNotNull('address');
 
 
+        return view("website.index")->with(compact("resume", "education", "work_ex", "skills_language", "skills_exp", "skills_degrees", "skills_honors", "samples", "researchs"
+        ,"social_links","job","educationgo","migration_job","migration_student","link"));
+    }
+        else{
+            abort(404);
+        }
 
-        return view("website.index")->with(compact("resume","education","work_ex","skills_language","skills_exp","skills_degrees","skills_honors","samples","researchs"));
     }
 
 
