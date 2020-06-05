@@ -1,0 +1,560 @@
+.container {
+    width: 210mm;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+    background: #fff;
+    height: 100%;
+    position: relative
+}
+
+.lgbox {
+    width: 63%;
+    height: 100%;
+    background-color: #fbfbfb;
+    float: left;
+    box-sizing: border-box;
+    padding-top: 140px;
+}
+
+.smbox {
+    width: 35%;
+    height: 100%;
+    float: right;
+    box-sizing: border-box;
+    background: -webkit-linear-gradient(#b5b9f6, #856caf);
+    position: relative;
+    right: 14px;
+    z-index: 9999999999;
+}
+
+.header {
+    position: absolute;
+    width: 100%;
+    height: 70px;
+    background: #6559a3;
+    z-index: 2;
+}
+
+    .header:before {
+        content: '';
+        position: absolute;
+        border-top: 137px solid #6559a3;
+        border-left: 794px solid transparent;
+        bottom: -137px;
+        left: 0;
+        z-index: 1;
+    }
+
+    .header:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        border-left: 476px solid #c0b5d7;
+        border-bottom: 67px solid transparent;
+        bottom: -67px;
+    }
+
+div.user-image {
+    margin-top: 20px;
+    width: 180px;
+    height: 180px;
+    box-shadow: none !important;
+}
+
+.smbox h1 {
+    position: absolute;
+    right: 108%;
+    top: -3px;
+    display: block;
+    width: 475px;
+    font-size: 23px;
+    color: whitesmoke;
+}
+
+h2.job-title {
+    position: absolute;
+    top: 45px;
+    right: 108%;
+    width: 345px;
+    font-size: 14px;
+    color: #b4b8f5;
+}
+
+.infoo label {
+    display: none;
+}
+
+.contact-item span:nth-child(2) {
+    display: none;
+}
+
+div.contact-item span:first-child {
+    display: inline-block;
+    width: 44px;
+    height: 35px;
+    background: #3d4494;
+    text-align: left;
+    line-height: 35px;
+    margin-bottom: 5px;
+    padding-left: 10px;
+    -webkit-transform: skew(13deg) rotate(13deg);
+    position: relative;
+    right: -13px;
+    color: #fbfbfb;
+    font-size: 16px;
+}
+
+
+
+.contact-item span:last-child {
+    color: #fbfbfb;
+    font-size: 12px;
+    position: relative;
+    top: -5px;
+    unicode-bidi: plaintext !important;
+}
+
+.smbox .property-item_head {
+    padding-top: 0;
+    width: 285px;
+    border: 0;
+    background: #6559a3;
+    position: relative;
+    right: -8px;
+}
+
+    .smbox .property-item_head label {
+        border-bottom: 0;
+        color: #fbfbfb;
+        font-size: 16px;
+    }
+
+.skill__list ul.history li {
+    width: 100%;
+    margin-bottom: 5px;
+    height: auto;
+}
+
+.skill__list div.item-row li > span label:first-child {
+    background: initial;
+    color: white;
+    padding-right: 0;
+    height: auto;
+    width: 180px;
+    line-height: 15px;
+}
+
+.property-item.skill__list .grade {
+    display: block;
+    float: left;
+}
+
+.item-row.w0 li > span {
+    width: 100%;
+    height: auto;
+}
+
+.language__list div.item-row li > span label.grade i {
+    margin: 7px 0;
+    border-radius: 0;
+    height: 8px;
+    width: 18px;
+    background: #ae9ddc;
+    /* box-shadow: inset 0px 0px 2px #464646; */
+}
+
+div.item-row li > span label.grade i.tik {
+    background: #3d4494 !important;
+}
+
+small:before {
+    content: '';
+    position: absolute;
+    width: 19px;
+    height: 33px;
+    background: #3d4494;
+    left: -19px;
+    top: 2px;
+    -webkit-transform: skew(-22deg) rotate(-22deg);
+}
+
+small {
+    display: block;
+    width: 40px;
+    height: 30px;
+    background: #3d4494;
+    text-align: center;
+    line-height: 30px;
+    color: #fbfbfb;
+    font-size: 11px;
+    position: relative;
+    top: -3px;
+}
+
+.language__list .circle-progress {
+    /* display: block; */
+}
+
+.c100.small {
+    font-size: 50px;
+    float: right;
+    margin: 16px 41px;
+}
+
+.language__list ul.history li {
+    width: 100%;
+    padding-right: 7px;
+}
+
+.circle-progress__title {
+    width: 102px;
+    font-size: 8px;
+    right: -27px;
+    top: 56px;
+    color: #fbfbfb;
+}
+
+.c100 > span {
+    color: #3d4494;
+}
+
+.language-item {
+    width: 97% !important;
+    color: #fbfbfb !important;
+    padding-bottom: 15px;
+    margin-bottom: -5px !important;
+}
+
+
+
+.pie, .c100 .bar, .c100.p51 .fill, .c100.p52 .fill, .c100.p53 .fill, .c100.p54 .fill, .c100.p55 .fill, .c100.p56 .fill, .c100.p57 .fill, .c100.p58 .fill, .c100.p59 .fill, .c100.p60 .fill, .c100.p61 .fill, .c100.p62 .fill, .c100.p63 .fill, .c100.p64 .fill, .c100.p65 .fill, .c100.p66 .fill, .c100.p67 .fill, .c100.p68 .fill, .c100.p69 .fill, .c100.p70 .fill, .c100.p71 .fill, .c100.p72 .fill, .c100.p73 .fill, .c100.p74 .fill, .c100.p75 .fill, .c100.p76 .fill, .c100.p77 .fill, .c100.p78 .fill, .c100.p79 .fill, .c100.p80 .fill, .c100.p81 .fill, .c100.p82 .fill, .c100.p83 .fill, .c100.p84 .fill, .c100.p85 .fill, .c100.p86 .fill, .c100.p87 .fill, .c100.p88 .fill, .c100.p89 .fill, .c100.p90 .fill, .c100.p91 .fill, .c100.p92 .fill, .c100.p93 .fill, .c100.p94 .fill, .c100.p95 .fill, .c100.p96 .fill, .c100.p97 .fill, .c100.p98 .fill, .c100.p99 .fill, .c100.p100 .fill {
+    border: .08em solid #3d4494;
+}
+
+.item-row.w4 {
+    display: block;
+}
+
+.social__list .property-item_head {
+}
+
+.property-item {
+    margin-top: 20px;
+    width: 100%;
+    padding-bottom: 5px;
+}
+
+.social__list {
+}
+
+    .social__list ul.history li {
+        width: 100%;
+        min-height: 0;
+    }
+
+.property-item.social__list ul.history li span label:first-child {
+    width: 22px;
+    height: 30px;
+    position: relative;
+    background: transparent;
+    color: #ffffff;
+    text-align: left;
+    line-height: 35px;
+    margin-left: 15px;
+    font-size: 19px;
+}
+
+    .property-item.social__list ul.history li span label:first-child:before {
+        /* content: ''; */
+        position: absolute;
+        width: 27px;
+        height: 32px;
+        background: #3d4494;
+        right: -28px;
+        -webkit-transform: skew(22deg) rotate(22deg);
+        top: 4px;
+    }
+
+
+
+
+
+a.social-link {
+    color: #3d4494;
+}
+
+.smbox .property-item_head:before {
+    content: '';
+    position: absolute;
+    right: 0;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid #2d2d2d;
+    top: -10px;
+}
+
+.smbox .property-item_head:after {
+    position: absolute;
+    left: 0;
+    top: -10px;
+}
+
+.skill__list div.item-row li > span label.grade i {
+    display: none;
+}
+
+.language__list div.item-row li > span {
+    width: 100%;
+    margin: 2px;
+}
+
+div.item-row li > span label {
+    float: left;
+}
+
+.language-item ~ span label:first-child {
+    font-size: 10px !important;
+    background: initial !important;
+}
+
+.basic__about .property-item_head {
+    display: none;
+}
+
+p.about-us {
+    text-align: left;
+    font-size: 11px !important;
+    margin-bottom: -20px !important;
+    color: #636363;
+    padding: 0 30px !important;
+}
+
+.lgbox .property-item_head {
+    width: 88%;
+    border: 0;
+    text-align: left;
+    padding-right: 51px;
+    padding-top: 15px;
+    position: relative;
+}
+
+.smbox .property-item_head span {
+    display: none;
+}
+
+.lgbox .property-item_head label {
+    border: 0;
+    color: #3d4494;
+    font-size: 16px;
+}
+
+ul.history li {
+    width: 100%;
+}
+
+.lgbox ul.history {
+    border-right: 2px solid #b7b7b7;
+    margin-right: 30px;
+    padding-right: 23px;
+    width: 90%;
+}
+
+
+ul.history h2.subtitle {
+    position: relative;
+    color: #6559a3;
+}
+
+    ul.history h2.subtitle:before {
+        content: '';
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        background: #929292;
+        right: -29px;
+        top: 6px;
+        border-radius: 50%;
+    }
+
+.language__list ul.history h2.subtitle:before {
+    display: none;
+}
+
+.property-item_head span {
+    display: block;
+    width: 35px;
+    height: 35px;
+    background: #3d4494;
+    position: absolute;
+    right: 8px;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    color: #fbfbfb;
+    font-size: 18px;
+}
+
+ul.history h3.subtitle {
+    font-style: normal;
+    color: #636363;
+    font-size: 11px;
+    margin-bottom: 0;
+}
+
+label.date {
+    color: #636363;
+    font-size: 11px !important;
+}
+
+h3.subtitle label {
+    background: transparent;
+    border: 1px dashed #3d4494;
+    font-size: 7px;
+}
+
+ul.history p.description {
+    color: #636363;
+    font-size: 10px;
+    margin-top: 0;
+}
+
+p.project-link {
+    font-size: 10px;
+    color: #636363;
+}
+
+ul.list-item li p {
+    color: #6559a3;
+    font-size: 13px;
+    position: relative;
+    border-right: 0;
+}
+
+    ul.list-item li p:before {
+        content: '';
+        position: absolute;
+        right: -30px;
+        width: 10px;
+        height: 10px;
+        top: 7px;
+        background: #929292;
+        border-radius: 50%;
+    }
+
+.infoo-head {
+    display: none;
+}
+
+label.Education-Grade {
+    display: block;
+    color: #636363;
+    font-size: 11px;
+}
+
+.ui-sortable-handle:hover {
+    background: #84848475;
+}
+
+.lgbox .property-item.social__list ul.history li span label:first-child {
+    color: #3d4494;
+}
+
+.property-item.social__list ul.history li span label:last-child {
+    float: right;
+}
+
+.lgbox a.social-link {
+    color: #636363;
+}
+
+.lgbox .social__list ul.history li {
+    width: 50%;
+}
+
+ul.history {
+    box-sizing: border-box;
+}
+
+.smbox ul.history h2.subtitle {
+    color: #3d4494;
+}
+
+.smbox ul.history h3.subtitle {
+    color: #3d4494;
+}
+
+.smbox label.date {
+    color: #3d4494;
+}
+
+.smbox ul.history p.description {
+    color: #3d4494;
+}
+
+.smbox p.project-link {
+    color: #3d4494;
+}
+
+.smbox ul.history h2.subtitle:before {
+    display: none;
+}
+
+.smbox label.Education-Grade {
+    color: #3d4494;
+}
+
+.property-item_body > *:first-child {
+    padding: initial;
+}
+
+.smbox ul.history {
+    padding: 0 10px;
+}
+
+.lgbox .skill__list ul.history li {
+    width: 50%;
+}
+
+.lgbox .skill__list div.item-row li > span label:first-child {
+    width: 125px;
+    color: #3d4494;
+    line-height: 27px;
+}
+
+.lgbox small:before {
+    display: none;
+}
+
+.lgbox small {
+    display: none;
+}
+
+.lgbox .language__list ul.history li {
+    width: 50%;
+    padding-right: 0 !important;
+}
+
+.lgbox .language-item {
+    color: #6559a3 !important;
+}
+
+    .lgbox .language-item ~ span label:first-child {
+        color: #636363;
+        padding-right: 0;
+    }
+
+.lgbox .skill__list div.item-row li > span label.grade i {
+    display: block;
+    margin: 7px 0;
+    border-radius: 0;
+    height: 8px;
+    width: 13px;
+    background: #ae9ddc;
+}
+
+.smbox ul.list-item li p:before {
+    display: none;
+}
+.smbox .language-item ~ span label:first-child {
+    color: #3d4494;
+}

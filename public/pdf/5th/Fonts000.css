@@ -1,0 +1,41 @@
+@font-face {
+    font-family: 'SDF';
+    src: url('https://cvbuilder.me/Fonts/IRANSans-web.woff') format('woff'),url('https://cvbuilder.me/Fonts/IRANSans-Light-web.ttf') format('truetype');
+    font-weight: normal;
+}
+@font-face {
+    font-family: 'SDF';
+    src: url('https://cvbuilder.me/Fonts/IRANSans-Bold-web.woff') format('woff'),url('https://cvbuilder.me/Fonts/IRANSans-Bold-web.ttf') format('truetype');
+    font-weight: bold;
+}
+@font-face {
+    font-family: 'SansIrani';
+    src: url('https://cvbuilder.me/Fonts/IRANSans-Light-web.woff') format('woff'),url('https://cvbuilder.me/Fonts/IRANSans-Light-web.ttf') format('truetype');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'FarsNews';
+    src: url('https://cvbuilder.me/Fonts/Vazir.woff') format('woff');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'YekPezeshk';
+    src: url('https://cvbuilder.me/Fonts/IRANSansWeb.woff2') format('woff');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'Digiato';
+    src: url('https://cvbuilder.me/Fonts/IRANSansWeb_Light.woff2') format('woff');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'Digiato2';
+    src: url('https://cvbuilder.me/Fonts/OpenSans-Light.woff2') format('woff');
+    font-weight: normal;
+}
+
+

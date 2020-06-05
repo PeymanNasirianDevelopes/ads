@@ -1,0 +1,501 @@
+body {
+    color: #fff;
+}
+
+.infoo-head {
+    display: none;
+}
+
+.contact-info {
+    background: rgb(71, 190, 201);
+}
+
+.container {
+    padding: 0;
+    background-color: rgb(68, 68, 63);
+}
+
+.contact-info_item h1 {
+}
+
+.property-item_head label {
+}
+
+.name-job-desc h1 {
+    font-size: 25px;
+    color: rgb(255, 255, 255);
+    text-align: right;
+    padding-right: 120px;
+    margin: 25px 0 0;
+}
+
+.property-item_head {
+    border-bottom: 0;
+    width: 100% !important;
+}
+
+div.item-row > span label:first-child {
+    background: #47bec9;
+}
+
+table td {
+    vertical-align: top;
+}
+
+.property-item_body > *:first-child {
+    padding: 0 5px;
+}
+
+div.item-row > span label.grade i.tik {
+    background: #fffb58;
+}
+
+div.item-row > span label:first-child {
+    border-radius: 100px;
+    font-size: 12px;
+}
+
+
+table {
+    width: 100%;
+    padding: 0;
+    border: 0;
+    border-spacing: 0;
+}
+
+.language-item {
+}
+
+    .language-item ~ span label {
+        background: none !important;
+        float: right;
+        color: #eee !IMPORTANT;
+    }
+
+        .language-item ~ span label.grade {
+            float: left !important;
+        }
+
+    .language-item ~ span {
+    }
+
+label.date {
+    color: #b9b9b9;
+}
+
+div.user-image {
+    margin-top: 10px;
+    border: 4px solid #fff;
+    float: right;
+    margin-bottom: 10px;
+}
+
+ul.history h2.subtitle {
+    margin-top: 5px;
+}
+
+.contact-info table tr td:last-child {
+    vertical-align: middle;
+    text-align: left;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+    .contact-info table tr td:last-child span:first-child {
+        display: inline-block;
+    }
+
+
+.name-job-desc h2 {
+    color: #fffb63;
+    margin-top: 0;
+    padding-right: 120px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+table td {
+    padding: 15px;
+    border: 0;
+    border-spacing: 0;
+}
+
+.container > table td:last-child {
+    background: #3c3c3c;
+}
+
+h3.subtitle label {
+    font-size: 8px;
+    background: transparent;
+    border: 1px solid #cecece;
+    color: #cecece;
+}
+
+.contact-info {
+    background: rgb(28, 132, 142);
+}
+
+.container {
+    padding: 0;
+    background-color: rgb(68, 68, 63);
+}
+
+.contact-info_item h1 {
+}
+
+.property-item_head label {
+    color: rgb(255, 251, 99);
+    border-bottom-width: 0px;
+    text-align: right;
+    display: block;
+    padding-right: 15px;
+}
+
+.name-job-desc h1 {
+    font-size: 25px;
+    color: rgb(255, 255, 255);
+    text-align: right;
+    padding-right: 130px;
+    margin: 28px 0 0;
+}
+
+.property-item_head {
+}
+
+div.item-row > span label:first-child {
+    background: #1c848e;
+}
+
+table td {
+    vertical-align: top;
+}
+
+.property-item_body > *:first-child {
+    padding: 0 5px;
+}
+
+div.item-row > span label.grade i.tik {
+    background: #fffb58;
+}
+
+div.item-row > span label:first-child {
+    border-radius: 100px;
+    font-size: 12px;
+}
+
+
+table {
+    width: 100%;
+    padding: 0;
+    border: 0;
+    border-spacing: 0;
+}
+
+.language-item ~ span label {
+    background: none !important;
+    float: right;
+    color: #eee !IMPORTANT;
+}
+
+    .language-item ~ span label.grade {
+        float: left !important;
+    }
+
+.language-item ~ span {
+    width: 100%;
+    margin-bottom: 0 !important;
+    padding: 0 !important;
+    height: 20px !important;
+    margin-top: 0 !important;
+}
+
+label.date {
+    color: #b9b9b9;
+    display: block;
+}
+
+div.user-image {
+    margin-top: 10px;
+    border: 4px solid #fff;
+    float: right;
+    margin-bottom: 10px;
+}
+
+ul.history h2.subtitle {
+    margin-top: 5px;
+}
+
+.contact-info table tr td:last-child {
+    vertical-align: middle;
+    text-align: right;
+    padding-right: 50px;
+    font-size: 14px;
+    color: #ffffff;
+    font-weight: normal;
+}
+
+
+
+
+.name-job-desc h2 {
+    text-align: right;
+    color: #fffb63;
+    margin-top: 0;
+    padding-right: 130px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+table td {
+    padding: 5px 10px;
+    border: 0;
+    border-spacing: 0;
+}
+
+.container > table td:last-child {
+    background: #3c3c3c;
+}
+
+ul.history li {
+}
+
+ul.history h3.subtitle {
+    font-size: 11px;
+    color: #cecece;
+}
+
+
+.container > table {
+    min-height: calc(297mm - 160px);
+}
+
+.col-wide {
+    width: 63%;
+    background: #44443f;
+    float: right;
+    padding-right: 10px;
+}
+
+.col-narrow {
+    width: 33%;
+    float: left;
+    background: #3c3c3c;
+    padding-right: 10px;
+    padding-left: 10px;
+    height: 100%;
+}
+
+li.break-property-item {
+    clear: both !important;
+    width: 100% !important;
+    float: none !important;
+}
+
+ul.history.multi-line li {
+    width: 50%;
+    min-height: 78px;
+    padding: 0 10px;
+}
+
+ul.history p.description {
+    font-size: 10px;
+    text-align: justify;
+    margin: 0;
+    margin-top: 6px;
+    color: #c3c3c3;
+}
+
+.item-row.w0 ul.history li span label {
+    background-color: #00444b;
+    font-size: 10px;
+    border-radius: 5px;
+    border: 2px solid #1c848e;
+}
+
+h2.language-item ~ span label:first-child {
+    font-size: 10px;
+    padding-right: 0 !important;
+}
+
+div.item-row li > span label.grade i.tik {
+    background: #fffb58;
+}
+
+.property-item_head {
+}
+
+ul.history label.date {
+    display: block;
+}
+
+div.item-row li > span label.grade i {
+    display: block;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    margin: 10px 4px;
+    background: #c7c7c7;
+    box-sizing: border-box;
+    float: left;
+}
+
+div.item-row li > span label {
+    line-height: 24px;
+    display: block;
+    height: 100%;
+    font-size: 10px;
+}
+
+    div.item-row li > span label.grade i {
+        float: right;
+    }
+
+    div.item-row li > span label:first-child {
+        color: #fff;
+        background: #575757;
+        display: block;
+        padding: 1px 10px;
+        border-radius: 2px;
+        float: right;
+    }
+
+h2.subtitle {
+    display: block;
+    width: 100%;
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+    margin-top: 0;
+    font-size: 13px;
+}
+
+div.item-row.w0 .history li {
+    margin-bottom: 0;
+}
+
+ul.history li:nth-child(n+3) {
+    /* margin-bottom: inherit; */
+}
+
+.item-row.w0 li > span {
+    width: auto;
+    height: auto;
+}
+
+ul.history.one-line li {
+    width: 96%;
+}
+
+ul.history h2.subtitle {
+    font-size: 12px;
+    line-height: 23px;
+    color: #e1e1e1;
+}
+
+ul.history.multi-line li:nth-child(2n+3) {
+    clear: both;
+}
+
+ul.list-item li p {
+    font-size: 11px;
+    border-right: 0;
+    padding-right: 0;
+    color: #e1e1e1;
+}
+
+small {
+    display: none;
+}
+
+.property-item.social__list ul.history li span {
+    width: 100%;
+}
+
+.property-item.social__list ul.history li {
+    width: 100%;
+    min-height: 10px;
+}
+
+    .property-item.social__list ul.history li span label:last-child {
+        font-size: 15px;
+        color: #e0e0e0;
+        background: transparent;
+        float: left;
+        border: 0;
+    }
+
+    .property-item.social__list ul.history li span label:first-child {
+        font-size: 19px;
+        color: #c7c7c7;
+        background: transparent;
+        border: 0;
+    }
+
+.contact-info table tr td:last-child span:nth-child(2) {
+    display: none;
+}
+
+.about-us {
+    text-align: right;
+    font-size: 12px !important;
+    padding: 0 15px !important;
+    color: #cecece;
+}
+
+.honor__list ul.history li {
+    width: 100%;
+    min-height: 40px;
+}
+
+ul.history label.date {
+    font-size: 10px;
+}
+
+p.project-link a {
+    color: #fffb63;
+}
+
+p.project-link {
+    font-size: 11px;
+    color: #cacaca;
+    margin-top: 0;
+}
+
+a.social-link {
+    color: #c7c7c7;
+}
+
+label.Education-Grade {
+    font-size: 10px;
+    color: #b9b9b9;
+}
+
+.ui-sortable-handle:hover {
+    background: #eeeeee29 !important;
+}
+
+ul.history {
+    box-sizing: border-box;
+    padding: 0 10px;
+}
+
+    ul.history.one-line {
+        padding: 0 15px;
+    }
+
+    ul.history.list-item {
+        padding: 0 15px;
+    }
+
+.property-item {
+    padding-bottom: 10px;
+}
+
+.smbox ul.history.multi-line li {
+    width: 100%;
+}
+
+.lgbox .language__list ul.history li {
+    width: 50%;
+    padding-right: 0;
+    padding-left: 20px;
+}

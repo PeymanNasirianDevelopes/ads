@@ -1,130 +1,643 @@
 
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 
 <html>
-
 <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8;charset=utf-8" />
-        <meta name="viewport" content="initial-scale=1.0,width=device-width,maximum-scale=1" />
-        <title>THE MOLITOR | The Applicant (HTML)</title>
 
-        <link href="{{asset("pdf/6th/styles00.css")}}" rel="stylesheet" media="all" />
 
-		<!--[if IE]>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1024">
+    <link rel="icon" type="image/png" href="{{asset("pdf/6th/favicon-.png")}}">
 
-			<style type="text/css">
+    <title>{{$resume->name}} {{$resume->last_name}} Resume </title>
+    <meta name="description" content="{{$resume->name}} {{$resume->last_name}} Resume | {{$resume->about}}">
 
-				li.purchase a {
-					padding-top: 5px;
-					background-position: 0px -4px;
-				}
 
-				li.remove_frame a {
-					padding-top: 5px;
-					background-position: 0px -3px;
-				}
+    <link href="{{asset("pdf/6th/Fonts000.css")}}" rel="stylesheet">
+    <link rel="stylesheet" href="{{asset("pdf/6th/all00000.css")}}" />
 
-				#theme_select {
-					padding: 8px 8px;
-				}
+    <link href="{{asset("pdf/6th/DefaultR.css")}}" rel="stylesheet">
 
-				#theme_list {
-					margin-top: 2px;
-				}
+    <script src="{{asset("pdf/6th/jquery00.js")}}"></script>
+    <script src="{{asset("pdf/6th/less0000.js")}}"></script>
+    <link href="{{asset("css/01font-a.css")}}" rel="stylesheet">
 
-			</style>
 
-		<![endif]-->
+    <link href="{{asset("pdf/6th/Template.css")}}" rel="stylesheet" />
 
-		<style type="text/css">
+    <script>
+        var options = {
+            templateId: 14,
+            newVars: {
+                "@main_font_size": "23px",
+                "@main_color": "#fbd22b",
+                "@base_vertical_space": "15px",
+                "@font_name": "IRANSans"
+            },
+            templateName: "Template11"
+        };
+    </script>
+    <style>
+        .lgbox:before {
+            height: calc(100% - 268px) !important;
+        }
+    </style>
 
-				</style>
-
-        <script type="text/javascript" src="{{asset("pdf/6th/jquery-1.js")}}"></script>
-        <script type="text/javascript" src="{{asset("pdf/6th/tip00000.js")}}"></script>
-
-        <script type="text/javascript">
-        var theme_list_open = false;
-
-        $(document).ready(function () {
-
-        	$(".themeListItem a").each(function() {
-
-				$(this).poshytip({
-					content: '<img class="toolTip" src="' + $(this).attr('title') + '" alt="" />',
-					className: 'toolTip',
-					followCursor: true,
-					slide: false,
-					showTimeout: 1,
-					fade: false,
-					offsetX: 100,
-					offsetY: 0
-				});
-			});
-
-        	function fixHeight () {
-        		var headerHeight = $("#switcher").height();
-
-        		$("#iframe").attr("height", (($(window).height()) - headerHeight) + 'px');
-        	}
-
-        	$(window).resize(function () {
-        		fixHeight();
-        	}).resize();
-
-        	$("#theme_select").click( function () {
-        		if (theme_list_open == true) {
-        			$("#switcher ul li ul").hide();
-
-        			theme_list_open = false;
-        		} else {
-        			$("#switcher ul li ul").show();
-
-        			theme_list_open = true;
-        		}
-
-        		return false;
-        	});
-
-        	$('.themeListItem').hover(function(){
-        		jQuery(this).find('.themePreview').show();
-        	},function(){
-        		jQuery(this).find('.themePreview').hide();
-        	});
-
-        	$("#switcher > ul > li > a").not('#logo a').css")}}({opacity:.6}).hover(function(){
-        		$(this).css")}}({opacity:1});
-        	},function(){
-        		$(this).css")}}({opacity:.6});
-        	});
-
-        	/////////////////
-			//CHECK IF MOBILE
-			/////////////////
-			var mobile = (/iphone|ipad|ipod|android|blackberry|mini|windows\sce|palm/i.test( navigator.userAgent.toLowerCase() ));
-
-			if(mobile) { alert("Close the top bar when viewing on mobile devices."); }
-        });
-        </script>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
 </head>
 
 <body>
-	<div id="switcher">
-		<ul>
-			<li class="remove_frame" rel="http://themolitor.com/applicant/"><a href="http://themolitor.com/applicant/">&times;</a></li>
-			<li class="purchase " rel="http://themeforest.net/item/the-applicant-resume-cv-html-template/3304484?ref=themolitor&license=regular&open_purchase_for_item_id=3304484"><a style="letter-spacing:1.5px;" href="http://themeforest.net/item/the-applicant-resume-cv-html-template/3304484?ref=themolitor&license=regular&open_purchase_for_item_id=3304484">Details</a></li>
-			<li id="logo"><a href="http://www.themolitor.com/"><img src="{{asset("pdf/6th/logo0000.png")}}" alt="" /></a></li>
-			<li id="theme_list">
-				<a id="theme_select" href="">The Applicant (HTML)</a>
 
-				<ul>
-					<li class="themeListItem"><a class="themeLink" title="http://themolitor.com/images/rivyt_590.jpg" href="http://premium.themolitor.com/?theme=rivyt" rel="https://rivyt.com,https://rivyt.com">RIVYT</a></li><li class="themeListItem"><a class="themeLink" title="http://themolitor.com/images/channelize_preview.jpg" href="http://premium.themolitor.com/?theme=channelize" rel="https://channelize.rivyt.com,https://rivyt.com">Channelize — RIVYT</a></li><li class="themeListItem"><a class="themeLink" title="http://themolitor.com/images/gryd_preview.jpg" href="http://premium.themolitor.com/?theme=gryd" rel="https://gryd.rivyt.com,https://rivyt.com">GRYD — RIVYT</a></li><li class="themeListItem"><a class="themeLink" title="http://themolitor.com/images/velika_preview.jpg" href="http://premium.themolitor.com/?theme=velika" rel="https://velika.rivyt.com,https://rivyt.com">Velika — RIVYT</a></li><li class="themeListItem"><a class="themeLink" title="http://themolitor.com/images/surfer_preview.jpg" href="http://premium.themolitor.com/?theme=surfer" rel="https://surfer.rivyt.com,https://rivyt.com">Surfer — RIVYT</a></li><li class="themeListItem"><a class="themeLink" title="http://themolitor.com/images/lystd_preview.jpg" href="http://premium.themolitor.com/?theme=lystd" rel="https://lystd.rivyt.com,https://rivyt.com">LYSTD — RIVYT</a></li><li class="themeListItem"><a class="themeLink" title="http://themolitor.com/images/bio_preview.jpg" href="http://premium.themolitor.com/?theme=bio" rel="https://bio.rivyt.com,https://rivyt.com">BIO — RIVYT</a></li><li class="themeListItem"><a class="themeLink" title="http://themolitor.com/images/refined_preview.jpg" href="http://premium.themolitor.com/?theme=refined" rel="https://refined.rivyt.com,https://rivyt.com">Refined — RIVYT</a></li><li class="themeListItem"><a class="themeLink" title="http://themolitor.com/images/slydes_preview.jpg" href="http://premium.themolitor.com/?theme=slydes" rel="https://slydes.rivyt.com,https://rivyt.com">Slydes — RIVYT</a></li><li class="themeListItem"><a class="themeLink" title="http://themolitor.com/images/cover_preview.jpg" href="http://premium.themolitor.com/?theme=cover" rel="https://cover.rivyt.com,https://rivyt.com">Cover — RIVYT</a></li><li class="themeListItem"><a class="themeLink" title="http://themolitor.com/images/mag_preview.jpg" href="http://premium.themolitor.com/?theme=mag" rel="https://mag.rivyt.com,https://rivyt.com">Mag — RIVYT</a></li><li class="themeListItem"><a class="themeLink" title="http://themolitor.com/images/incisor_preview.jpg" href="http://premium.themolitor.com/?theme=incisor" rel="https://incisor.rivyt.com,https://rivyt.com">Incisor — RIVYT</a></li><li class="themeListItem"><a class="themeLink" title="http://themolitor.com/images/cubicle_preview.jpg" href="http://premium.themolitor.com/?theme=cubicle" rel="https://cubicle.rivyt.com,https://rivyt.com">Cubicle — RIVYT</a></li><li class="themeListItem"><a class="themeLink" title="http://themolitor.com/images/nwz_preview.jpg" href="http://premium.themolitor.com/?theme=nwz" rel="https://nwz.rivyt.com,https://rivyt.com">NWZ — RIVYT</a></li><li class="themeListItem"><a class="themeLink" title="http://themolitor.com/images/tic_preview.jpg" href="http://premium.themolitor.com/?theme=tic" rel="https://tic.rivyt.com,https://rivyt.com">Tic — RIVYT</a></li><li class="themeListItem"><a class="themeLink" title="http://i.imgur.com/4T44jVO.jpg" href="http://premium.themolitor.com/?theme=vysualize" rel="http://themolitor.com/vysualize_landing/index.php,http://www.themolitor.com/2016/04/vysualize-responsive-film-campaign-wordpress-theme/">VYSUALIZE</a></li><li class="themeListItem"><a class="themeLink" title="http://i.imgur.com/IcsceKz.jpg" href="http://premium.themolitor.com/?theme=vysual" rel="http://themolitor.com/vysual_landing/index.php,http://themeforest.net/item/vysual-responsive-film-campaign-wp-theme/11148276?ref=themolitor&license=regular&open_purchase_for_item_id=11148276">VYSUAL </a></li><li class="themeListItem"><a class="themeLink" title="http://i.imgur.com/fRVzys2.jpg" href="http://premium.themolitor.com/?theme=thecontractor" rel="http://themes.themolitor.com/contractor/,http://themeforest.net/item/the-contractor-construction-company-wp-theme/8878963?ref=themolitor&license=regular&open_purchase_for_item_id=8878963">The Contractor</a></li><li class="themeListItem"><a class="themeLink" title="http://i.imgur.com/YjNoE5o.jpg" href="http://premium.themolitor.com/?theme=thekitchentable" rel="http://themes.themolitor.com/kitchen/,http://themeforest.net/item/the-kitchen-table-responsive-recipes-wp-theme/5516768?ref=themolitor&license=regular&open_purchase_for_item_id=5516768">The Kitchen Table</a></li><li class="themeListItem"><a class="themeLink" title="http://i.imgur.com/AuAhoYO.jpg" href="http://premium.themolitor.com/?theme=theproducer" rel="http://themes.themolitor.com/producer/,http://themeforest.net/item/the-producer-responsive-film-studio-theme/3262558??ref=themolitor&license=regular&open_purchase_for_item_id=3262558">The Producer</a></li><li class="themeListItem"><a class="themeLink" title="http://i.imgur.com/LkuApMD.jpg" href="http://premium.themolitor.com/?theme=lemaitred" rel="http://themes.themolitor.com/maitred/,http://themeforest.net/item/le-maitre-d-super-simple-restaurant-wp-theme/2680203?ref=themolitor&license=regular&open_purchase_for_item_id=2680203">Le Maitre 'd</a></li><li class="themeListItem"><a class="themeLink" title="http://i.imgur.com/Q832sQu.jpg" href="http://premium.themolitor.com/?theme=thecurator" rel="http://themes.themolitor.com/curator/,http://themeforest.net/item/the-curator-premier-wp-timeline-theme-for-artists/2449908?ref=themolitor&license=regular&open_purchase_for_item_id=2449908">The Curator</a></li><li class="themeListItem"><a class="themeLink" title="http://i.imgur.com/i5opk7I.jpg" href="http://premium.themolitor.com/?theme=thedailypress" rel="http://themes.themolitor.com/dailypress/,http://themeforest.net/item/the-daily-press-super-simple-wp-publication-theme/1965747?ref=themolitor&license=regular&open_purchase_for_item_id=1965747">The Daily Press</a></li><li class="themeListItem"><a class="themeLink" title="http://i.imgur.com/5tgg1Cx.jpg" href="http://premium.themolitor.com/?theme=eventure" rel="http://themes.themolitor.com/eventure/,http://themeforest.net/item/eventure-responsive-events-wp-theme/1529155?ref=themolitor&license=regular&open_purchase_for_item_id=1529155">Eventure</a></li><li class="themeListItem"><a class="themeLink" title="http://i.imgur.com/UIJyFuS.jpg" href="http://premium.themolitor.com/?theme=nocturnal" rel="http://themes.themolitor.com/nocturnal/,http://themeforest.net/item/nocturnal-premier-audio-wp-theme-/621573?ref=themolitor&license=regular&open_purchase_for_item_id=621573">Nocturnal</a></li><li class="themeListItem"><a class="themeLink" title="http://i.imgur.com/hHcTtsk.jpg" href="http://premium.themolitor.com/?theme=photopharm" rel="http://themes.themolitor.com/photopharm/,http://themeforest.net/item/photopharm-premium-photography-and-blog-theme/807697?ref=themolitor&license=regular&open_purchase_for_item_id=807697">PhotoPharm</a></li><li class="themeListItem"><a class="themeLink" title="http://i.imgur.com/m1KDhyD.jpg" href="http://premium.themolitor.com/?theme=thenovelist" rel="http://themes.themolitor.com/wpnovelist/,http://themeforest.net/item/the-novelist-responsive-wp-theme-for-writers/526345?ref=themolitor&license=regular&open_purchase_for_item_id=526345">The Novelist</a></li><li class="themeListItem"><a class="themeLink" title="http://i.imgur.com/9PALMNc.jpg" href="http://premium.themolitor.com/?theme=thenavigator" rel="http://themes.themolitor.com/wpnavigator/,http://themeforest.net/item/the-navigator-premium-wp-location-guide-blog/397351?ref=themolitor&license=regular&open_purchase_for_item_id=397351">The Navigator</a></li><li class="themeListItem"><a class="themeLink" title="http://i.imgur.com/pTxHTGA.jpg" href="http://premium.themolitor.com/?theme=brickmason" rel="http://themes.themolitor.com/wpbm/,http://themeforest.net/item/brick-mason-premium-photography-and-blog-theme/245497?ref=themolitor&license=regular&open_purchase_for_item_id=245497">Brick + Mason</a></li><li class="themeListItem"><a class="themeLink" title="http://i.imgur.com/KXPiXk9.jpg" href="http://premium.themolitor.com/?theme=aid" rel="http://themes.themolitor.com/wpaid/,http://themeforest.net/item/wordpress-aid-charity-blog-theme/238405?ref=themolitor&license=regular&open_purchase_for_item_id=238405">Aid</a></li><li class="themeListItem"><a class="themeLink" title="http://i.imgur.com/X1YI7Gc.jpg" href="http://premium.themolitor.com/?theme=zoom" rel="http://themes.themolitor.com/wpzoom/,http://themeforest.net/item/wordpress-zoom-portfolio-blog/231324?ref=themolitor&license=regular&open_purchase_for_item_id=231324">Zoom</a></li><li class="themeListItem"><a class="themeLink" title="http://i.imgur.com/kAWcw6d.jpg" href="http://premium.themolitor.com/?theme=politico" rel="http://themes.themolitor.com/wppolitico/,http://themeforest.net/item/wordpress-politico/139979?ref=themolitor&license=regular&open_purchase_for_item_id=139979">Politico</a></li><li class="themeListItem"><a class="themeLink" title="http://i.imgur.com/jZXDL6n.jpg" href="http://premium.themolitor.com/?theme=university" rel="http://themes.themolitor.com/wpuniversity/,http://themeforest.net/item/wordpress-university/76163?ref=themolitor&license=regular&open_purchase_for_item_id=76163">University</a></li>				</ul>
-			</li>
-		</ul>
-	</div><!--end switcher-->
 
-    <iframe id="iframe" src="{{asset("pdf/6th/00000000.htm")}}" frameborder="0" width="100%"></iframe>
+<style>
+    body, html {
+        -ms-text-size-adjust: none;
+        -moz-text-size-adjust: none;
+        -o-text-size-adjust: none;
+        -webkit-text-size-adjust: none;
+    }
+</style>
+
+
+
+
+
+
+<script>
+    var changeLanguage = function (ele) {
+        var value = ele.options[ele.selectedIndex].value;
+        var query = '', res, loc = location.href;
+        if (loc.indexOf('?') > 0) {
+            query = loc.substring(loc.indexOf('?'), loc.length);
+        }
+        if (loc.indexOf('?') > 0) {
+            loc = loc.substring(0, loc.indexOf('?'));
+        }
+        if (loc.indexOf('/fa') > 0 || loc.indexOf('/Fa') > 0 || loc.indexOf('/FA') > 0) {
+            res = loc.replace('/fa', '/' + value);
+        }
+        else if (loc.indexOf('/en') > 0 || loc.indexOf('/En') > 0 || loc.indexOf('/EN') > 0) {
+            res = loc.replace('/en', '/' + value);
+        }
+        else {
+            res = loc + '/' + value;
+        }
+        location.href = res + query;
+    }
+</script>
+<style>
+    select::-ms-expand {
+        display: none;
+    }
+
+    @media screen and (min-width:0\0) {
+        select {
+            background: none\9;
+            padding: 5px\9;
+        }
+    }
+
+    @media only screen and (max-width: 576px) {
+        select.change-lang {
+            display: inline-block;
+            width: 70px;
+            padding: 5px;
+            font-size: 11px;
+            margin: 11px 5px;
+            border: none;
+            height: 34px;
+            background: transparent;
+            color: black;
+            position: absolute;
+            z-index: 999;
+            border-radius: 4px;
+            border: 1px solid #bebebe;
+        }
+    }
+</style>    <link href="{{asset("pdf/6th/credit-h.css")}}" rel="stylesheet" />
+<header>
+    <a href="https://werbungseiten.de/">
+        <img src="{{asset("storage/images/Logowerbung.png")}}" width="125" />
+    </a>
+</header>
+
+
+
+
+<div class="container">
+    <div class="contact-info">
+        <div class="name-job-desc">
+            <table>
+                <tr>
+                    <td width="60%">
+                        <div class="user-image" style="background-image:url({{asset("storage/images/$resume->image")}})"></div>
+                        <h1 style="text-transform: uppercase">{{$resume->name}} {{$resume->last_name}}</h1>
+                        <div style="margin: 20px;" class="other-infos not-drag">
+
+                            <div class="basic__birthday">
+                                <span>Date of Birth:</span>
+                                <span>{{$resume->date_birth}}</span>
+                            </div>
+
+                            <div class="basic__marital">
+
+                                <span>{{$resume->maried}}</span>
+                            </div>
+
+
+                        </div>
+                    </td>
+                    <td width="40%">
+                        <div dir="ltr" style="text-align: left !important;" class="infoo info" data-section="Contact">
+                            <div class="infoo-head">
+                                <label>Contacts</label>
+                            </div>
+
+                            <div class="contact-item contact__email">
+                <span>
+                    <i class="fa fa-envelope"></i>
+                </span>
+                                <span>Email:</span>
+                                <span>{{$resume->email}}</span>
+                            </div>
+
+                            <div class="contact-item contact__mobile">
+                <span>
+                    <i class="fa fa-phone"></i>
+                </span>
+                                <span>Mobile:</span>
+                                <span style="unicode-bidi:embed" dir="ltr">{{$resume->mobile}}</span>
+                            </div>
+                            <div class="contact-item contact__phone">
+                <span>
+                    <i class="fa fa-home"></i>
+                </span>
+                                <span>Phone:</span>
+                                <span>{{$resume->name}}</span>
+                            </div>
+                            <div class="contact-item contact__website">
+                <span>
+                    <i class="fa fa-globe"></i>
+                </span>
+                                <span>Website:</span>
+                                <span>{{$resume->website}}</span>
+                            </div>
+                            <div class="contact-item contact__city">
+                <span>
+                    <i class="fa fa-map-marker"></i>
+                </span>
+                                <span>Address:</span>
+                                <span>{{$resume->address}}</span>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="row" style="height:calc(100% - 175px)">
+        <div style="text-align: left !important;" class="lgbox col-wide sortable-cv-items">
+
+
+
+            <div class="property-item education__list" data-section="Education">
+                <div class="property-item_head">
+            <span>
+                <i class="fa fa-graduation-cap"></i>
+            </span>
+                    <label>Education</label>
+
+                </div>
+                <div class="property-item_body">
+                    <ul class="history multi-line">
+                        @foreach($education as $edu)
+                            <li>
+                                <h2 class="subtitle">{{$edu->uni_major}}</h2>
+                                <h3 class="subtitle">{{$edu->uni_gerayesh}}</h3>
+                                <h3 class="subtitle">{{$edu->uni_name}}<label>{{$edu->uni_city}}</label></h3>
+                                <label class="date">{{$edu->uni_inyear}}</label>
+                            </li>
+                        @endforeach
+                    </ul>
+                </div>
+            </div>
+
+            <div class="property-item experience__list" data-section="Experience">
+                <div class="property-item_head">
+            <span>
+                <i class="fa fa-toolbox"></i>
+            </span>
+                    <label>Experiences</label>
+                </div>
+                <div class="property-item_body">
+                    <ul class="history multi-line">
+                        @foreach($work_ex as $work)
+
+                            <li class="66832">
+                                <h2 class="subtitle">{{$work->work_title}} </h2>
+                                <h3 class="subtitle">
+                                    {{$work->work_center}} {{$work->work_center_title}}
+                                </h3>
+                                <label class="date">Start in: {{$work->work_startm}} {{$work->work_starty}}</label>
+                                ------
+                                @if($work->in_work)
+                                    <label class="date">Working</label>
+                                @else
+
+                                    <label class="date">{{$work->work_endm}} {{$work->work_endy}}</label>
+                            @endif
+                        @endforeach
+                    </ul>
+                </div>
+            </div>
+
+            <div class="property-item certificate__list" data-section="Certificate">
+                <div class="property-item_head">
+            <span>
+                <i class="fa fa-tasks"></i>
+            </span>
+                    <label>Certificates</label>
+
+                </div>
+                <div class="property-item_body">
+                    <ul class="history one-line">
+
+                        @foreach($skills_degrees as $degree)
+                            <li>
+                                @if($degree->degree_type==1)
+                                    Language
+                                @elseif($degree->degree_type==2)
+                                    SoftWare
+                                @else
+                                    Other
+                                @endif
+                                <h2 class="subtitle bidirectional">Title: {{$degree->degree_title}}</h2>
+                                <h3 class="subtitle">Istitude: {{$degree->degree_uni}}</h3>
+                                <label class="date"><label class="text-date">Date:</label> {{$degree->degree_month}}&nbsp;{{$degree->degree_year}}</label>
+                            </li>
+
+                        @endforeach
+
+                    </ul>
+                </div>
+            </div>
+
+
+
+
+
+            <div class="property-item project__list" data-section="Project">
+                <div class="property-item_head">
+            <span>
+                <i class="fa fa-thumb-tack"></i>
+            </span>
+                    <label>Projects</label>
+
+                </div>
+                <div class="property-item_body">
+                    <ul class="history one-line">
+
+                        @foreach($samples as $sample)
+                            <li>
+                                <h2 class="subtitle bidirectional">
+                                    {{$sample->project_title}}</h2>
+                                <h3 class="subtitle">Employer: {{$sample->project_employee}} </h3>
+                                <label class="date"><label class="text-date">Date:</label>{{$sample->project_month}} {{$sample->project_year}}</label>
+
+                            </li>
+                        @endforeach
+                    </ul>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+        <div  style="text-align: left !important;" class="smbox col-narrow sortable-cv-items">
+
+
+            <div class="property-item skill__list" data-section="Skill">
+                <div class="property-item_head">
+            <span>
+                <i class="fa fa-lightbulb"></i>
+            </span>
+                    <label>Skills</label>
+                </div>
+                <div class="property-item_body">
+                    <div class="bar-progress item-row w0">
+                        <ul class="history">
+
+                            @foreach($skills_exp as $xp)
+                                @if(($xp->ex_name)!="0")
+                                    <li>
+                            <span>
+                                <label>{{$xp->ex_name}}</label>
+                                    <label class="grade">
+                                        <small>@php
+                                                $exstate=($xp->ex_state)*20;
+                    echo $exstate
+                                            @endphp%</small>
+
+                                    </label>
+                            </span>
+                                    </li>
+                                @endif
+                            @endforeach
+                        </ul>
+
+                    </div>
+
+                </div>
+            </div>
+
+
+            <div class="property-item language__list" data-section="Language">
+                <div class="property-item_head">
+            <span>
+                <i class="fa fa-globe-americas"></i>
+            </span>
+                    <label>Languages</label>
+                </div>
+                <div class="property-item_body">
+                    <div class="item-row w4">
+                        <ul class="history">
+
+
+
+                            @foreach($skills_language as $language)
+                                @if(($language->language_name)!="0")
+                                    <li>
+                                        <h2 class="subtitle language-item">{{$language->language_name}}</h2>
+                                        <span>
+                                    <label>Reading</label>
+                                    <label class="grade">
+                                          @for($i=1;$i<=5;$i++)
+                                            @if($language->language_read<$i)
+                                                <i><span id="freelancer" class="far fa-star"></span></i>
+                                            @else
+                                                <i  class=tik><span id="freelancer" class="far fa-star"></span></i>
+                                            @endif
+                                        @endfor
+
+                                    </label>
+                                </span>
+                                        <span>
+                                    <label>Writing</label>
+                                    <label class="grade">
+                                          @for($i=1;$i<=5;$i++)
+                                            @if($language->language_write<$i)
+                                                <i><span id="freelancer" class="far fa-star"></span></i>
+                                            @else
+                                                <i  class=tik><span id="freelancer" class="far fa-star"></span></i>
+                                            @endif
+                                        @endfor
+
+                                    </label>
+                                </span>
+                                        <span>
+                                    <label>Listening</label>
+                                    <label class="grade">
+                                          @for($i=1;$i<=5;$i++)
+                                            @if($language->language_listen<$i)
+                                                <i><span id="freelancer" class="far fa-star"></span></i>
+                                            @else
+                                                <i  class=tik><span id="freelancer" class="far fa-star"></span></i>
+                                            @endif
+                                        @endfor
+
+                                    </label>
+                                </span>
+                                        <span>
+                                    <label>Speaking</label>
+                                    <label class="grade">
+                                          @for($i=1;$i<=5;$i++)
+                                            @if($language->language_speak<$i)
+                                                <i><span id="freelancer" class="far fa-star"></span></i>
+                                            @else
+                                                <i  class=tik><span id="freelancer" class="far fa-star"></span></i>
+                                            @endif
+                                        @endfor
+
+                                    </label>
+                                </span>
+                                    </li>
+                                @endif
+                            @endforeach
+
+                        </ul>
+
+                    </div>
+
+                </div>
+            </div>
+
+
+
+
+
+        </div>
+    </div>
+</div>
+
+
+<style>
+    .click-to-build-cv > div {
+        font-weight: bold;
+        font-size: 18px;
+        margin: 5px 0 10px;
+    }
+</style>
+
+<script>
+    $('a.call-to-action').click(function (event) {
+        event.preventDefault();
+        var urlParams = new URLSearchParams(window.location.search);
+        var template = urlParams.get('template');
+        if (template) {
+            setCookie('PreviewTemplate', template);
+        }
+        document.location = '/builder';
+    });
+</script>
+<script>
+    setTimeout(function () {
+        document.querySelector('.click-to-build-cv').style.display = 'block';
+    }, 5000);
+</script>
+
+<link href="{{asset("pdf/6th/gmodal00.css")}}" rel="stylesheet" />
+<style>
+    ul.gModal-features {
+        width: 75%;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    @media only screen and (max-width: 576px) {
+        ul.gModal-features {
+            width: 90%;
+        }
+    }
+</style>
+
+<script>
+    var features = {
+        hasMouseout: true,
+        hasScroll: false,
+        hasTimeout: true,
+        scrollItem: '',
+        timoeout: 8000};
+</script>
+<script src="{{asset("pdf/6th/gmodal00.js")}}" type="text/javascript"></script>
+
+<style>
+    .page-watermark {
+        left: calc(50% - 350px);
+        display: none;
+        position: absolute;
+        font-size: 96px;
+        transform: rotate(-45deg);
+        -webkit-transform: rotate(-45deg);
+        opacity: 0.5;
+        font-weight: bold;
+        color: #969696;
+        z-index: 0;
+    }
+</style>
+
+<script>
+    var fullHeight = function (measure) {
+        var height = document.querySelector(".container").offsetHeight;
+        var colwide = document.querySelector(".col-wide");
+        var colnarrow = document.querySelector(".col-narrow");
+        var oneColLayout = document.querySelector(".one-col-layout");
+        var head = document.querySelector(".contact-info");
+
+        if (oneColLayout != null) {
+            height = oneColLayout.offsetHeight;
+        }
+        else {
+            if (measure) {
+                var colNarrowMeasuredHeight = measureHeight('.col-narrow');
+                var colWideMeasuredHeight = measureHeight('.col-wide');
+
+                if (colWideMeasuredHeight > colNarrowMeasuredHeight) {
+                    height = colWideMeasuredHeight;
+                } else {
+                    height = colNarrowMeasuredHeight;
+                }
+            }
+            else {
+                if (colwide.offsetHeight > colnarrow.offsetHeight) {
+                    height = colwide.offsetHeight;
+                } else {
+                    height = colnarrow.offsetHeight;
+                }
+
+            }
+        }
+
+        if (head != null) height += head.offsetHeight;
+
+        var height_mm = height / 3.7795275591 - 5;
+        //var height_mm = (height * 25.4) / 96 - 0;
+
+        height_mm = Math.ceil(height_mm / 297) * 297 - 1;
+        document.querySelector(".container").style.height = height_mm + "mm";
+
+        $('div.page-indicator,div.page-watermark').remove();
+        var pages = Math.ceil(height_mm / 297);
+        for (var i = 0; i < pages; i++) {
+            var top = i * 297;
+            $('<div data-page="' + (i + 1) + '" class="page-indicator"></div>').appendTo('.container').css({ top: top + 'mm' });
+        }
+
+    };
+    function measureHeight(selector) {
+        var height = 0;
+        $(selector).children().each(function () {
+            height += $(this).height() + parseInt($(this).css('paddingBottom')) + parseInt($(this).css('paddingTop'));
+        })
+        return height;
+    }
+</script>
+<script>
+    function webHeightAdjust() {
+        var height = document.querySelector(".container").offsetHeight;
+        var colwide = document.querySelector(".col-wide");
+        var colnarrow = document.querySelector(".col-narrow");
+        var oneColLayout = document.querySelector(".one-col-layout");
+        var head = document.querySelector(".contact-info");
+        if (oneColLayout != null) {
+            height = oneColLayout.offsetHeight;
+        }
+        else {
+            if (colwide.offsetHeight > colnarrow.offsetHeight) {
+                height = colwide.offsetHeight;
+            } else {
+                height = colnarrow.offsetHeight;
+            }
+        }
+        if (head != null) height += head.offsetHeight;
+        var height_mm = height * 25.4 / 96 + 15;
+        document.querySelector(".container").style.height = height_mm + "mm";
+    }
+</script>
+
+
+<div style="font-size: 13px !important; color: #0b0b0b" class="footer">
+    Created with <i class="fa fa-heart" aria-hidden="true"></i> By
+    <a href="https://werbungseiten.de/">
+        Werbungseiten.de
+    </a>
+</div>
+<style>
+    .container {
+        box-shadow: 0 0 6px -2px #000;
+        margin: 0 auto;
+        margin-top: 40px;
+        margin-bottom: 50px;
+        min-height: 297mm;
+    }
+</style>
+<script src="{{asset("pdf/6th/template.js")}}"></script>
+<script>
+    window.onload = function () {
+        setTimeout(function () {
+            webHeightAdjust();
+        }, 800);
+    }
+</script>
+<script async>
+    var mobile = (/iphone|ipod|android|blackberry|mini|windows\sce|palm/i.test(navigator.userAgent.toLowerCase()));
+    if (!mobile) {
+        (function (s, u, m, o, j, v) { j = u.createElement(m); v = u.getElementsByTagName(m)[0]; j.async = 1; j.src = o; j.dataset.sumoSiteId = 'e2a3c8eb01dd914a33cb2632bc2f1bed8daa48f8f04a3d24057d538b082b200c'; v.parentNode.insertBefore(j, v) })(window, document, 'script', '//load.sumo.com/');
+    }
+</script>
+
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="{{asset("pdf/6th/js000000.js")}}"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-101108363-3');
+</script>
+
+
 </body>
 </html>
-
 

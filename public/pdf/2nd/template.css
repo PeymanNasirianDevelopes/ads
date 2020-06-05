@@ -1,0 +1,380 @@
+.container {
+    padding: 0;
+    background: #ffffec;
+    position: relative;
+    padding-bottom: 40px
+}
+
+.infoo-head {
+    display: none;
+}
+
+.banner {
+    width: 100%;
+    background: #ffa850;
+    height: 40px;
+    overflow: hidden
+}
+
+    .banner.top {
+        position: absolute;
+        top: 0
+    }
+
+    .banner.bottom {
+        position: absolute;
+        bottom: 0
+    }
+
+.col-narrow {
+    width: 45%;
+    float: right;
+    padding: 0 20px;
+}
+
+.col-wide {
+    width: 45%;
+    float: left;
+    padding: 0px 19px;
+}
+
+.name-job-desc {
+    padding: 0
+}
+
+
+
+    .name-job-desc h1 {
+        font-size: 30px;
+        position: absolute;
+        top: 52px;
+        color: #ee7057;
+        right: 184px;
+        text-align: right;
+    }
+
+div.user-image {
+    box-shadow: none !important;
+    border: 3px solid #ffe279;
+    width: 130px;
+    height: 130px;
+    margin: 0;
+    margin-right: 20px;
+}
+
+
+
+tbody tr:first-child td h2 {
+    font-size: 16px;
+    color: #ffac57;
+    position: absolute;
+    right: 216px;
+    top: 150px;
+    margin: 0;
+    width: 215%;
+    text-align: right;
+}
+
+
+
+.property-item {
+    margin-bottom: 5px;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+
+.property-item_head label {
+    text-align: right;
+    border: 0;
+    color: #d87e6c;
+    padding-bottom: 5px;
+    font-size: 16px;
+    display: block;
+}
+
+.property-item_head {
+    border-bottom: 3px solid #d87e6c;
+    text-align: right;
+    width: 100%;
+    margin: 0;
+    padding-top: 5px;
+}
+
+.property-item_body > *:first-child {
+    padding: 0
+}
+
+.property-item_body.contact div {
+    margin-bottom: 15px;
+    font-size: 14px;
+    width: 100%;
+    float: right;
+}
+
+    .property-item_body.contact div span:nth-child(3) {
+        float: right;
+        margin-right: 23px;
+    }
+
+ul.history h2.subtitle {
+    margin-top: 0
+}
+
+ul.history li {
+    position: relative;
+    padding: 0;
+    margin-bottom: 15px;
+    width: auto;
+    min-height: initial;
+}
+
+h3.subtitle label {
+    background: #ffe174;
+    color: #000
+}
+
+table tr:nth-child(2) td {
+    width: 41%;
+    display: block;
+    padding: 0 45px;
+    vertical-align: top
+}
+
+div.item-row > span label:first-child {
+    background: #ffe174;
+    color: #000;
+    font-size: 11px
+}
+
+h2.subtitle {
+    color: #000;
+    margin-top: 15px
+}
+
+    h2.subtitle:first-of-type {
+        margin-top: 0
+    }
+
+.item-row.w4 > span {
+    margin: 5px 0;
+    width: 100%
+}
+
+div.item-row > span label.grade {
+    float: left
+}
+
+    div.item-row > span label.grade i.tik {
+        background: #d87e6c
+    }
+
+    div.item-row > span label.grade i {
+        background: #ffe174
+    }
+
+.banner:after, .banner:before {
+    content: ' ';
+    width: 0;
+    height: 0
+}
+
+.banner:after {
+    border-right: 250px solid #ee7057;
+    border-top: 85px solid transparent;
+    position: relative;
+    top: 40px;
+    right: -300px
+}
+
+.banner:before {
+    border-left: 250px solid #ffe174;
+    border-bottom: 83px solid transparent;
+    position: relative;
+    top: -23px;
+    left: -590px
+}
+
+table tr:nth-child(2) td:first-child {
+    padding-left: 22px
+}
+
+table tr:nth-child(2) td:nth-child(2) {
+    padding-right: 22px
+}
+
+label.date {
+    color: #ee7057;
+    font-size: 11px;
+}
+
+ul.list-item li p {
+    border: 0;
+    padding: 0;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+ul.history li:nth-child(n+3) {
+    margin-bottom: 15px;
+}
+
+ul.history.multi-line li {
+    width: 100%;
+}
+
+div.item-row li > span label:first-child {
+    color: #000;
+    background: #ffe174;
+    display: block;
+    padding: 0 6px;
+    border-radius: 2px;
+    float: right;
+    font-size: 12px;
+}
+
+div.item-row li > span {
+    float: right;
+    padding-left: 5px;
+    box-sizing: border-box;
+    height: 24px;
+    margin: 5px 0;
+    width: 100%;
+}
+
+    div.item-row li > span label:last-child {
+        line-height: 24px;
+        display: block;
+        height: 100%;
+        font-size: 10px;
+        float: left;
+        width: 100px;
+    }
+
+    div.item-row li > span label.grade i.tik {
+        background: #d87e6c;
+    }
+
+    div.item-row li > span label.grade i {
+        display: block;
+        border-radius: 50%;
+        width: 10px;
+        height: 10px;
+        margin: 7px 3px;
+        background: #ffe174;
+        box-sizing: border-box;
+        float: right;
+    }
+
+.header {
+    padding-top: 62px;
+    height: 138px;
+}
+
+    .header h2 {
+        position: absolute;
+        right: 185px;
+        top: 155px;
+        font-size: 15px;
+        color: #777777;
+    }
+
+div.item-row li > span label:last-child {
+    line-height: 24px;
+    display: block;
+    height: 100%;
+    font-size: 10px;
+    float: left;
+    width: auto;
+}
+
+h2.subtitle {
+    display: block;
+    width: 100%;
+}
+
+ul.history label.date {
+    font-size: 11px;
+    margin-top: 0px;
+    display: block;
+}
+
+li.break-property-item {
+    clear: both !important;
+    width: 100% !important;
+    float: none !important;
+}
+
+div.item-row li > span label {
+    line-height: 24px;
+    display: block;
+    height: 100%;
+    font-size: 10px;
+}
+
+.item-row.w0 ul.history li {
+    margin-bottom: 0;
+}
+
+ul.history p.description {
+    text-align: right;
+    margin-top: 0;
+}
+
+.item-row.w0 li > span {
+    height: auto;
+}
+
+small {
+    display: none;
+}
+
+.property-item.social__list ul.history li {
+    width: 100%;
+}
+
+    .property-item.social__list ul.history li span {
+        width: 100%;
+    }
+
+        .property-item.social__list ul.history li span label:last-child {
+            font-size: 15px;
+            color: #565555;
+        }
+
+        .property-item.social__list ul.history li span label:first-child {
+            font-size: 19px;
+            color: #d87e6c;
+            background: #ffffec;
+        }
+
+div.contact-item span:first-child {
+    display: inline-block;
+    color: #d87e6c;
+    float: right;
+}
+
+.contact-item span:nth-child(2) {
+    display: none;
+}
+
+.about-us {
+    text-align: right;
+}
+
+p.project-link {
+    font-size: 12px;
+    color: #ee7057;
+}
+
+a.social-link {
+    color: #ee7057;
+}
+
+label.Education-Grade {
+    font-size: 11px;
+    color: #ee7057;
+}
+
+.ui-sortable-handle:hover {
+    background: #84848452;
+}

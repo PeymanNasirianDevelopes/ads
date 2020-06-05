@@ -1,0 +1,201 @@
+/* Modal Base CSS */
+.scotch-overlay {
+    position: fixed;
+    z-index: 9998;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    -webkit-transition: 1ms opacity ease;
+    -moz-transition: 1ms opacity ease;
+    -ms-transition: 1ms opacity ease;
+    -o-transition: 1ms opacity ease;
+    transition: 1ms opacity ease;
+    background: rgba(0,0,0,.6);
+}
+
+.scotch-modal {
+    box-shadow: 0 10px 25px -5px #3b3b3b;
+    position: fixed;
+    z-index: 9999;
+    top: 50%;
+    left: 50%;
+    opacity: 0;
+    width: 94%;
+    padding: 24px 20px;
+    -webkit-transition: 1ms opacity ease;
+    -moz-transition: 1ms opacity ease;
+    -ms-transition: 1ms opacity ease;
+    -o-transition: 1ms opacity ease;
+    transition: 1ms opacity ease;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    background: #fff;
+    border-radius: 6%;
+}
+
+    .scotch-modal.scotch-open.scotch-anchored {
+        top: 20px;
+        -webkit-transform: translate(-50%, 0);
+        -moz-transform: translate(-50%, 0);
+        -ms-transform: translate(-50%, 0);
+        -o-transform: translate(-50%, 0);
+        transform: translate(-50%, 0);
+    }
+
+    .scotch-modal.scotch-open {
+        opacity: 1;
+    }
+
+.scotch-overlay.scotch-open {
+    opacity: 1;
+}
+
+/* Close Button */
+.scotch-close {
+    font-size: 24px;
+    border-radius: 15px;
+    position: absolute;
+    padding: 0;
+    width: 25px;
+    height: 25px;
+    top: -5px;
+    right: -5px;
+    cursor: pointer;
+    color: #fff;
+    border: 0;
+    outline: none;
+    font-weight: 700;
+    background: #d9ae96;
+    line-height: 1.2;
+}
+
+    .scotch-close:hover {
+        background: #ff2d33;
+    }
+
+/* Default Animation */
+
+.scotch-overlay.fade-and-drop {
+    display: block;
+    opacity: 0;
+}
+
+.scotch-modal.fade-and-drop {
+    top: -300%;
+    opacity: 1;
+    display: block;
+}
+
+    .scotch-modal.fade-and-drop.scotch-open {
+        top: 50%;
+        -webkit-transition: 500ms top 500ms ease;
+        -moz-transition: 500ms top 500ms ease;
+        -ms-transition: 500ms top 500ms ease;
+        -o-transition: 500ms top 500ms ease;
+        transition: 500ms top 500ms ease;
+    }
+
+        .scotch-modal.fade-and-drop.scotch-open.scotch-anchored {
+            -webkit-transition: 500ms top 500ms ease;
+            -moz-transition: 500ms top 500ms ease;
+            -ms-transition: 500ms top 500ms ease;
+            -o-transition: 500ms top 500ms ease;
+            transition: 500ms top 500ms ease;
+        }
+
+.scotch-overlay.fade-and-drop.scotch-open {
+    top: 0;
+    -webkit-transition: 500ms opacity ease;
+    -moz-transition: 500ms opacity ease;
+    -ms-transition: 500ms opacity ease;
+    -o-transition: 500ms opacity ease;
+    transition: 500ms opacity ease;
+    opacity: 1;
+}
+
+.scotch-modal.fade-and-drop {
+    -webkit-transition: 500ms top ease;
+    -moz-transition: 500ms top ease;
+    -ms-transition: 500ms top ease;
+    -o-transition: 500ms top ease;
+    transition: 500ms top ease;
+}
+
+.scotch-overlay.fade-and-drop {
+    -webkit-transition: 500ms opacity 500ms ease;
+    -moz-transition: 500ms opacity 500ms ease;
+    -ms-transition: 500ms opacity 500ms ease;
+    -o-transition: 500ms opacity 500ms ease;
+    transition: 500ms opacity 500ms ease;
+}
+
+#gModal {
+    display: none;
+}
+
+.gModal-description {
+    font-size: 17px;
+    margin: 0;
+    color: #00b5ff;
+    font-weight: bold;
+    text-align: center;
+}
+
+ul.gModal-features {
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+    ul.gModal-features li {
+        font-size: 13px;
+        margin: 0 auto 5px;
+        color: #585973;
+        width: 80%;
+        font-weight: bold;
+        list-style: none;
+    }
+
+        ul.gModal-features li:before {
+            content: '✔';
+            color: #fecf66;
+            font-size: 20px;
+            vertical-align: middle;
+        }
+
+.gModal-link {
+    text-align: center;
+}
+
+    .gModal-link a {
+        padding: 8px 70px;
+        font-weight: bold;
+        background: #78c800;
+        color: #fff;
+        display: inline-block;
+        border-radius: 25px;
+        transition: all 150ms;
+        text-decoration: none;
+        box-shadow: 0 5px 20px -8px rgb(69, 69, 69);
+    }
+
+        .gModal-link a:hover {
+            background: #66aa00;
+            box-shadow: 0 10px 20px -8px rgb(69, 69, 69);
+        }
+
+.scotch-content img {
+    margin-bottom: -110px;
+    position: relative;
+    top: -110px;
+}
+
+@media only screen and (max-width: 576px) {
+    .scotch-modal {
+        width: 85% !important;
+    }
+}

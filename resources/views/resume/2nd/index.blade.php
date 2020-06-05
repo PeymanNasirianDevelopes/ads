@@ -1,150 +1,314 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!DOCTYPE html>
 
+<html>
 <head>
-     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 
-     <title>{{$resume->name}} {{$resume->last_name}} Resume</title>
 
-     <style type="text/css">
-        * { margin: 0; padding: 0; }
-        body { font: 16px Helvetica, Sans-Serif; line-height: 24px; background: url({{asset("pdf/2nd/noise.jpg")}}); }
-        .clear { clear: both; }
-        #page-wrap { width: 800px; margin: 40px auto 60px; }
-        #pic { float: right; margin: -30px 0 0 0; }
-        h1 { margin: 0 0 16px 0; padding: 0 0 16px 0; font-size: 42px; font-weight: bold; letter-spacing: -2px; border-bottom: 1px solid #999; }
-        h2 { font-size: 20px; margin: 0 0 6px 0; position: relative; }
-        h2 span { position: absolute; bottom: 0; right: 0; font-style: italic; font-family: Georgia, Serif; font-size: 16px; color: #999; font-weight: normal; }
-        p { margin: 0 0 16px 0; }
-        a { color: #999; text-decoration: none; border-bottom: 1px dotted #999; }
-        a:hover { border-bottom-style: solid; color: black; }
-        ul { margin: 0 0 32px 17px; }
-        #objective { width: 500px; float: left; }
-        #objective p { font-family: Georgia, Serif; font-style: italic; color: #666; }
-        dt { font-style: italic; font-weight: bold; font-size: 18px; text-align: right; padding: 0 26px 0 0; width: 150px; float: left; height: 100px; border-right: 1px solid #999;  }
-        dd { width: 600px; float: right; }
-        dd.clear { float: none; margin: 0; height: 15px; }
-     </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1024">
+    <link rel="icon" type="image/png" href="{{asset("pdf/2nd/favicon-.png")}}">
+
+    <title>{{$resume->name}} {{$resume->last_name}} Resume</title>
+    <meta name="description" content="{{$resume->name}} {{$resume->last_name}} Resume | {{$resume->about}} ">
+
+
+    <link href="{{asset("pdf/2nd/Fonts000.css")}}" rel="stylesheet">
+    <link rel="stylesheet" href="{{asset("pdf/2nd/all00000.css")}}" />
+
+    <link href="{{asset("pdf/2nd/DefaultR.css")}}" rel="stylesheet">
+
+    <script src="{{asset("pdf/2nd/jquery00.js")}}"></script>
+    <script src="{{asset("pdf/2nd/less0000.js")}}"></script>
+    <link href="{{asset("css/01font-a.css")}}" rel="stylesheet">
+
+
+    <link href="{{asset("pdf/2nd/template.css")}}" rel="stylesheet" />
+    <script>
+        var options = {
+            templateId: 6,
+            newVars: {
+                "@main_font_size": "23px",
+                "@main_color": "#ee7057",
+                "@base_vertical_space": "15px",
+                "@font_name": "IRANSans"
+            },
+            templateName: "template5"
+        };
+    </script>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
 </head>
 
 <body>
 
-    <div id="page-wrap">
 
-        <img width="200" height="200" src="{{asset("storage/images/$resume->image")}}" alt="{{$resume->name}} {{$resume->last_name}}" id="pic" />
-
-        <div id="contact-info" class="vcard">
-
-            <!-- Microformats! -->
-
-            <h1 class="fn">{{$resume->name}} {{$resume->last_name}}</h1>
-
-            <p>
-                Cell: <span class="tel">{{$resume->mobile}}</span><br />
-                Email: <a class="email" href="mailto:{{$resume->email}}">{{$resume->email}}</a>
-            </p>
-        </div>
-
-        <div id="objective">
-            <p>
-      {{$resume->about}}
-            </p>
-        </div>
-
-        <div class="clear"></div>
-
-        <dl>
-            <dd class="clear"></dd>
-
-            <dt>Education</dt>
-            <dd>
-                @foreach($education as $edu)
-                <h2>{{$edu->uni_name}}</h2>
-                <p><strong>Major:</strong>{{$edu->uni_major}}<br />
-                   <strong>City:</strong> {{$edu->uni_city}}</p>
-                @endforeach
-            </dd>
-
-            <dd class="clear"></dd>
-
-            <dt>Skills</dt>
-            <dd>
-                <div style="float: left; margin: 10px;">
-                <h2>Languages</h2>
-                @foreach($skills_language as $language)
-                <p><b>{{$language->language_name}}</b>
-                  <br>
-                    Reading:
-                    @for($i=1;$i<=$language->language_read;$i++)
-                        &#9733;
-                    @endfor
-                    <br>
-                    Writing:
-                    @for($i=1;$i<=$language->language_write;$i++)
-                        &#9733;
-                    @endfor
-                    <br>
-                    Listening:
-                    @for($i=1;$i<=$language->language_listen;$i++)
-                        &#9733;
-                    @endfor
-                    <br>
-                    Speaking:
-                    @for($i=1;$i<=$language->language_speak;$i++)
-                        &#9733;
-                    @endfor
+<style>
+    body, html {
+        -ms-text-size-adjust: none;
+        -moz-text-size-adjust: none;
+        -o-text-size-adjust: none;
+        -webkit-text-size-adjust: none;
+    }
+</style>
 
 
-                </p>
-                @endforeach
-                    <h2>Honors</h2>
-                    @foreach($skills_honors as $honor)
-                        <p><b>{{$honor->honor_title}}</b>
-                            <br>
 
 
-                            {{$honor->honor_month}}&nbsp;{{$honor->honor_year}}
 
-                        </p>
-                    @endforeach
+
+<script>
+    var changeLanguage = function (ele) {
+        var value = ele.options[ele.selectedIndex].value;
+        var query = '', res, loc = location.href;
+        if (loc.indexOf('?') > 0) {
+            query = loc.substring(loc.indexOf('?'), loc.length);
+        }
+        if (loc.indexOf('?') > 0) {
+            loc = loc.substring(0, loc.indexOf('?'));
+        }
+        if (loc.indexOf('/fa') > 0 || loc.indexOf('/Fa') > 0 || loc.indexOf('/FA') > 0) {
+            res = loc.replace('/fa', '/' + value);
+        }
+        else if (loc.indexOf('/en') > 0 || loc.indexOf('/En') > 0 || loc.indexOf('/EN') > 0) {
+            res = loc.replace('/en', '/' + value);
+        }
+        else {
+            res = loc + '/' + value;
+        }
+        location.href = res + query;
+    }
+</script>
+<style>
+    select::-ms-expand {
+        display: none;
+    }
+
+    @media screen and (min-width:0\0) {
+        select {
+            background: none\9;
+            padding: 5px\9;
+        }
+    }
+
+    @media only screen and (max-width: 576px) {
+        select.change-lang {
+            display: inline-block;
+            width: 70px;
+            padding: 5px;
+            font-size: 11px;
+            margin: 11px 5px;
+            border: none;
+            height: 34px;
+            background: transparent;
+            color: black;
+            position: absolute;
+            z-index: 999;
+            border-radius: 4px;
+            border: 1px solid #bebebe;
+        }
+    }
+</style>    <link href="{{asset("pdf/2nd/credit-h.css")}}" rel="stylesheet" />
+<header>
+    <a href="https://werbungseiten.de/">
+        <img src="{{asset("storage/images/Logowerbung.png")}}" width="125" />
+    </a>
+</header>
+
+
+
+
+<div align="left" dir="ltr" class="container" style="padding-bottom: 40px; text-align: left !important;">
+    <div class="banner top"></div>
+    <div class="contact-info">
+        <div class="name-job-desc">
+            <div class="header">
+                <div class="user-image" style="background-image:url({{asset("storage/images/$resume->image")}})"></div>
+                <h1 style="text-transform: uppercase">{{$resume->name}} {{$resume->last_name}}</h1>
+                <h2>
+                    {{$resume->expert}}              </h2>
+                <div style="margin: 20px;" class="other-infos not-drag">
+
+                    <div class="basic__birthday">
+                        <span>Date of Birth:</span>
+                        <span>{{$resume->date_birth}}</span>
+                    </div>
+
+                    <div class="basic__marital">
+
+                        <span>{{$resume->maried}}</span>
+                    </div>
+
+
                 </div>
-                <div style="float: right;">
-                    <h2>Working Experiences</h2>
-                    @foreach($skills_exp as $work_exp)
-                        <p><b>{{$work_exp->ex_name}}</b>
-                            <br>
-                            @for($i=1;$i<=$work_exp->ex_state;$i++)
-                                &#9733;
-                            @endfor
+            </div>
+        </div>
+        <div class="row">
+            <div class="smbox col-narrow sortable-cv-items">
+                <div class="property-item">
+                    <div class="property-item_head">
+                        <label>Contacts</label>
+                    </div>
+                    <div class="property-item_body contact">
+                        <div class="infoo info" data-section="Contact">
+                            <div class="infoo-head">
+                                <label>Contacts</label>
+                            </div>
+
+                            <div class="contact-item contact__email">
+                <span>
+                    <i class="fa fa-envelope"></i>
+                </span>
+                                <span>Email:</span>
+                                <span>{{$resume->email}}</span>
+                            </div>
+                            <div class="contact-item contact__mobile">
+                <span>
+                    <i class="fa fa-phone"></i>
+                </span>
+                                <span>Mobile:</span>
+                                <span style="unicode-bidi:embed" dir="ltr">{{$resume->mobile}}</span>
+                            </div>
+                            <div class="contact-item contact__phone">
+                <span>
+                    <i class="fa fa-home"></i>
+                </span>
+                                <span>Phone:</span>
+                                <span>{{$resume->phone}}</span>
+                            </div>
+                            <div class="contact-item contact__website">
+                <span>
+                    <i class="fa fa-globe"></i>
+                </span>
+                                <span>Website:</span>
+                                <span>{{$resume->website}}</span>
+                            </div>
+                            <div class="contact-item contact__city">
+                <span>
+                    <i class="fa fa-map-marker"></i>
+                </span>
+                                <span>Address:</span>
+                                <span>{{$resume->address}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="property-item skill__list" data-section="Skill">
+                    <div class="property-item_head">
+            <span>
+                <i class="fa fa-lightbulb"></i>
+            </span>
+                        <label>Skills</label>
+                    </div>
+                    <div class="property-item_body">
+                        <div class="bar-progress item-row w0">
+                            <ul class="history">
+
+                                @foreach($skills_exp as $xp)
+                                <li>
+                            <span>
+                                <label>{{$xp->ex_name}}</label>
+                                    <label class="grade">
+                                        <small>{{$xp->ex_state *20}}%</small>
+                                            <i class=tik></i>
+                                            <i class=tik></i>
+                                            <i class=tik></i>
+                                            <i class=tik></i>
+                                            <i class=tik></i>
+                                    </label>
+                            </span>
+                                </li>
 
 
-                        </p>
-                    @endforeach
+                                @endforeach
 
-                    <h2>Certificates</h2>
-                    @foreach($skills_degrees as $degree)
-                        <p><b>
+                            </ul>
 
-                                @if($degree->degree_type==1)
-                                    Language
-                                @elseif($degree->degree_type==2)
-                                    SoftWare
-                                @else
-                                    Other
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <div class="property-item language__list" data-section="Language">
+                    <div class="property-item_head">
+            <span>
+                <i class="fa fa-globe-americas"></i>
+            </span>
+                        <label>Languages</label>
+                    </div>
+                    <div class="property-item_body">
+                        <div class="item-row w4">
+                            <ul class="history">
+                                @foreach($skills_language as $language)
+                                    @if(($language->language_name)!="0")
+
+                                <li>
+                                    <h2 class="subtitle language-item">{{$language->language_name}}</h2>
+                                    <span>
+                                    <label>Reading</label>
+                                    <label class="grade">
+                                    @for($i=1;$i<=5;$i++)
+                                            @if($language->language_read<$i)
+                                                <i><span id="freelancer" class="far fa-star"></span></i>
+                                            @else
+                                                <i  class=tik><span id="freelancer" class="far fa-star"></span></i>
+                                            @endif
+                                        @endfor
+                                    </label>
+                                </span>
+                                    <span>
+                                    <label>Writing</label>
+                                    <label class="grade">
+                                    @for($i=1;$i<=5;$i++)
+                                            @if($language->language_write<$i)
+                                                <i><span id="freelancer" class="far fa-star"></span></i>
+                                            @else
+                                                <i  class=tik><span id="freelancer" class="far fa-star"></span></i>
+                                            @endif
+                                        @endfor
+                                    </label>
+                                </span>
+                                    <span>
+                                    <label>Listening</label>
+                                    <label class="grade">
+                                    @for($i=1;$i<=5;$i++)
+                                            @if($language->language_listen<$i)
+                                                <i><span id="freelancer" class="far fa-star"></span></i>
+                                            @else
+                                                <i  class=tik><span id="freelancer" class="far fa-star"></span></i>
+                                            @endif
+                                        @endfor
+                                    </label>
+                                </span>
+                                    <span>
+                                    <label>Speaking</label>
+                                    <label class="grade">
+                                    @for($i=1;$i<=5;$i++)
+                                            @if($language->language_speak<$i)
+                                                <i><span id="freelancer" class="far fa-star"></span></i>
+                                            @else
+                                                <i  class=tik><span id="freelancer" class="far fa-star"></span></i>
+                                            @endif
+                                        @endfor
+                                    </label>
+                                </span>
+                                </li>
+
+
+
+
+
                                 @endif
-
-                            </b>
-
-
-                            <br>
-                            {{$degree->degree_title}} From
-                            &nbsp;{{$degree->degree_uni}}&nbsp;{{$degree->degree_month}}&nbsp;{{$degree->degree_year}}
+                                @endforeach
 
 
-                        </p>
-                    @endforeach
+                            </ul>
+
+                        </div>
+
+                    </div>
                 </div>
 
 
@@ -152,62 +316,364 @@
 
 
 
+            </div>
+            <div dir="ltr" class="lgbox col-wide sortable-cv-items">
+
+
+
+                <div class="property-item basic__about" data-section="About">
+                    <div class="property-item_head">
+            <span>
+                <i class="fa fa-user"></i>
+            </span>
+                        <label>About Me</label>
+                    </div>
+                    <div class="property-item_body">
+                        <p style="text-align: left !important;" class="about-us">
+                            {{$resume->about}}
+                        </p>
+                    </div>
+                </div>
+
+
+                <div class="property-item education__list" data-section="Education">
+                    <div class="property-item_head">
+            <span>
+                <i class="fa fa-graduation-cap"></i>
+            </span>
+                        <label>Education</label>
+
+                    </div>
+                    <div class="property-item_body">
+                        <ul class="history multi-line">
+
+                            @foreach($education as $edu)
+                            <li>
+                                <h2 class="subtitle">{{$edu->uni_major}}</h2>
+                                <h3 class="subtitle">{{$edu->uni_gerayesh}}</h3>
+                                <h3 class="subtitle">{{$edu->uni_name}}<label>{{$edu->uni_city}}</label></h3>
+                                <label class="date"> {{$edu->uni_inyear}}</label>
+                            </li>
+
+
+                            @endforeach
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="property-item experience__list" data-section="Experience">
+                    <div class="property-item_head">
+            <span>
+                <i class="fa fa-toolbox"></i>
+            </span>
+                        <label>Experiences</label>
+                    </div>
+                    <div class="property-item_body">
+                        <ul class="history multi-line">
+
+                            @foreach($work_ex as $work)
+
+                            <li class="70008">
+                                <h2 class="subtitle">{{$work->work_title}}</h2>
+                                <h3 class="subtitle">
+                                    {{$work->work_center}} {{$work->work_center_title}}
+                                </h3>
+                                <label class="date">Start in: {{$work->work_startm}} {{$work->work_starty}}</label>
+                                ------
+                                @if($work->in_work)
+                                    <label class="date">Working</label>
+                                @else
+
+                                    <label class="date">{{$work->work_endm}} {{$work->work_endy}}</label>
+                                @endif
+                            </li>
+                            @endforeach
+
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="property-item certificate__list" data-section="Certificate">
+                    <div class="property-item_head">
+            <span>
+                <i class="fa fa-tasks"></i>
+            </span>
+                        <label>Certificates</label>
+
+                    </div>
+                    <div class="property-item_body">
+                        <ul class="history one-line">
+
+
+                            @foreach($skills_degrees as $degree)
+                                <li>
+                                    @if($degree->degree_type==1)
+                                        Language
+                                    @elseif($degree->degree_type==2)
+                                        SoftWare
+                                    @else
+                                        Other
+                                    @endif
+                                    <h2 class="subtitle bidirectional">Title: {{$degree->degree_title}}</h2>
+                                    <h3 class="subtitle">Istitude: {{$degree->degree_uni}}</h3>
+                                    <label class="date"><label class="text-date">Date:</label> {{$degree->degree_month}}&nbsp;{{$degree->degree_year}}</label>
+                                </li>
+
+                            @endforeach
+                        </ul>
+                    </div>
+                </div>
 
 
 
 
-            </dd>
 
-            <dd class="clear"></dd>
+                <div class="property-item project__list" data-section="Project">
+                    <div class="property-item_head">
+            <span>
+                <i class="fa fa-pencil-ruler"></i>
+            </span>
+                        <label>Projects</label>
 
-            <dt>Experience</dt>
-            <dd>
-                @foreach($work_ex as $work)
-                <h2>{{$work->work_title}} <span>in {{$work->work_center}} {{$work->work_center_title}} - {{$work->work_startm}} {{$work->work_starty}} - {{$work->work_endm}} {{$work->work_endy}}</span></h2>
-                <ul>
-                    <li>{{$work->work_semat}}</li>
-                    <li>{{$work->work_city}}</li>
-                    <li>{{$work->work_how}}</li>
+                    </div>
+                    <div class="property-item_body">
+                        <ul class="history one-line">
+                            @foreach($samples as $sample)
+                                <li>
+                                    <h2 class="subtitle bidirectional">
+                                        {{$sample->project_title}}</h2>
+                                    <h3 class="subtitle">Employer: {{$sample->project_employee}} </h3>
+                                    <label class="date"><label class="text-date">Date:</label>{{$sample->project_month}} {{$sample->project_year}}</label>
 
-                </ul>
+                                </li>
+                            @endforeach
+                        </ul>
+                    </div>
+                </div>
 
-                @endforeach
-            </dd>
 
-            <dd class="clear"></dd>
 
-            <dt>Works</dt>
-            @foreach($samples as $sample)
-            <dd><div style="margin:20px">
-                    <a href="http://{{$sample->project_link}}" title="{{$sample->project_title}}">{{$sample->project_title}}</a>
-                    <br>
-                    Description:  {{$sample->project_content}}
-                    <br>
-                    Web Site:  {{$sample->project_link}}
-                </div></dd>
-            @endforeach
+                <div class="property-item project__list" data-section="Project">
+                    <div class="property-item_head">
+            <span>
+                <i class="fa fa-pencil-ruler"></i>
+            </span>
+                        <label>Researches</label>
 
-            <dd class="clear"></dd>
+                    </div>
+                    <div class="property-item_body">
+                        <ul class="history one-line">
+                            @foreach($researchs as $research)
+                                <li>
+                                    <h2 class="subtitle bidirectional">
+                                        {{$research->research_title}}</h2>
+                                    <h3 class="subtitle">Publisher: {{$research->research_author}} </h3>
+                                    <label class="date"><label class="text-date">Date:</label>{{$research->research_month}} {{$research->research_year}}</label>
 
-            <dt>Researches</dt>
-            @foreach($researchs as $research)
-            <dd><div style="margin:20px">
-                    <a href="http://{{$research->research_link}}" title="{{$research->research_title}}">{{$research->research_title}}</a>
-                    <br>
-                    Publisher:{{$research->research_author}}
-                    <br>
-                    Description: {{$research->research_content}}
-                    <br>
-                    Web Site:  {{$research->research_link}}
-                </div></dd>
-            @endforeach
-            <dd class="clear"></dd>
-        </dl>
+                                </li>
+                            @endforeach
+                        </ul>
+                    </div>
+                </div>
 
-        <div class="clear"></div>
 
+
+
+            </div>
+        </div>
     </div>
 
-</body>
+</div>
 
+
+<style>
+    .click-to-build-cv > div {
+        font-weight: bold;
+        font-size: 18px;
+        margin: 5px 0 10px;
+    }
+</style>
+
+<script>
+    $('a.call-to-action').click(function (event) {
+        event.preventDefault();
+        var urlParams = new URLSearchParams(window.location.search);
+        var template = urlParams.get('template');
+        if (template) {
+            setCookie('PreviewTemplate', template);
+        }
+        document.location = '/builder';
+    });
+</script>
+<script>
+    setTimeout(function () {
+        document.querySelector('.click-to-build-cv').style.display = 'block';
+    }, 5000);
+</script>
+
+<link href="{{asset("pdf/2nd/gmodal00.css")}}" rel="stylesheet" />
+<style>
+    ul.gModal-features {
+        width: 75%;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    @media only screen and (max-width: 576px) {
+        ul.gModal-features {
+            width: 90%;
+        }
+    }
+</style>
+
+<script>
+    var features = {
+        hasMouseout: true,
+        hasScroll: false,
+        hasTimeout: true,
+        scrollItem: '',
+        timoeout: 8000};
+</script>
+<script src="{{asset("pdf/2nd/gmodal00.js")}}" type="text/javascript"></script>
+
+<style>
+    .page-watermark {
+        left: calc(50% - 350px);
+        display: none;
+        position: absolute;
+        font-size: 96px;
+        transform: rotate(-45deg);
+        -webkit-transform: rotate(-45deg);
+        opacity: 0.5;
+        font-weight: bold;
+        color: #969696;
+        z-index: 0;
+    }
+</style>
+
+<script>
+    var fullHeight = function (measure) {
+        var height = document.querySelector(".container").offsetHeight;
+        var colwide = document.querySelector(".col-wide");
+        var colnarrow = document.querySelector(".col-narrow");
+        var oneColLayout = document.querySelector(".one-col-layout");
+        var head = document.querySelector(".contact-info");
+
+        if (oneColLayout != null) {
+            height = oneColLayout.offsetHeight;
+        }
+        else {
+            if (measure) {
+                var colNarrowMeasuredHeight = measureHeight('.col-narrow');
+                var colWideMeasuredHeight = measureHeight('.col-wide');
+
+                if (colWideMeasuredHeight > colNarrowMeasuredHeight) {
+                    height = colWideMeasuredHeight;
+                } else {
+                    height = colNarrowMeasuredHeight;
+                }
+            }
+            else {
+                if (colwide.offsetHeight > colnarrow.offsetHeight) {
+                    height = colwide.offsetHeight;
+                } else {
+                    height = colnarrow.offsetHeight;
+                }
+
+            }
+        }
+
+        if (head != null) height += head.offsetHeight;
+
+        var height_mm = height / 3.7795275591 - 5;
+        //var height_mm = (height * 25.4) / 96 - 0;
+
+        height_mm = Math.ceil(height_mm / 297) * 297 - 1;
+        document.querySelector(".container").style.height = height_mm + "mm";
+
+        $('div.page-indicator,div.page-watermark').remove();
+        var pages = Math.ceil(height_mm / 297);
+        for (var i = 0; i < pages; i++) {
+            var top = i * 297;
+            $('<div data-page="' + (i + 1) + '" class="page-indicator"></div>').appendTo('.container').css({ top: top + 'mm' });
+        }
+
+    };
+    function measureHeight(selector) {
+        var height = 0;
+        $(selector).children().each(function () {
+            height += $(this).height() + parseInt($(this).css('paddingBottom')) + parseInt($(this).css('paddingTop'));
+        })
+        return height;
+    }
+</script>
+<script>
+    function webHeightAdjust() {
+        var height = document.querySelector(".container").offsetHeight;
+        var colwide = document.querySelector(".col-wide");
+        var colnarrow = document.querySelector(".col-narrow");
+        var oneColLayout = document.querySelector(".one-col-layout");
+        var head = document.querySelector(".contact-info");
+        if (oneColLayout != null) {
+            height = oneColLayout.offsetHeight;
+        }
+        else {
+            if (colwide.offsetHeight > colnarrow.offsetHeight) {
+                height = colwide.offsetHeight;
+            } else {
+                height = colnarrow.offsetHeight;
+            }
+        }
+        if (head != null) height += head.offsetHeight;
+        var height_mm = height * 25.4 / 96 + 15;
+        document.querySelector(".container").style.height = height_mm + "mm";
+    }
+</script>
+
+
+<div style="font-size: 13px !important;" class="footer">
+    Created with <i class="fa fa-heart" aria-hidden="true"></i> By
+    <a href="https://werbungseiten.de/">
+        Werbungseiten.de
+    </a>
+</div>
+<style>
+    .container {
+        box-shadow: 0 0 6px -2px #000;
+        margin: 0 auto;
+        margin-top: 40px;
+        margin-bottom: 50px;
+        min-height: 297mm;
+    }
+</style>
+<script src="{{asset("pdf/2nd/template.js")}}"></script>
+<script>
+    window.onload = function () {
+        setTimeout(function () {
+            webHeightAdjust();
+        }, 800);
+    }
+</script>
+<script async>
+    var mobile = (/iphone|ipod|android|blackberry|mini|windows\sce|palm/i.test(navigator.userAgent.toLowerCase()));
+    if (!mobile) {
+        (function (s, u, m, o, j, v) { j = u.createElement(m); v = u.getElementsByTagName(m)[0]; j.async = 1; j.src = o; j.dataset.sumoSiteId = 'e2a3c8eb01dd914a33cb2632bc2f1bed8daa48f8f04a3d24057d538b082b200c'; v.parentNode.insertBefore(j, v) })(window, document, 'script', '//load.sumo.com/');
+    }
+</script>
+
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="{{asset("pdf/2nd/js000000.js")}}"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-101108363-3');
+</script>
+
+
+
+</body>
 </html>
+

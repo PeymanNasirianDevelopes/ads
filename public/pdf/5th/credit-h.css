@@ -1,0 +1,204 @@
+header {
+    box-shadow: 0 1px 15px -5px #9a9a9a;
+    margin-bottom: 5px;
+    height: 45px;
+    padding: 4px 30px 2px;
+}
+
+    header img {
+        margin: 5px 0;
+    }
+
+    header span {
+        float: right;
+        font-size: 30px;
+        background: #1c6ca3;
+        color: #fff;
+        height: 45px;
+        line-height: 45px;
+        padding-top: 0;
+        cursor: pointer;
+        width: 28px;
+        text-align: center;
+    }
+
+    header a {
+        float: left;
+    }
+
+.click-to-build-cv {
+    background: linear-gradient(36deg, #0dd3ff, #0389ff, #1c79c0);
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    color: #fff;
+    z-index: 9;
+    padding-right: 60px;
+    display: none;
+    font-family: sdf;
+}
+
+    .click-to-build-cv h4 {
+        font-size: 18px;
+        margin-top: 10px;
+        margin-bottom: 0;
+    }
+
+    .click-to-build-cv p {
+        margin: 5px 0;
+        font-size: 13px;
+    }
+
+    .click-to-build-cv a {
+        background: #f6214b;
+        color: #fff;
+        font-weight: bold;
+        position: fixed;
+        left: 100px;
+        bottom: 10px;
+        font-size: 16px;
+        padding: 12px;
+        text-decoration: none;
+        border-radius: 4px;
+        box-shadow: 0 10px 25px -12px #000;
+    }
+
+.container.preview-container {
+    margin-bottom: 100px;
+}
+
+@media (max-width:991px) {
+    .click-to-build-cv {
+        display: none !important;
+    }
+}
+
+.preview-section {
+    width: 210mm;
+    margin: auto;
+    height: 65px;
+    margin-bottom: -20px;
+    margin-top: 30px;
+}
+
+    .preview-section span {
+        width: 50%;
+        display: block;
+        margin: 0 auto;
+        box-sizing: border-box;
+    }
+
+a.view-template {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    height: 53px;
+    border-radius: 6px;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    line-height: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    text-shadow: 0px 1px 1px #888;
+    cursor: pointer;
+    width: 100%;
+}
+
+    a.view-template:hover span.title {
+        background: #00c2a5;
+    }
+
+    a.view-template:active, a.view-template.active {
+        height: 51px;
+    }
+
+    a.view-template span.icon, a.view-template span.title {
+        display: block;
+        position: relative;
+        line-height: 50px;
+        padding: 0 30px;
+        border-radius: 6px;
+        -moz-border-radius: 6px;
+        -webkit-border-radius: 6px;
+    }
+
+    a.view-template span.title {
+        -webkit-box-shadow: 0 3px 0 0 #00ae94;
+        box-shadow: 0 3px 0 0 #00ae94;
+        background-color: #00cdae;
+        float: left;
+        border-radius: 6px 0 0 6px;
+        -moz-border-radius: 6px 0 0 6px;
+        -webkit-border-radius: 6px 0 0 6px;
+        height: 50px;
+        width: 84%;
+        font-size: 16px;
+        text-align: center;
+        color: white;
+        padding: 0 15px;
+        transition: all 100ms;
+    }
+
+    a.view-template span.icon {
+        background-color: #00967f;
+        -webkit-box-shadow: 0 3px 0 0 #007261;
+        box-shadow: 0 3px 0 0 #007261;
+        text-shadow: 0px 1px 1px #888;
+        float: right;
+        border-radius: 0 6px 6px 0;
+        -moz-border-radius: 0 6px 6px 0;
+        -webkit-border-radius: 0 6px 6px 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 50px;
+        width: 16%;
+        padding: 0;
+    }
+
+        a.view-template span.icon img {
+            width: 28px;
+        }
+
+@keyframes BtnHover {
+    0%, 50% {
+        background-position: 100%;
+        color: #1c6ca3;
+    }
+
+    50%, 100% {
+        background-position: 0;
+        color: white;
+    }
+}
+
+select.change-lang {
+    display: inline-block;
+    width: 70px;
+    padding: 5px;
+    font-size: 11px;
+    margin: 11px 5px;
+    font-family: inherit;
+    border: none;
+    height: 34px;
+    background: transparent;
+    color: black;
+    position: absolute;
+    top: -3px;
+    right: 25px;
+    z-index: 999;
+    border-radius: 2px;
+    border: 1px solid #ababab;
+    transition: all 150ms;
+    cursor: pointer;
+}
+
+    select.change-lang:hover {
+        background: #f9f9f9;
+    }

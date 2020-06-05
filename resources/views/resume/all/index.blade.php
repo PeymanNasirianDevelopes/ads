@@ -7,23 +7,23 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=1024">
-    <link rel="icon" type="image/png" href="{{asset("pdf/3rd/favicon-.png")}}">
+    <link rel="icon" type="image/png" href="{{asset("pdf/6th/favicon-.png")}}">
 
     <title>{{$resume->name}} {{$resume->last_name}} Resume </title>
     <meta name="description" content="{{$resume->name}} {{$resume->last_name}} Resume | {{$resume->about}}">
 
 
-    <link href="{{asset("pdf/3rd/Fonts000.css")}}" rel="stylesheet">
-    <link rel="stylesheet" href="{{asset("pdf/3rd/all00000.css")}}" />
+    <link href="{{asset("pdf/6th/Fonts000.css")}}" rel="stylesheet">
+    <link rel="stylesheet" href="{{asset("pdf/6th/all00000.css")}}" />
 
-    <link href="{{asset("pdf/3rd/DefaultR.css")}}" rel="stylesheet">
+    <link href="{{asset("pdf/6th/DefaultR.css")}}" rel="stylesheet">
 
-    <script src="{{asset("pdf/3rd/jquery00.js")}}"></script>
-    <script src="{{asset("pdf/3rd/less0000.js")}}"></script>
+    <script src="{{asset("pdf/6th/jquery00.js")}}"></script>
+    <script src="{{asset("pdf/6th/less0000.js")}}"></script>
     <link href="{{asset("css/01font-a.css")}}" rel="stylesheet">
 
 
-    <link href="{{asset("pdf/3rd/Template.css")}}" rel="stylesheet" />
+    <link href="{{asset("pdf/6th/Template.css")}}" rel="stylesheet" />
 
     <script>
         var options = {
@@ -114,12 +114,12 @@
             border: 1px solid #bebebe;
         }
     }
-</style>    <link href="{{asset("pdf/3rd/credit-h.css")}}" rel="stylesheet" />
+</style>    <link href="{{asset("pdf/6th/credit-h.css")}}" rel="stylesheet" />
 <header>
     <a href="https://werbungseiten.de/">
         <img src="{{asset("storage/images/Logowerbung.png")}}" width="125" />
     </a>
-    </header>
+</header>
 
 
 
@@ -127,143 +127,79 @@
 <div class="container">
     <div class="contact-info">
         <div class="name-job-desc">
-            <div class="user-image" style="background-image:url({{asset("storage/images/$resume->image")}});"></div>
-        </div>
-        <div style="float: left;width: 74%;">
-            <div class="personinfos">
-                <div class="personinfos-name">
-                    <h1 style="margin-left: 10px; text-transform: uppercase">{{$resume->name}} {{$resume->last_name}}</h1>
-                </div>
-                <div style="margin: 20px;" class="other-infos not-drag">
+            <table>
+                <tr>
+                    <td width="60%">
+                        <div class="user-image" style="background-image:url({{asset("storage/images/$resume->image")}})"></div>
+                        <h1 style="text-transform: uppercase">{{$resume->name}} {{$resume->last_name}}</h1>
+                        <div style="margin: 20px;" class="other-infos not-drag">
 
-                    <div class="basic__birthday">
-                        <span>Date of Birth:</span>
-                        <span>{{$resume->date_birth}}</span>
-                    </div>
+                            <div class="basic__birthday">
+                                <span>Date of Birth:</span>
+                                <span>{{$resume->date_birth}}</span>
+                            </div>
 
-                    <div class="basic__marital">
+                            <div class="basic__marital">
 
-                        <span>{{$resume->maried}}</span>
-                    </div>
+                                <span>{{$resume->maried}}</span>
+                            </div>
 
 
-                </div>
-            </div>
-            <div class="edit-about">
+                        </div>
+                    </td>
+                    <td width="40%">
+                        <div dir="ltr" style="text-align: left !important;" class="infoo info" data-section="Contact">
+                            <div class="infoo-head">
+                                <label>Contacts</label>
+                            </div>
 
-
-
-                <div class="property-item basic__about" data-section="About">
-                    <div class="property-item_head">
-            <span>
-                <i class="fa fa-user"></i>
-            </span>
-                        <label>About Me</label>
-                    </div>
-                    <div class="property-item_body">
-                        <p class="about-us">
-                            {{$resume->expert}}
-                        </p>
-                    </div>
-                </div>
-
-
-            </div>
-
-        </div>
-    </div>
-    <div class="row" style="height: calc(100% - 212px)">
-        <div class="smbox col-narrow sortable-cv-items">
-            <div class="infoo not-drag">
-                <label>Contacts</label>
-                <div class="infoo info" data-section="Contact">
-                    <div class="infoo-head">
-                        <label>Contacts</label>
-                    </div>
-
-                    <div class="contact-item contact__email">
+                            <div class="contact-item contact__email">
                 <span>
                     <i class="fa fa-envelope"></i>
                 </span>
-                        <span>Email:</span>
-                        <span>{{$resume->email}}</span>
-                    </div>
-                    <div class="contact-item contact__mobile">
+                                <span>Email:</span>
+                                <span>{{$resume->email}}</span>
+                            </div>
+
+                            <div class="contact-item contact__mobile">
                 <span>
                     <i class="fa fa-phone"></i>
                 </span>
-                        <span>Mobile:</span>
-                        <span style="unicode-bidi:embed" dir="ltr">{{$resume->mobile}}</span>
-                    </div>
-                    <div class="contact-item contact__phone">
+                                <span>Mobile:</span>
+                                <span style="unicode-bidi:embed" dir="ltr">{{$resume->mobile}}</span>
+                            </div>
+                            <div class="contact-item contact__phone">
                 <span>
                     <i class="fa fa-home"></i>
                 </span>
-                        <span>Phone:</span>
-                        <span>{{$resume->name}}</span>
-                    </div>
-                    <div class="contact-item contact__website">
+                                <span>Phone:</span>
+                                <span>{{$resume->name}}</span>
+                            </div>
+                            <div class="contact-item contact__website">
                 <span>
                     <i class="fa fa-globe"></i>
                 </span>
-                        <span>Website:</span>
-                        <span>{{$resume->website}}</span>
-                    </div>
-                    <div class="contact-item contact__city">
+                                <span>وب سایت:</span>
+                                <span>www.cvbuilder.me</span>
+                            </div>
+                            <div class="contact-item contact__city">
                 <span>
                     <i class="fa fa-map-marker"></i>
                 </span>
-                        <span>Address:</span>
-                        <span>{{$resume->address}}</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="property-item skill__list" data-section="Skill">
-                <div class="property-item_head">
-            <span>
-                <i class="fa fa-lightbulb"></i>
-            </span>
-                    <label>Skills</label>
-                </div>
-                <div class="property-item_body">
-                    <div class="bar-progress item-row w0">
-                        <ul class="history">
-
-                            @foreach($skills_exp as $xp)
-                            <li>
-                            <span>
-                                <label>{{$xp->ex_name}}</label>
-                                    <label class="grade">
-                                        <small>{{$xp->ex_state *20}}%</small>
-                                            <i class=tik></i>
-                                            <i class=tik></i>
-                                            <i class=tik></i>
-                                            <i class=tik></i>
-                                            <i class=tik></i>
-                                    </label>
-                            </span>
-                            </li>
-
-                            @endforeach
-
-
-
-                        </ul>
-
-                    </div>
-
-                </div>
-            </div>
-
-
-
-
-
-
+                                <span>Address:</span>
+                                <span>{{$resume->address}}</span>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
         </div>
+    </div>
 
-        <div class="lgbox col-wide sortable-cv-items">
+    <div class="row" style="height:calc(100% - 175px)">
+        <div style="text-align: left !important;" class="lgbox col-wide sortable-cv-items">
+
+
 
             <div class="property-item education__list" data-section="Education">
                 <div class="property-item_head">
@@ -290,7 +226,7 @@
             <div class="property-item experience__list" data-section="Experience">
                 <div class="property-item_head">
             <span>
-                <i class="fa fa-list"></i>
+                <i class="fa fa-toolbox"></i>
             </span>
                     <label>Experiences</label>
                 </div>
@@ -313,91 +249,6 @@
                             @endif
                         @endforeach
                     </ul>
-                </div>
-            </div>
-
-
-            <div class="property-item language__list" data-section="Language">
-                <div class="property-item_head">
-            <span>
-                <i class="fa fa-globe"></i>
-            </span>
-                    <label>Languages</label>
-                </div>
-                <div class="property-item_body">
-                    <div class="item-row w4">
-                        <ul class="history">
-
-
-
-                            @foreach($skills_language as $language)
-                                @if(($language->language_name)!="0")
-
-                                    <li>
-                                        <h2 class="subtitle language-item">{{$language->language_name}}</h2>
-                                        <span>
-                                    <label>Reading</label>
-                                    <label class="grade">
-                                    @for($i=1;$i<=5;$i++)
-                                            @if($language->language_read<$i)
-                                                <i><span id="freelancer" class="far fa-star"></span></i>
-                                            @else
-                                                <i  class=tik><span id="freelancer" class="far fa-star"></span></i>
-                                            @endif
-                                        @endfor
-                                    </label>
-                                </span>
-                                        <span>
-                                    <label>Writing</label>
-                                    <label class="grade">
-                                    @for($i=1;$i<=5;$i++)
-                                            @if($language->language_write<$i)
-                                                <i><span id="freelancer" class="far fa-star"></span></i>
-                                            @else
-                                                <i  class=tik><span id="freelancer" class="far fa-star"></span></i>
-                                            @endif
-                                        @endfor
-                                    </label>
-                                </span>
-                                        <span>
-                                    <label>Listening</label>
-                                    <label class="grade">
-                                    @for($i=1;$i<=5;$i++)
-                                            @if($language->language_listen<$i)
-                                                <i><span id="freelancer" class="far fa-star"></span></i>
-                                            @else
-                                                <i  class=tik><span id="freelancer" class="far fa-star"></span></i>
-                                            @endif
-                                        @endfor
-                                    </label>
-                                </span>
-                                        <span>
-                                    <label>Speaking</label>
-                                    <label class="grade">
-                                    @for($i=1;$i<=5;$i++)
-                                            @if($language->language_speak<$i)
-                                                <i><span id="freelancer" class="far fa-star"></span></i>
-                                            @else
-                                                <i  class=tik><span id="freelancer" class="far fa-star"></span></i>
-                                            @endif
-                                        @endfor
-                                    </label>
-                                </span>
-                                    </li>
-
-
-
-
-
-                                @endif
-                            @endforeach
-
-
-
-                        </ul>
-
-                    </div>
-
                 </div>
             </div>
 
@@ -435,6 +286,7 @@
 
 
 
+
             <div class="property-item project__list" data-section="Project">
                 <div class="property-item_head">
             <span>
@@ -463,58 +315,141 @@
 
 
 
-            <div class="property-item project__list" data-section="Project">
+
+
+
+
+
+
+
+
+        </div>
+        <div  style="text-align: left !important;" class="smbox col-narrow sortable-cv-items">
+
+
+            <div class="property-item skill__list" data-section="Skill">
                 <div class="property-item_head">
             <span>
-                <i class="fa fa-sliders"></i>
+                <i class="fa fa-lightbulb"></i>
             </span>
-                    <label>Researches</label>
-
+                    <label>Skills</label>
                 </div>
                 <div class="property-item_body">
-                    <ul class="history one-line">
+                    <div class="bar-progress item-row w0">
+                        <ul class="history">
 
-                        @foreach($researchs as $research)
-                            <li>
-                                <h2 class="subtitle bidirectional">
-                                    {{$research->research_title}}</h2>
-                                <h3 class="subtitle">Publisher: {{$research->research_author}} </h3>
-                                <label class="date"><label class="text-date">Date:</label>{{$research->research_month}} {{$research->research_year}}</label>
+                            @foreach($skills_exp as $xp)
+                                @if(($xp->ex_name)!="0")
+                                    <li>
+                            <span>
+                                <label>{{$xp->ex_name}}</label>
+                                    <label class="grade">
+                                        <small>@php
+                                                $exstate=($xp->ex_state)*20;
+                    echo $exstate
+                                            @endphp%</small>
 
-                            </li>
-                        @endforeach
-                    </ul>
+                                    </label>
+                            </span>
+                                    </li>
+                                @endif
+                            @endforeach
+                        </ul>
+
+                    </div>
+
+                </div>
+            </div>
+
+
+            <div class="property-item language__list" data-section="Language">
+                <div class="property-item_head">
+            <span>
+                <i class="fa fa-globe-americas"></i>
+            </span>
+                    <label>Languages</label>
+                </div>
+                <div class="property-item_body">
+                    <div class="item-row w4">
+                        <ul class="history">
+
+
+
+                            @foreach($skills_language as $language)
+                                @if(($language->language_name)!="0")
+                                    <li>
+                                        <h2 class="subtitle language-item">{{$language->language_name}}</h2>
+                                        <span>
+                                    <label>Reading</label>
+                                    <label class="grade">
+                                          @for($i=1;$i<=5;$i++)
+                                            @if($language->language_read<$i)
+                                                <i><span id="freelancer" class="far fa-star"></span></i>
+                                            @else
+                                                <i  class=tik><span id="freelancer" class="far fa-star"></span></i>
+                                            @endif
+                                        @endfor
+
+                                    </label>
+                                </span>
+                                        <span>
+                                    <label>Writing</label>
+                                    <label class="grade">
+                                          @for($i=1;$i<=5;$i++)
+                                            @if($language->language_write<$i)
+                                                <i><span id="freelancer" class="far fa-star"></span></i>
+                                            @else
+                                                <i  class=tik><span id="freelancer" class="far fa-star"></span></i>
+                                            @endif
+                                        @endfor
+
+                                    </label>
+                                </span>
+                                        <span>
+                                    <label>Listening</label>
+                                    <label class="grade">
+                                          @for($i=1;$i<=5;$i++)
+                                            @if($language->language_listen<$i)
+                                                <i><span id="freelancer" class="far fa-star"></span></i>
+                                            @else
+                                                <i  class=tik><span id="freelancer" class="far fa-star"></span></i>
+                                            @endif
+                                        @endfor
+
+                                    </label>
+                                </span>
+                                        <span>
+                                    <label>Speaking</label>
+                                    <label class="grade">
+                                          @for($i=1;$i<=5;$i++)
+                                            @if($language->language_speak<$i)
+                                                <i><span id="freelancer" class="far fa-star"></span></i>
+                                            @else
+                                                <i  class=tik><span id="freelancer" class="far fa-star"></span></i>
+                                            @endif
+                                        @endfor
+
+                                    </label>
+                                </span>
+                                    </li>
+                                @endif
+                            @endforeach
+
+                        </ul>
+
+                    </div>
+
                 </div>
             </div>
 
 
 
 
-            <div class="property-item honor__list" data-section="Honor">
-                <div class="property-item_head">
-            <span>
-                <i class="fa fa-award"></i>
-            </span>
-                    <label>Honors</label>
 
-                </div>
-                <div class="property-item_body">
-                    <ul class="history list-item">
-
-                        @foreach($skills_honors as $honor)
-                        <li>
-                            <p class="bidirectional">
-                                {{$honor->honor_title}}
-                            </p>
-                            <label class="date"><label class="text-date">Date:</label> {{$honor->honor_month}} {{$honor->honor_year}}</label>
-                        </li>
-                        @endforeach
-                    </ul>
-                </div>
-            </div>
         </div>
     </div>
 </div>
+
 
 <style>
     .click-to-build-cv > div {
@@ -541,7 +476,7 @@
     }, 5000);
 </script>
 
-<link href="{{asset("pdf/3rd/gmodal00.css")}}" rel="stylesheet" />
+<link href="{{asset("pdf/6th/gmodal00.css")}}" rel="stylesheet" />
 <style>
     ul.gModal-features {
         width: 75%;
@@ -564,7 +499,7 @@
         scrollItem: '',
         timoeout: 8000};
 </script>
-<script src="{{asset("pdf/3rd/gmodal00.js")}}" type="text/javascript"></script>
+<script src="{{asset("pdf/6th/gmodal00.js")}}" type="text/javascript"></script>
 
 <style>
     .page-watermark {
@@ -661,7 +596,7 @@
 </script>
 
 
-<div style="font-size: 13px !important;" class="footer">
+<div style="font-size: 13px !important; color: #0b0b0b" class="footer">
     Created with <i class="fa fa-heart" aria-hidden="true"></i> By
     <a href="https://werbungseiten.de/">
         Werbungseiten.de
@@ -676,7 +611,7 @@
         min-height: 297mm;
     }
 </style>
-<script src="{{asset("pdf/3rd/template.js")}}"></script>
+<script src="{{asset("pdf/6th/template.js")}}"></script>
 <script>
     window.onload = function () {
         setTimeout(function () {
@@ -694,7 +629,7 @@
 
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="{{asset("pdf/3rd/js000000.js")}}"></script>
+<script async src="{{asset("pdf/6th/js000000.js")}}"></script>
 <script>
     window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }

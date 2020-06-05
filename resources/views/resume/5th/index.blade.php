@@ -1,239 +1,703 @@
+
 <!DOCTYPE html>
+
 <html>
 <head>
-<title>{{$resume->name}} {{$resume->last_name}} Resume</title>
 
-<meta name="viewport" content="width=device-width"/>
-<meta name="description" content="The Curriculum Vitae of Joe Bloggs."/>
-<meta charset="UTF-8">
 
-<link type="text/css" rel="stylesheet" href="{{asset("pdf/5th/style.css")}}">
-<link href='http://fonts.googleapis.com/css?family=Rokkitt:400,700|Lato:400,300' rel='stylesheet' type='text/css'>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1024">
+    <link rel="icon" type="image/png" href="{{asset("pdf/5th/favicon-.png")}}">
 
-<!--[if lt IE 9]>
-<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-<![endif]-->
+    <title>{{$resume->name}} {{$resume->last_name}} Resume </title>
+    <meta name="description" content="{{$resume->name}} {{$resume->last_name}} Resume | {{$resume->about}}">
+
+
+    <link href="{{asset("pdf/5th/Fonts000.css")}}" rel="stylesheet">
+    <link rel="stylesheet" href="{{asset("pdf/5th/all00000.css")}}" />
+
+    <link href="{{asset("pdf/5th/DefaultR.css")}}" rel="stylesheet">
+
+    <script src="{{asset("pdf/5th/jquery00.js")}}"></script>
+    <script src="{{asset("pdf/5th/less0000.js")}}"></script>
+    <link href="{{asset("css/01font-a.css")}}" rel="stylesheet">
+
+
+    <link href="{{asset("pdf/5th/Template.css")}}" rel="stylesheet" />
+
+    <script>
+        var options = {
+            templateId: 14,
+            newVars: {
+                "@main_font_size": "23px",
+                "@main_color": "#fbd22b",
+                "@base_vertical_space": "15px",
+                "@font_name": "IRANSans"
+            },
+            templateName: "Template11"
+        };
+    </script>
+    <style>
+        .lgbox:before {
+            height: calc(100% - 268px) !important;
+        }
+    </style>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
 </head>
-<body id="top">
-<div id="cv" class="instaFade">
-	<div class="mainDetails">
-		<div id="headshot" class="quickFade">
-            <img width="200" height="200" src="{{asset("storage/images/$resume->image")}}" alt="{{$resume->name}} {{$resume->last_name}}" itemprop="image" />
-		</div>
 
-		<div id="name">
-			<h1 class="quickFade delayTwo">{{$resume->name}} {{$resume->last_name}}</h1>
-			<h2 class="quickFade delayThree">{{$resume->about}}</h2>
-		</div>
+<body>
 
-		<div id="contactDetails" class="quickFade delayFour">
-			<ul>
-				<li>e: <a href="mailto:{{$resume->email}}" target="_blank">{{$resume->email}}</a></li>
-				<li>w: <a href="http://{{$resume->website}}">{{$resume->website}}</a></li>
-				<li>m: {{$resume->mobile}}</li>
-			</ul>
-		</div>
-		<div class="clear"></div>
-	</div>
 
-	<div id="mainArea" class="quickFade delayFive">
+<style>
+    body, html {
+        -ms-text-size-adjust: none;
+        -moz-text-size-adjust: none;
+        -o-text-size-adjust: none;
+        -webkit-text-size-adjust: none;
+    }
+</style>
 
 
 
-		<section>
-			<div class="sectionTitle">
-				<h1>Works</h1>
-			</div>
-
-			<div class="sectionContent">
-                @foreach($samples as $sample)
-				<article>
-					<h2>   <a href="http://{{$sample->project_link}}" title="{{$sample->project_title}}">{{$sample->project_title}}</a></h2>
-					<p >              <br>
-                    Description:  {{$sample->project_content}}
-                    <br>
-                    Web Site:  {{$sample->project_link}}</p>
-
-				</article>
-                @endforeach
-
-			</div>
-			<div class="clear"></div>
-		</section>
 
 
-        <section>
-            <div class="sectionTitle">
-                <h1>Experience</h1>
+
+<script>
+    var changeLanguage = function (ele) {
+        var value = ele.options[ele.selectedIndex].value;
+        var query = '', res, loc = location.href;
+        if (loc.indexOf('?') > 0) {
+            query = loc.substring(loc.indexOf('?'), loc.length);
+        }
+        if (loc.indexOf('?') > 0) {
+            loc = loc.substring(0, loc.indexOf('?'));
+        }
+        if (loc.indexOf('/fa') > 0 || loc.indexOf('/Fa') > 0 || loc.indexOf('/FA') > 0) {
+            res = loc.replace('/fa', '/' + value);
+        }
+        else if (loc.indexOf('/en') > 0 || loc.indexOf('/En') > 0 || loc.indexOf('/EN') > 0) {
+            res = loc.replace('/en', '/' + value);
+        }
+        else {
+            res = loc + '/' + value;
+        }
+        location.href = res + query;
+    }
+</script>
+<style>
+    select::-ms-expand {
+        display: none;
+    }
+
+    @media screen and (min-width:0\0) {
+        select {
+            background: none\9;
+            padding: 5px\9;
+        }
+    }
+
+    @media only screen and (max-width: 576px) {
+        select.change-lang {
+            display: inline-block;
+            width: 70px;
+            padding: 5px;
+            font-size: 11px;
+            margin: 11px 5px;
+            border: none;
+            height: 34px;
+            background: transparent;
+            color: black;
+            position: absolute;
+            z-index: 999;
+            border-radius: 4px;
+            border: 1px solid #bebebe;
+        }
+    }
+</style>    <link href="{{asset("pdf/5th/credit-h.css")}}" rel="stylesheet" />
+<header>
+    <a href="https://werbungseiten.de/">
+        <img src="{{asset("storage/images/Logowerbung.png")}}" width="125" />
+    </a>
+</header>
+
+
+
+
+
+    <div class="container">
+        <div class="row" style="height:100%">
+            <div class="smbox col-narrow sortable-cv-items">
+                <div class="user-image not-drag" style="background-image:url({{asset("storage/images/$resume->image")}});"></div>
+                <div class="infoo not-drag">
+                    <label>Contacts</label>
+                    <div class="infoo info" data-section="Contact">
+                        <div class="infoo-head">
+                            <label>Contacts</label>
+                        </div>
+
+                        <div class="contact-item contact__email">
+                <span>
+                    <i class="fa fa-envelope"></i>
+                </span>
+                            <span>Email:</span>
+                            <span>{{$resume->email}}</span>
+                        </div>
+
+                        <div class="contact-item contact__mobile">
+                <span>
+                    <i class="fa fa-phone"></i>
+                </span>
+                            <span>Mobile:</span>
+                            <span style="unicode-bidi:embed" dir="ltr">{{$resume->mobile}}</span>
+                        </div>
+                        <div class="contact-item contact__phone">
+                <span>
+                    <i class="fa fa-home"></i>
+                </span>
+                            <span>Phone:</span>
+                            <span>{{$resume->name}}</span>
+                        </div>
+                        <div class="contact-item contact__website">
+                <span>
+                    <i class="fa fa-globe"></i>
+                </span>
+                            <span>Website:</span>
+                            <span>{{$resume->website}}</span>
+                        </div>
+                        <div class="contact-item contact__city">
+                <span>
+                    <i class="fa fa-map-marker"></i>
+                </span>
+                            <span>Address:</span>
+                            <span>{{$resume->address}}</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="property-item skill__list" data-section="Skill">
+                    <div class="property-item_head">
+            <span>
+                <i class="fa fa-lightbulb"></i>
+            </span>
+                        <label>Skills</label>
+                    </div>
+                    <div class="property-item_body">
+                        <div class="bar-progress item-row w0">
+                            <ul class="history">
+
+                                @foreach($skills_exp as $xp)
+                                    @if(($xp->ex_name)!="0")
+                                        <li>
+                            <span>
+                                <label>{{$xp->ex_name}}</label>
+                                    <label class="grade">
+                                        <small>@php
+                                                $exstate=($xp->ex_state)*20;
+                    echo $exstate
+                                            @endphp%</small>
+
+                                    </label>
+                            </span>
+                                        </li>
+                                    @endif
+                                @endforeach
+                            </ul>
+
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="property-item language__list" data-section="Language">
+                    <div class="property-item_head">
+            <span>
+                <i class="fa fa-globe-americas"></i>
+            </span>
+                        <label>Languages</label>
+                    </div>
+                    <div class="property-item_body">
+                        <div class="item-row w4">
+                            <ul class="history">
+
+
+
+                                @foreach($skills_language as $language)
+                                    @if(($language->language_name)!="0")
+                                        <li>
+                                            <h2 class="subtitle language-item">{{$language->language_name}}</h2>
+                                            <span>
+                                    <label>Reading</label>
+                                    <label class="grade">
+                                          @for($i=1;$i<=5;$i++)
+                                            @if($language->language_read<$i)
+                                                <i><span id="freelancer" class="far fa-star"></span></i>
+                                            @else
+                                                <i  class=tik><span id="freelancer" class="far fa-star"></span></i>
+                                            @endif
+                                        @endfor
+
+                                    </label>
+                                </span>
+                                            <span>
+                                    <label>Writing</label>
+                                    <label class="grade">
+                                          @for($i=1;$i<=5;$i++)
+                                            @if($language->language_write<$i)
+                                                <i><span id="freelancer" class="far fa-star"></span></i>
+                                            @else
+                                                <i  class=tik><span id="freelancer" class="far fa-star"></span></i>
+                                            @endif
+                                        @endfor
+
+                                    </label>
+                                </span>
+                                            <span>
+                                    <label>Listening</label>
+                                    <label class="grade">
+                                          @for($i=1;$i<=5;$i++)
+                                            @if($language->language_listen<$i)
+                                                <i><span id="freelancer" class="far fa-star"></span></i>
+                                            @else
+                                                <i  class=tik><span id="freelancer" class="far fa-star"></span></i>
+                                            @endif
+                                        @endfor
+
+                                    </label>
+                                </span>
+                                            <span>
+                                    <label>Speaking</label>
+                                    <label class="grade">
+                                          @for($i=1;$i<=5;$i++)
+                                            @if($language->language_speak<$i)
+                                                <i><span id="freelancer" class="far fa-star"></span></i>
+                                            @else
+                                                <i  class=tik><span id="freelancer" class="far fa-star"></span></i>
+                                            @endif
+                                        @endfor
+
+                                    </label>
+                                </span>
+                                        </li>
+                                    @endif
+                                @endforeach
+
+                            </ul>
+
+                        </div>
+
+                    </div>
+                </div>
+
+
+
+
+
+
             </div>
+            <div class="lgbox col-wide sortable-cv-items">
+                <div class="contact-info not-drag">
+                    <div class="header-line not-drag">
+                        <div class="header-line2">
+                            <div class="header-line3">
+                                <div class="header-line4"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <h1 class="not-drag" style="text-transform: uppercase; margin-left: 20px">{{$resume->name}} {{$resume->last_name}}</h1>
+                        <h2 class="not-drag">{{$resume->expert}}</h2>
+                    <div style="margin: 20px;" class="other-infos not-drag">
 
-            <div class="sectionContent">
-                @foreach($work_ex as $work)
-                    <article>
-                        @if($work->in_work)
-                            <h3>{{$work->work_startm}} {{$work->work_starty}} - in work</h3>
-                        @else
-                            <h3>{{$work->work_startm}} {{$work->work_starty}} - {{$work->work_endm}} {{$work->work_endy}}</h3>
-                        @endif
-                        <p>{{$work->work_center}} {{$work->work_center_title}} <br />
-                            <em>{{$work->work_title}}</em></p>
+                        <div class="basic__birthday">
+                            <span>Date of Birth:</span>
+                            <span>{{$resume->date_birth}}</span>
+                        </div>
 
-                    </article>
-                @endforeach
+                        <div class="basic__marital">
+
+                            <span>{{$resume->maried}}</span>
+                        </div>
+
+
+                    </div>
+                    <div class="not-drag">
+
+
+
+                        <div class="property-item basic__about" data-section="About">
+                            <div class="property-item_head">
+            <span>
+                <i class="fa fa-user"></i>
+            </span>
+                                <label>About Me</label>
+                            </div>
+                            <div class="property-item_body">
+                                <p style="text-align: left" class="about-us">
+                                    {{$resume->about}}
+                                </p>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+
+
+                <div class="property-item education__list" data-section="Education">
+                    <div class="property-item_head">
+            <span>
+                <i class="fa fa-graduation-cap"></i>
+            </span>
+                        <label>Education</label>
+
+                    </div>
+                    <div class="property-item_body">
+                        <ul class="history multi-line">
+                            @foreach($education as $edu)
+                                <li>
+                                    <h2 class="subtitle">{{$edu->uni_major}}</h2>
+                                    <h3 class="subtitle">{{$edu->uni_gerayesh}}</h3>
+                                    <h3 class="subtitle">{{$edu->uni_name}}<label>{{$edu->uni_city}}</label></h3>
+                                    <label class="date">{{$edu->uni_inyear}}</label>
+                                </li>
+                            @endforeach
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="property-item experience__list" data-section="Experience">
+                    <div class="property-item_head">
+            <span>
+                <i class="fa fa-toolbox"></i>
+            </span>
+                        <label>Experiences</label>
+                    </div>
+                    <div class="property-item_body">
+                        <ul class="history multi-line">
+                            @foreach($work_ex as $work)
+
+                                <li class="66832">
+                                    <h2 class="subtitle">{{$work->work_title}} </h2>
+                                    <h3 class="subtitle">
+                                        {{$work->work_center}} {{$work->work_center_title}}
+                                    </h3>
+                                    <label class="date">Start in: {{$work->work_startm}} {{$work->work_starty}}</label>
+                                    ------
+                                    @if($work->in_work)
+                                        <label class="date">Working</label>
+                                    @else
+
+                                        <label class="date">{{$work->work_endm}} {{$work->work_endy}}</label>
+                                @endif
+                            @endforeach
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="property-item certificate__list" data-section="Certificate">
+                    <div class="property-item_head">
+            <span>
+                <i class="fa fa-tasks"></i>
+            </span>
+                        <label>Certificates</label>
+
+                    </div>
+                    <div class="property-item_body">
+                        <ul class="history one-line">
+
+                            @foreach($skills_degrees as $degree)
+                                <li>
+                                    @if($degree->degree_type==1)
+                                        Language
+                                    @elseif($degree->degree_type==2)
+                                        SoftWare
+                                    @else
+                                        Other
+                                    @endif
+                                    <h2 class="subtitle bidirectional">Title: {{$degree->degree_title}}</h2>
+                                    <h3 class="subtitle">Istitude: {{$degree->degree_uni}}</h3>
+                                    <label class="date"><label class="text-date">Date:</label> {{$degree->degree_month}}&nbsp;{{$degree->degree_year}}</label>
+                                </li>
+
+                            @endforeach
+
+                        </ul>
+                    </div>
+                </div>
+
+
+
+                <div class="property-item research__list" data-section="Research">
+                    <div class="property-item_head">
+            <span>
+                <i class="fa fa-sliders"></i>
+            </span>
+                        <label>Researches</label>
+
+                    </div>
+                    <div class="property-item_body">
+                        <ul class="history one-line">
+
+                            @foreach($researchs as $research)
+                                <li>
+                                    <h2 class="subtitle bidirectional">
+                                        {{$research->research_title}}</h2>
+                                    <h3 class="subtitle">Publisher: {{$research->research_author}} </h3>
+                                    <label class="date"><label class="text-date">Date:</label>{{$research->research_month}} {{$research->research_year}}</label>
+
+                                </li>
+                            @endforeach
+                        </ul>
+                    </div>
+                </div>
+
+
+
+
+
+                <div class="property-item project__list" data-section="Project">
+                    <div class="property-item_head">
+            <span>
+                <i class="fa fa-thumb-tack"></i>
+            </span>
+                        <label>Projects</label>
+
+                    </div>
+                    <div class="property-item_body">
+                        <ul class="history one-line">
+
+                            @foreach($samples as $sample)
+                                <li>
+                                    <h2 class="subtitle bidirectional">
+                                        {{$sample->project_title}}</h2>
+                                    <h3 class="subtitle">Employer: {{$sample->project_employee}} </h3>
+                                    <label class="date"><label class="text-date">Date:</label>{{$sample->project_month}} {{$sample->project_year}}</label>
+
+                                </li>
+                            @endforeach
+                        </ul>
+                    </div>
+                </div>
+
+
+
+
+
+                <div class="property-item honor__list" data-section="Honor">
+                    <div class="property-item_head">
+            <span>
+                <i class="fa fa-award"></i>
+            </span>
+                        <label>Honors</label>
+
+                    </div>
+                    <div class="property-item_body">
+                        <ul class="history list-item">
+
+                            @foreach($skills_honors as $honor)
+                                <li>
+                                    <p class="bidirectional">
+                                        {{$honor->honor_title}}
+                                    </p>
+                                    <label class="date"><label class="text-date">Date:</label> {{$honor->honor_month}} {{$honor->honor_year}}</label>
+                                </li>
+                            @endforeach
+                        </ul>
+                    </div>
+                </div>
 
             </div>
-            <div class="clear"></div>
-        </section>
-
-		<section>
-			<div class="sectionTitle">
-				<h1> Skills</h1>
-			</div>
-
-			<div class="sectionContent">
-                <h2>Languages</h2>
-				<ul class="keySkills">
-                    @foreach($skills_language as $language)
-                        <li>{{$language->language_name}}
-                            <br>
-                            Reading:
-                            @for($i=1;$i<=$language->language_read;$i++)
-                                &#9733;
-                            @endfor
-                            <br>
-                            Writing:
-                            @for($i=1;$i<=$language->language_write;$i++)
-                                &#9733;
-                            @endfor
-                            <br>
-                            Listening:
-                            @for($i=1;$i<=$language->language_listen;$i++)
-                                &#9733;
-                            @endfor
-                            <br>
-                            Speaking:
-                            @for($i=1;$i<=$language->language_speak;$i++)
-                                &#9733;
-                            @endfor
-                        </li>
-                    @endforeach
-				</ul>
-			</div>
+        </div>
+    </div>
 
 
-            <div class="sectionContent">
-                <h2>Working Experiences</h2>
-                <ul class="keySkills">
-                    @foreach($skills_exp as $work_exp)
-                        <li>{{$work_exp->ex_name}}
-                            @for($i=1;$i<=$work_exp->ex_state;$i++)
-                                &#9733;
-                            @endfor
-                        </li>
-                    @endforeach
-                </ul>
-            </div>
+<style>
+    .click-to-build-cv > div {
+        font-weight: bold;
+        font-size: 18px;
+        margin: 5px 0 10px;
+    }
+</style>
 
-            <div class="sectionContent">
-                <h2>Certificates</h2>
-                <ul class="keySkills">
-                    @foreach($skills_degrees as $degree)
+<script>
+    $('a.call-to-action').click(function (event) {
+        event.preventDefault();
+        var urlParams = new URLSearchParams(window.location.search);
+        var template = urlParams.get('template');
+        if (template) {
+            setCookie('PreviewTemplate', template);
+        }
+        document.location = '/builder';
+    });
+</script>
+<script>
+    setTimeout(function () {
+        document.querySelector('.click-to-build-cv').style.display = 'block';
+    }, 5000);
+</script>
 
-                        <li>
-                            @if($degree->degree_type==1)
-                                Language
-                            @elseif($degree->degree_type==2)
-                                SoftWare
-                            @else
-                                Other
-                            @endif
-                            <br>
-                            {{$degree->degree_title}} From
-                            &nbsp;{{$degree->degree_uni}}&nbsp;{{$degree->degree_month}}&nbsp;{{$degree->degree_year}}
-                        </li>
-                    @endforeach
-                </ul>
-            </div>
+<link href="{{asset("pdf/5th/gmodal00.css")}}" rel="stylesheet" />
+<style>
+    ul.gModal-features {
+        width: 75%;
+        margin-right: auto;
+        margin-left: auto;
+    }
 
-            <div class="sectionContent">
-                <h2>Honors</h2>
-                <ul class="keySkills">
-                    @foreach($skills_honors as $honor)
+    @media only screen and (max-width: 576px) {
+        ul.gModal-features {
+            width: 90%;
+        }
+    }
+</style>
 
-                        <li>
-                            {{$honor->honor_title}}
+<script>
+    var features = {
+        hasMouseout: true,
+        hasScroll: false,
+        hasTimeout: true,
+        scrollItem: '',
+        timoeout: 8000};
+</script>
+<script src="{{asset("pdf/5th/gmodal00.js")}}" type="text/javascript"></script>
 
-                            {{$honor->honor_month}}&nbsp;{{$honor->honor_year}}
-                        </li>
-                    @endforeach
-                </ul>
-            </div>
-			<div class="clear"></div>
-		</section>
+<style>
+    .page-watermark {
+        left: calc(50% - 350px);
+        display: none;
+        position: absolute;
+        font-size: 96px;
+        transform: rotate(-45deg);
+        -webkit-transform: rotate(-45deg);
+        opacity: 0.5;
+        font-weight: bold;
+        color: #969696;
+        z-index: 0;
+    }
+</style>
+
+<script>
+    var fullHeight = function (measure) {
+        var height = document.querySelector(".container").offsetHeight;
+        var colwide = document.querySelector(".col-wide");
+        var colnarrow = document.querySelector(".col-narrow");
+        var oneColLayout = document.querySelector(".one-col-layout");
+        var head = document.querySelector(".contact-info");
+
+        if (oneColLayout != null) {
+            height = oneColLayout.offsetHeight;
+        }
+        else {
+            if (measure) {
+                var colNarrowMeasuredHeight = measureHeight('.col-narrow');
+                var colWideMeasuredHeight = measureHeight('.col-wide');
+
+                if (colWideMeasuredHeight > colNarrowMeasuredHeight) {
+                    height = colWideMeasuredHeight;
+                } else {
+                    height = colNarrowMeasuredHeight;
+                }
+            }
+            else {
+                if (colwide.offsetHeight > colnarrow.offsetHeight) {
+                    height = colwide.offsetHeight;
+                } else {
+                    height = colnarrow.offsetHeight;
+                }
+
+            }
+        }
+
+        if (head != null) height += head.offsetHeight;
+
+        var height_mm = height / 3.7795275591 - 5;
+        //var height_mm = (height * 25.4) / 96 - 0;
+
+        height_mm = Math.ceil(height_mm / 297) * 297 - 1;
+        document.querySelector(".container").style.height = height_mm + "mm";
+
+        $('div.page-indicator,div.page-watermark').remove();
+        var pages = Math.ceil(height_mm / 297);
+        for (var i = 0; i < pages; i++) {
+            var top = i * 297;
+            $('<div data-page="' + (i + 1) + '" class="page-indicator"></div>').appendTo('.container').css({ top: top + 'mm' });
+        }
+
+    };
+    function measureHeight(selector) {
+        var height = 0;
+        $(selector).children().each(function () {
+            height += $(this).height() + parseInt($(this).css('paddingBottom')) + parseInt($(this).css('paddingTop'));
+        })
+        return height;
+    }
+</script>
+<script>
+    function webHeightAdjust() {
+        var height = document.querySelector(".container").offsetHeight;
+        var colwide = document.querySelector(".col-wide");
+        var colnarrow = document.querySelector(".col-narrow");
+        var oneColLayout = document.querySelector(".one-col-layout");
+        var head = document.querySelector(".contact-info");
+        if (oneColLayout != null) {
+            height = oneColLayout.offsetHeight;
+        }
+        else {
+            if (colwide.offsetHeight > colnarrow.offsetHeight) {
+                height = colwide.offsetHeight;
+            } else {
+                height = colnarrow.offsetHeight;
+            }
+        }
+        if (head != null) height += head.offsetHeight;
+        var height_mm = height * 25.4 / 96 + 15;
+        document.querySelector(".container").style.height = height_mm + "mm";
+    }
+</script>
 
 
-		<section>
-			<div class="sectionTitle">
-				<h1>Education</h1>
-			</div>
-
-			<div class="sectionContent">
-
-                @foreach($education as $edu)
-				<article>
-					<h2>{{$edu->uni_type}}</h2>
-					<p class="subDetails">{{$edu->uni_name}}</p>
-					<p>{{$edu->uni_gerayesh}}</p>
-                    @if($edu->uni_instudy)
-                        <h5>{{$edu->uni_inyear}} - in study</h5>
-                    @else
-                        <h5>{{$edu->uni_inyear}} - {{$edu->uni_outyear}}</h5>
-                    @endif
-				</article>
-                    <br>
-                    <br>
-
-                @endforeach
-			</div>
-			<div class="clear"></div>
-		</section>
-
-
-        <section>
-            <div class="sectionTitle">
-                <h1>Researches</h1>
-            </div>
-
-            <div class="sectionContent">
-                @foreach($researchs as $research)
-                    <article>
-
-                        <p>  <a href="http://{{$research->research_link}}" title="{{$research->research_title}}">{{$research->research_title}}</a> <br />
-                            <em> Publisher:{{$research->research_author}}</em>
-
-
-                            <br>
-                            Description: {{$research->research_content}}
-                            <br>
-                            Web Site:  {{$research->research_link}}</p>
-
-                    </article>
-                @endforeach
-
-            </div>
-            <div class="clear"></div>
-        </section>
-
-	</div>
+<div style="font-size: 13px !important;" class="footer">
+    Created with <i class="fa fa-heart" aria-hidden="true"></i> By
+    <a href="https://werbungseiten.de/">
+        Werbungseiten.de
+    </a>
 </div>
-<script type="text/javascript">
-var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+<style>
+    .container {
+        box-shadow: 0 0 6px -2px #000;
+        margin: 0 auto;
+        margin-top: 40px;
+        margin-bottom: 50px;
+        min-height: 297mm;
+    }
+</style>
+<script src="{{asset("pdf/5th/template.js")}}"></script>
+<script>
+    window.onload = function () {
+        setTimeout(function () {
+            webHeightAdjust();
+        }, 800);
+    }
 </script>
-<script type="text/javascript">
-var pageTracker = _gat._getTracker("UA-3753241-1");
-pageTracker._initData();
-pageTracker._trackPageview();
+<script async>
+    var mobile = (/iphone|ipod|android|blackberry|mini|windows\sce|palm/i.test(navigator.userAgent.toLowerCase()));
+    if (!mobile) {
+        (function (s, u, m, o, j, v) { j = u.createElement(m); v = u.getElementsByTagName(m)[0]; j.async = 1; j.src = o; j.dataset.sumoSiteId = 'e2a3c8eb01dd914a33cb2632bc2f1bed8daa48f8f04a3d24057d538b082b200c'; v.parentNode.insertBefore(j, v) })(window, document, 'script', '//load.sumo.com/');
+    }
 </script>
+
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="{{asset("pdf/5th/js000000.js")}}"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-101108363-3');
+</script>
+
+
 </body>
 </html>
+

@@ -1,251 +1,667 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!DOCTYPE html>
+
+<html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8;charset=utf-8" />
-<title>{{$resume->name}} {{$resume->last_name}} Resume</title>
-<link type="text/css" rel="stylesheet" href="{{asset("pdf/1st/blue0000.css")}}" />
-<link type="text/css" rel="stylesheet" href="{{asset("pdf/1st/print000.css")}}" media="print"/>
-<!--[if IE 7]>
-<link href="css/ie7.css")}}" rel="stylesheet" type="text/css" />
-<![endif]-->
-<!--[if IE 6]>
-<link href="css/ie6.css")}}" rel="stylesheet" type="text/css" />
-<![endif]-->
-<script type="text/javascript" src="{{asset("pdf/1st/jquery-1.js")}}"></script>
-<script type="text/javascript" src="{{asset("pdf/1st/jquery00.js")}}"></script>
-<script type="text/javascript" src="{{asset("pdf/1st/cufon000.js")}}"></script>
-<script type="text/javascript" src="{{asset("pdf/1st/scrollTo.js")}}"></script>
-<script type="text/javascript" src="{{asset("pdf/1st/myriad00.js")}}"></script>
-<script type="text/javascript" src="{{asset("pdf/1st/jquery01.js")}}"></script>
-<script type="text/javascript" src="{{asset("pdf/1st/custom00.js")}}"></script>
-<script type="text/javascript">
-		Cufon.replace('h1,h2');
-</script>
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1024">
+    <link rel="icon" type="image/png" href="{{asset("pdf/1st/favicon-.png")}}">
+
+    <title>{{$resume->name}} {{$resume->last_name}} Resume</title>
+    <meta name="description" content="{{$resume->name}} {{$resume->last_name}} Resume | {{$resume->about}}">
+
+
+    <link href="{{asset("pdf/1st/Fonts000.css")}}" rel="stylesheet">
+    <link href="{{asset("css/01font-a.css")}}" rel="stylesheet">
+    <link rel="stylesheet" href="{{asset("pdf/1st/all00000.css")}}" />
+
+    <link href="{{asset("pdf/1st/DefaultR.css")}}" rel="stylesheet">
+
+    <script src="{{asset("pdf/1st/jquery00.js")}}"></script>
+    <script src="{{asset("pdf/1st/less0000.js")}}"></script>
+
+
+
+    <link href="{{asset("pdf/1st/template.css")}}" rel="stylesheet" />
+    <script>
+        var options = {
+            templateId: 31,
+            newVars: {
+                "@main_font_size": "23px",
+                "@main_color": "#3d5982",
+                "@base_vertical_space": "15px",
+                "@font_name": "IRANSans"
+            },
+            templateName: "template27"
+        };
+    </script>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
 </head>
+
 <body>
-<!-- Begin Wrapper -->
-<div id="wrapper">
-  <div class="wrapper-top"></div>
-  <div class="wrapper-mid">
-    <!-- Begin Paper -->
-    <div id="paper">
-      <div class="paper-top"></div>
-      <div id="paper-mid">
-        <div class="entry">
-          <!-- Begin Image -->
-          <img class="portrait" src="{{asset("storage/images/$resume->image")}}" alt="{{$resume->name}} {{$resume->last_name}}" />
-          <!-- End Image -->
-          <!-- Begin Personal Information -->
-          <div class="self">
-            <h1 class="name">{{$resume->name}} {{$resume->last_name}} <br />
-              <span>{{$resume->about}}</span></h1>
-            <ul>
-              <li class="ad">{{$resume->address}}</li>
-              <li class="mail">{{$resume->email}}</li>
-              <li class="tel">{{$resume->mobile}}</li>
-              <li class="web">{{$resume->website}}</li>
-            </ul>
-          </div>
-          <!-- End Personal Information -->
-          <!-- Begin Social -->
-          <div class="social">
-            <ul>
-              <li><a class='north' href="" title="Download .pdf"><img src="{{asset("pdf/1st/icn-save.jpg")}}" alt="Download the pdf version" /></a></li>
-              <li><a class='north' href="javascript:window.print()" title="Print"><img src="{{asset("pdf/1st/icn-prin.jpg")}}" alt="" /></a></li>
-              <li><a class='north' id="contact" href="http://elemisfreebies.com/ed/demos/resume/contact/index.html" title="Contact Me"><img src="{{asset("pdf/1st/icn-cont.jpg")}}" alt="" /></a></li>
-              <li><a class='north' href="" title="Follow me on Twitter"><img src="{{asset("pdf/1st/icn-twit.jpg")}}" alt="" /></a></li>
-              <li><a class='north' href="" title="My Facebook Profile"><img src="{{asset("pdf/1st/icn-face.jpg")}}" alt="" /></a></li>
-            </ul>
-          </div>
-          <!-- End Social -->
+
+
+
+<style>
+    body, html {
+        -ms-text-size-adjust: none;
+        -moz-text-size-adjust: none;
+        -o-text-size-adjust: none;
+        -webkit-text-size-adjust: none;
+    }
+</style>
+
+
+
+
+
+
+<script>
+    var changeLanguage = function (ele) {
+        var value = ele.options[ele.selectedIndex].value;
+        var query = '', res, loc = location.href;
+        if (loc.indexOf('?') > 0) {
+            query = loc.substring(loc.indexOf('?'), loc.length);
+        }
+        if (loc.indexOf('?') > 0) {
+            loc = loc.substring(0, loc.indexOf('?'));
+        }
+        if (loc.indexOf('/fa') > 0 || loc.indexOf('/Fa') > 0 || loc.indexOf('/FA') > 0) {
+            res = loc.replace('/fa', '/' + value);
+        }
+        else if (loc.indexOf('/en') > 0 || loc.indexOf('/En') > 0 || loc.indexOf('/EN') > 0) {
+            res = loc.replace('/en', '/' + value);
+        }
+        else {
+            res = loc + '/' + value;
+        }
+        location.href = res + query;
+    }
+</script>
+<style>
+    select::-ms-expand {
+        display: none;
+    }
+
+    @media screen and (min-width:0\0) {
+        select {
+            background: none\9;
+            padding: 5px\9;
+        }
+    }
+
+    @media only screen and (max-width: 576px) {
+        select.change-lang {
+            display: inline-block;
+            width: 70px;
+            padding: 5px;
+            font-size: 11px;
+            margin: 11px 5px;
+            border: none;
+            height: 34px;
+            background: transparent;
+            color: black;
+            position: absolute;
+            z-index: 999;
+            border-radius: 4px;
+            border: 1px solid #bebebe;
+        }
+    }
+</style>    <link href="{{asset("pdf/1st/credit-h.css")}}" rel="stylesheet" />
+<header>
+    <a href="https://werbungseiten.de/">
+        <img src="{{asset("storage/images/Logowerbung.png")}}" width="125" />
+    </a>
+</header>
+
+
+
+
+<div class="container">
+    <div class="header">
+
+    </div>
+    <div class="row" style="height:100%">
+        <div dir="ltr" class="smbox col-narrow sortable-cv-items">
+            <div class="user-image not-drag" style="background-image:url({{asset("storage/images/$resume->image")}})"></div>
+            <h1 class="not-drag">{{$resume->name}} {{$resume->last_name}}</h1>
+            <h2 class="job-title not-drag">{{$resume->expert}}</h2>
+            <div class="other-infos not-drag">
+
+                <div style="font-size:16px !important;" class="basic__birthday">
+                    <span>Date Of birth</span>
+                    <br>
+                    <span>{{$resume->date_birth}}</span>
+                </div>
+
+                <div style="font-size:16px !important;" class="basic__marital">
+
+                    <span>{{$resume->maried}}</span>
+                </div>
+
+
+            </div>
+            <div class="infoo not-drag">
+                <div style="width:100%;display:block;text-align:center;margin-bottom:15px">
+                    <label>Contacts</label>
+                </div>
+                <div class="infoo info" data-section="Contact">
+                    <div class="infoo-head">
+                        <label>اطلاعات تماس</label>
+                    </div>
+
+                    <div class="contact-item contact__email">
+                <span>
+                    <i class="fa fa-envelope"></i>
+                </span>
+                        <span>Email:</span>
+                        <span>{{$resume->email}}</span>
+                    </div>
+                    <div class="contact-item contact__mobile">
+                <span>
+                    <i class="fa fa-phone"></i>
+                </span>
+                        <span>Mobile:</span>
+                        <span style="unicode-bidi:embed" dir="ltr">{{$resume->mobile}}</span>
+                    </div>
+                    <div class="contact-item contact__phone">
+                <span>
+                    <i class="fa fa-home"></i>
+                </span>
+                        <span>Phone:</span>
+                        <span>{{$resume->phone}}</span>
+                    </div>
+                    <div class="contact-item contact__website">
+                <span>
+                    <i class="fa fa-globe"></i>
+                </span>
+                        <span>Website:</span>
+                        <span>{{$resume->website}}</span>
+                    </div>
+                    <div class="contact-item contact__city">
+                <span>
+                    <i class="fa fa-map-marker"></i>
+                </span>
+                        <span>Address:</span>
+                        <span>{{$resume->address}}</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="property-item skill__list" data-section="Skill">
+                <div class="property-item_head">
+            <span>
+                <i class="fa fa-lightbulb"></i>
+            </span>
+                    <label>Skills</label>
+                </div>
+                <div class="property-item_body">
+                    <div class="bar-progress item-row w0">
+                        <ul class="history">
+
+     @foreach($skills_exp as $xp)
+                                @if(($xp->ex_name)!="0")
+                            <li>
+                            <span>
+                                <label>{{$xp->ex_name}}</label>
+                                    <label class="grade">
+                                        <small>@php
+                                                $exstate=($xp->ex_state)*20;
+                    echo $exstate
+                                            @endphp%</small>
+
+                                    </label>
+                            </span>
+                            </li>
+  @endif
+                            @endforeach
+                        </ul>
+
+                    </div>
+
+                </div>
+            </div>
+
+
+            <div class="property-item language__list" data-section="Language">
+                <div class="property-item_head">
+            <span>
+                <i class="fa fa-globe-americas"></i>
+            </span>
+                    <label>Languages</label>
+                </div>
+                <div class="property-item_body">
+                    <div class="item-row w4">
+                        <ul class="history">
+
+
+
+                            @foreach($skills_language as $language)
+                                @if(($language->language_name)!="0")
+                            <li>
+                                <h2 class="subtitle language-item">{{$language->language_name}}</h2>
+                                <span>
+                                    <label>Reading</label>
+                                    <label class="grade">
+                                          @for($i=1;$i<=5;$i++)
+                                             @if($language->language_read<$i)
+                                                <i><span id="freelancer" class="far fa-star"></span></i>
+                                            @else
+                                                <i  class=tik><span id="freelancer" class="far fa-star"></span></i>
+                                         @endif
+                                        @endfor
+
+                                    </label>
+                                </span>
+                                <span>
+                                    <label>Writing</label>
+                                    <label class="grade">
+                                          @for($i=1;$i<=5;$i++)
+                                            @if($language->language_write<$i)
+                                                <i><span id="freelancer" class="far fa-star"></span></i>
+                                            @else
+                                                <i  class=tik><span id="freelancer" class="far fa-star"></span></i>
+                                            @endif
+                                        @endfor
+
+                                    </label>
+                                </span>
+                                <span>
+                                    <label>Listening</label>
+                                    <label class="grade">
+                                          @for($i=1;$i<=5;$i++)
+                                            @if($language->language_listen<$i)
+                                                <i><span id="freelancer" class="far fa-star"></span></i>
+                                            @else
+                                                <i  class=tik><span id="freelancer" class="far fa-star"></span></i>
+                                            @endif
+                                        @endfor
+
+                                    </label>
+                                </span>
+                                <span>
+                                    <label>Speaking</label>
+                                    <label class="grade">
+                                          @for($i=1;$i<=5;$i++)
+                                            @if($language->language_speak<$i)
+                                                <i><span id="freelancer" class="far fa-star"></span></i>
+                                            @else
+                                                <i  class=tik><span id="freelancer" class="far fa-star"></span></i>
+                                            @endif
+                                        @endfor
+
+                                    </label>
+                                </span>
+                            </li>
+       @endif
+                                    @endforeach
+
+                        </ul>
+
+                    </div>
+
+                </div>
+            </div>
+
+
+
+
+
         </div>
-        <!-- Begin 1st Row -->
-        <div class="entry">
-          <h2>OBJECTIVE</h2>
-          <p>{{$resume->about}}</p>
-        </div>
-        <!-- End 1st Row -->
-        <!-- Begin 2nd Row -->
-        <div class="entry">
-          <h2>EDUCATION</h2>
-            @foreach($education as $edu)
+        <div dir="ltr" class="lgbox col-wide sortable-cv-items">
+            <div style="text-align: left" class="not-drag">
 
-          <div class="content">
-              @if($edu->uni_instudy)
-                  <h3>{{$edu->uni_inyear}} - in study</h3>
-                  @else
-                  <h3>{{$edu->uni_inyear}} - {{$edu->uni_outyear}}</h3>
-              @endif
-            <p>{{$edu->uni_name}} <br />
-                <span>{{$edu->uni_city}}</span>
-              <em>{{$edu->uni_major}}</em></p>
-          </div>
 
-            @endforeach
-        </div>
-        <!-- End 2nd Row -->
-        <!-- Begin 3rd Row -->
-        <div class="entry">
-          <h2>EXPERIENCE</h2>
 
-            @foreach($work_ex as $work)
+                <div class="property-item basic__about" data-section="About">
+                    <div class="property-item_head">
+            <span>
+                <i class="fa fa-user"></i>
+            </span>
+                        <label>About Me</label>
+                    </div>
+                    <div class="property-item_body">
+                        <p class="about-us">
+                           {{$resume->about}}
+                               </p>
+                    </div>
+                </div>
 
-          <div class="content">
-              @if($work->in_work)
-            <h3>{{$work->work_startm}} {{$work->work_starty}} - in work</h3>
-              @else
-                  <h3>{{$work->work_startm}} {{$work->work_starty}} - {{$work->work_endm}} {{$work->work_endy}}</h3>
-                  @endif
-            <p>{{$work->work_center}} {{$work->work_center_title}} <br />
-              <em>{{$work->work_title}}</em></p>
 
-          </div>
-            @endforeach
+            </div>
 
-        </div>
-        <!-- End 3rd Row -->
-        <!-- Begin 4th Row -->
-        <div class="entry">
-          <h2>SKILLS</h2>
-          <div class="content">
-            <h3>Languages</h3>
-            <ul class="skills">
-                @foreach($skills_language as $language)
-              <li>{{$language->language_name}}
-                  <br>
-Reading:
-              @for($i=1;$i<=$language->language_read;$i++)
-                      &#9733;
-                  @endfor
-                  <br>
-                  Writing:
-                  @for($i=1;$i<=$language->language_write;$i++)
-                      &#9733;
-                  @endfor
-                  <br>
-                  Listening:
-                  @for($i=1;$i<=$language->language_listen;$i++)
-                      &#9733;
-                  @endfor
-                  <br>
-                  Speaking:
-                  @for($i=1;$i<=$language->language_speak;$i++)
-                      &#9733;
-                  @endfor
-              </li>
-                @endforeach
-            </ul>
-          </div>
-          <div class="content">
-            <h3>Working Experiences</h3>
-            <ul class="skills">
-                @foreach($skills_exp as $work_exp)
-              <li>{{$work_exp->ex_name}}
-                  @for($i=1;$i<=$work_exp->ex_state;$i++)
-                      &#9733;
-                  @endfor
-              </li>
-                @endforeach
+            <div class="property-item education__list" data-section="Education">
+                <div class="property-item_head">
+            <span>
+                <i class="fa fa-graduation-cap"></i>
+            </span>
+                    <label>Education</label>
 
-            </ul>
-          </div>
+                </div>
+                <div class="property-item_body">
+                    <ul class="history multi-line">
 
-            <div class="content">
-                <h3>Certificates</h3>
-                <ul class="skills">
-                    @foreach($skills_degrees as $degree)
+                        @foreach($education as $edu)
+                        <li>
+                            <h2 class="subtitle">{{$edu->uni_major}}</h2>
+                            <h3 class="subtitle">{{$edu->uni_gerayesh}}</h3>
+                            <h3 class="subtitle">{{$edu->uni_name}}<label>{{$edu->uni_city}}</label></h3>
+                            <label class="date">{{$edu->uni_inyear}}</label>
+                        </li>
+                        @endforeach
+                    </ul>
+                </div>
+            </div>
 
+            <div class="property-item experience__list" data-section="Experience">
+                <div class="property-item_head">
+            <span>
+                <i class="fa fa-list "></i>
+            </span>
+                    <label>Experiences</label>
+                </div>
+                <div class="property-item_body">
+                    <ul class="history multi-line">
+                        @foreach($work_ex as $work)
+
+                        <li class="66832">
+                            <h2 class="subtitle">{{$work->work_title}} </h2>
+                            <h3 class="subtitle">
+                                {{$work->work_center}} {{$work->work_center_title}}
+                            </h3>
+                            <label class="date">Start in: {{$work->work_startm}} {{$work->work_starty}}</label>
+------
+                            @if($work->in_work)
+                                <label class="date">Working</label>
+                            @else
+
+                            <label class="date">{{$work->work_endm}} {{$work->work_endy}}</label>
+@endif
+                            @endforeach
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+
+            <div class="property-item certificate__list" data-section="Certificate">
+                <div class="property-item_head">
+            <span>
+                <i class="fa fa-tasks"></i>
+            </span>
+                    <label>Certificates</label>
+
+                </div>
+                <div class="property-item_body">
+                    <ul class="history one-line">
+
+                        @foreach($skills_degrees as $degree)
                         <li>
                             @if($degree->degree_type==1)
                                 Language
-                                @elseif($degree->degree_type==2)
+                            @elseif($degree->degree_type==2)
                                 SoftWare
                             @else
                                 Other
-                                @endif
-<br>
-                            {{$degree->degree_title}} From
-                   &nbsp;{{$degree->degree_uni}}&nbsp;{{$degree->degree_month}}&nbsp;{{$degree->degree_year}}
+                            @endif
+                            <h2 class="subtitle bidirectional">Title: {{$degree->degree_title}}</h2>
+                            <h3 class="subtitle">Istitude: {{$degree->degree_uni}}</h3>
+                            <label class="date"><label class="text-date">Date:</label> {{$degree->degree_month}}&nbsp;{{$degree->degree_year}}</label>
                         </li>
-                    @endforeach
 
-                </ul>
-            </div>
-@foreach($skills_honors as $honor)
-@if($honor)
-            <div class="content">
-                <h3>Honors</h3>
-                <ul class="skills">
-                    @foreach($skills_honors as $honor)
+                        @endforeach
 
-                        <li>
-                            {{$honor->honor_title}}
-
-          {{$honor->honor_month}}&nbsp;{{$honor->honor_year}}
-                        </li>
-                    @endforeach
-
-                </ul>
+                    </ul>
+                </div>
             </div>
 
 
-    @endif
-            @endforeach
+            <div class="property-item project__list" data-section="Project">
+                <div class="property-item_head">
+            <span>
+                <i class="fa fa-thumb-tack"></i>
+            </span>
+                    <label>Projects</label>
+
+                </div>
+                <div class="property-item_body">
+                    <ul class="history one-line">
+
+                        @foreach($samples as $sample)
+                            <li>
+                                <h2 class="subtitle bidirectional">
+                                    {{$sample->project_title}}</h2>
+                                <h3 class="subtitle">Employer: {{$sample->project_employee}} </h3>
+                                <label class="date"><label class="text-date">Date:</label>{{$sample->project_month}} {{$sample->project_year}}</label>
+
+                            </li>
+                        @endforeach
+                    </ul>
+                </div>
+            </div>
+
+
+            <div class="property-item project__list" data-section="Project">
+                <div class="property-item_head">
+            <span>
+                <i class="fa fa-sliders"></i>
+            </span>
+                    <label>Researches</label>
+
+                </div>
+                <div class="property-item_body">
+                    <ul class="history one-line">
+
+                        @foreach($researchs as $research)
+                            <li>
+                                <h2 class="subtitle bidirectional">
+                                    {{$research->research_title}}</h2>
+                                <h3 class="subtitle">Publisher: {{$research->research_author}} </h3>
+                                <label class="date"><label class="text-date">Date:</label>{{$research->research_month}} {{$research->research_year}}</label>
+
+                            </li>
+                        @endforeach
+                    </ul>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
         </div>
-
-
-
-        <!-- End 4th Row -->
-         <!-- Begin 5th Row -->
-        <div class="entry">
-        <h2>WORKS</h2>
-        	<ul class="works">
-                @foreach($samples as $sample)
-
-        		<li><div style="margin:20px">
-                    <a href="http://{{$sample->project_link}}" title="{{$sample->project_title}}">{{$sample->project_title}}</a>
-                <br>
-                        Description:  {{$sample->project_content}}
-                    <br>
-                        Web Site:  {{$sample->project_link}}
-                    </div>
-                </li>
-
-                @endforeach
-            </ul>
-        </div>
-
-          <div class="entry">
-              <h2>Researches</h2>
-              <ul class="works">
-                  @foreach($researchs as $research)
-
-                      <li><div style="margin:20px">
-                              <a href="http://{{$research->research_link}}" title="{{$research->research_title}}">{{$research->research_title}}</a>
-                              <br>
-                              Publisher:{{$research->research_author}}
-                              <br>
-                              Description: {{$research->research_content}}
-                              <br>
-                            Web Site:  {{$research->research_link}}
-                          </div>
-                      </li>
-
-                  @endforeach
-              </ul>
-          </div>
-        <!-- Begin 5th Row -->
-      </div>
-      <div class="clear"></div>
-      <div class="paper-bottom"></div>
     </div>
-    <!-- End Paper -->
-  </div>
-  <div class="wrapper-bottom"></div>
 </div>
-<div id="message"><a href="" id="top-link">Go to Top</a></div>
-<!-- End Wrapper -->
+
+
+
+<script>
+    $('a.call-to-action').click(function (event) {
+        event.preventDefault();
+        var urlParams = new URLSearchParams(window.location.search);
+        var template = urlParams.get('template');
+        if (template) {
+            setCookie('PreviewTemplate', template);
+        }
+        document.location = '/builder';
+    });
+</script>
+<script>
+    setTimeout(function () {
+        document.querySelector('.click-to-build-cv').style.display = 'block';
+    }, 5000);
+</script>
+
+<link href="{{asset("pdf/1st/gmodal00.css")}}" rel="stylesheet" />
+<style>
+    ul.gModal-features {
+        width: 75%;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    @media only screen and (max-width: 576px) {
+        ul.gModal-features {
+            width: 90%;
+        }
+    }
+</style>
+
+<script>
+    var features = {
+        hasMouseout: true,
+        hasScroll: false,
+        hasTimeout: true,
+        scrollItem: '',
+        timoeout: 8000};
+</script>
+<script src="{{asset("pdf/1st/gmodal00.js")}}" type="text/javascript"></script>
+
+<style>
+    .page-watermark {
+        left: calc(50% - 350px);
+        display: none;
+        position: absolute;
+        font-size: 96px;
+        transform: rotate(-45deg);
+        -webkit-transform: rotate(-45deg);
+        opacity: 0.5;
+        font-weight: bold;
+        color: #969696;
+        z-index: 0;
+    }
+</style>
+
+<script>
+    var fullHeight = function (measure) {
+        var height = document.querySelector(".container").offsetHeight;
+        var colwide = document.querySelector(".col-wide");
+        var colnarrow = document.querySelector(".col-narrow");
+        var oneColLayout = document.querySelector(".one-col-layout");
+        var head = document.querySelector(".contact-info");
+
+        if (oneColLayout != null) {
+            height = oneColLayout.offsetHeight;
+        }
+        else {
+            if (measure) {
+                var colNarrowMeasuredHeight = measureHeight('.col-narrow');
+                var colWideMeasuredHeight = measureHeight('.col-wide');
+
+                if (colWideMeasuredHeight > colNarrowMeasuredHeight) {
+                    height = colWideMeasuredHeight;
+                } else {
+                    height = colNarrowMeasuredHeight;
+                }
+            }
+            else {
+                if (colwide.offsetHeight > colnarrow.offsetHeight) {
+                    height = colwide.offsetHeight;
+                } else {
+                    height = colnarrow.offsetHeight;
+                }
+
+            }
+        }
+
+        if (head != null) height += head.offsetHeight;
+
+        var height_mm = height / 3.7795275591 - 5;
+        //var height_mm = (height * 25.4) / 96 - 0;
+
+        height_mm = Math.ceil(height_mm / 297) * 297 - 1;
+        document.querySelector(".container").style.height = height_mm + "mm";
+
+        $('div.page-indicator,div.page-watermark').remove();
+        var pages = Math.ceil(height_mm / 297);
+        for (var i = 0; i < pages; i++) {
+            var top = i * 297;
+            $('<div data-page="' + (i + 1) + '" class="page-indicator"></div>').appendTo('.container').css({ top: top + 'mm' });
+        }
+
+    };
+    function measureHeight(selector) {
+        var height = 0;
+        $(selector).children().each(function () {
+            height += $(this).height() + parseInt($(this).css('paddingBottom')) + parseInt($(this).css('paddingTop'));
+        })
+        return height;
+    }
+</script>
+<script>
+    function webHeightAdjust() {
+        var height = document.querySelector(".container").offsetHeight;
+        var colwide = document.querySelector(".col-wide");
+        var colnarrow = document.querySelector(".col-narrow");
+        var oneColLayout = document.querySelector(".one-col-layout");
+        var head = document.querySelector(".contact-info");
+        if (oneColLayout != null) {
+            height = oneColLayout.offsetHeight;
+        }
+        else {
+            if (colwide.offsetHeight > colnarrow.offsetHeight) {
+                height = colwide.offsetHeight;
+            } else {
+                height = colnarrow.offsetHeight;
+            }
+        }
+        if (head != null) height += head.offsetHeight;
+        var height_mm = height * 25.4 / 96 + 15;
+        document.querySelector(".container").style.height = height_mm + "mm";
+    }
+</script>
+
+
+<div style="font-size: 13px !important;" class="footer">
+    Created with <i class="fa fa-heart" aria-hidden="true"></i> By
+    <a href="https://werbungseiten.de/">
+        Werbungseiten.de
+    </a>
+</div>
+<style>
+    .container {
+        box-shadow: 0 0 6px -2px #000;
+        margin: 0 auto;
+        margin-top: 40px;
+        margin-bottom: 50px;
+        min-height: 297mm;
+    }
+</style>
+<script src="{{asset("pdf/1st/template.js")}}"></script>
+<script>
+    window.onload = function () {
+        setTimeout(function () {
+            webHeightAdjust();
+        }, 800);
+    }
+</script>
+<script async>
+    var mobile = (/iphone|ipod|android|blackberry|mini|windows\sce|palm/i.test(navigator.userAgent.toLowerCase()));
+    if (!mobile) {
+        (function (s, u, m, o, j, v) { j = u.createElement(m); v = u.getElementsByTagName(m)[0]; j.async = 1; j.src = o; j.dataset.sumoSiteId = 'e2a3c8eb01dd914a33cb2632bc2f1bed8daa48f8f04a3d24057d538b082b200c'; v.parentNode.insertBefore(j, v) })(window, document, 'script', '//load.sumo.com/');
+    }
+</script>
+
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="{{asset("pdf/1st/js000000.js")}}"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-101108363-3');
+</script>
+
+
 </body>
 </html>
 
-<!-- This document saved from http://elemisfreebies.com/ed/demos/resume/ -->
+
+
